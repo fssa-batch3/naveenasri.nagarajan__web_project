@@ -1,0 +1,54 @@
+/* header is started */
+#section1 {
+  background-image: url("/assets/image/login as customer/architect/image 1.webp");
+}
+.hold {
+  width: 250px;
+}
+/* }header is ended */
+/* main container is started */
+ul {
+  font-size: 20px;
+}
+h2 {
+  font-size: 30px;
+  color: #28467f;
+  margin: 5px;
+}
+h3 {
+  margin: 7px;
+}
+
+button {
+  color: #cee1ff;
+  background-color: #28467f;
+  border: none;
+  font-weight: bold;
+  padding: 3px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.main-container {
+  display: flex;
+  margin-top: 40px;
+}
+.architect-list {
+  overflow-y: scroll;
+  height: 1000px;
+  width: 300px;
+}
+.details {
+  overflow-y: scroll;
+  height: 1000px;
+  width: 70%;
+  padding: 20px;
+  padding-left: 40px;
+}
+.details::-webkit-scrollbar {
+  display: none;
+}
+.checked {
+  color: orange;
+}
+/* main container is ended */

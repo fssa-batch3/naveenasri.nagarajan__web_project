@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>login 2</title>
+    <style>
+      body {
+        background-color: #cee1ff;
+      }
+      .all {
+        display: grid;
+        place-items: center;
+        margin-top: 50px;
+      }
+      a {
+        text-decoration: none;
+        color: #cee1ff;
+      }
+      button {
+        margin-top: 20px;
+        color: #cee1ff;
+        background-color: #28467f;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        width: 350px;
+        border-radius: 12px;
+        font-weight: bolder;
+      }
+      .form {
+        width: 350px;
+        background-color: #96aaec;
+        font-size: 25px;
+        height: 350px;
+        padding: 50px;
+        border-radius: 13px;
+        position: relative;
+      }
+      label {
+        color: #28467f;
+      }
+      input,
+      textarea {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 7px;
+        border: none;
+      }
+      .holder {
+        width: 600px;
+      }
+      .img2 {
+        display: flex;
+        justify-content: flex-start;
+      }
+      .img3 {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .main-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="all">
+        <img
+          src="/assets/image/common/logo.png"
+          alt="logo"
+          height="170px"
+          width="430px"
+        />
+      </div>
+      <div class="main-container">
+        <div>
+          <form class="form">
+            <label>Name:</label>
+            <input type="text" placeholder="Naveen" />
+            <br /><br />
+            <label>email:</label>
+            <input type="email" placeholder="naveen32@gmail.com" />
+            <br /><br />
+            <label>password:</label>
+            <input type="password" placeholder="password" />
+            <br /><br />
+            <div>
+              <button>
+                <a href="/pages/customer home.html">Login us customer</a>
+              </button>
+              <button>
+                <a href="/pages/architect required qualification.html"
+                  >Login us architect</a
+                >
+              </button>
+              <button><a href="#">Sign in</a></button>
+            </div>
+          </form>
+        </div>
+        <div class="holder">
+          <div class="img2">
+            <img
+              src="/assets/image/login as customer/contact us/image 2.jpg"
+              alt="interior design"
+              width="300px"
+              height="220px"
+            />
+          </div>
+          <div class="img3">
+            <img
+              src="/assets/image/login as customer/design gallery/living room/image 4.webp"
+              alt="interior design"
+              width="300px"
+              height="220px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

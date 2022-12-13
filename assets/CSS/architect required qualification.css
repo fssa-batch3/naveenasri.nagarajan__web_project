@@ -1,0 +1,24 @@
+/* header is started */
+#section1 {
+  background-image: url("/assets/image/login as architect/required qualification/image 1.webp");
+}
+.hold {
+  width: 500px;
+}
+/* }header is ended */
+.gif {
+  height: 300px;
+  width: 400px;
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  background-color: #96aaec;
+  margin: 40px;
+  border-radius: 15px;
+  padding: 10px;
+}
