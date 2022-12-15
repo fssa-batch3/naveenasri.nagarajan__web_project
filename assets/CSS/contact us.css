@@ -1,15 +1,15 @@
 /* header is started */
 #section1 {
-  background-image: url("/assets/image/login as customer/contact us/image 1.jpg");
+  background-image: url("../../assets/image/login as customer/contact us/image 1.jpg");
 }
 .hold {
   width: 200px;
 }
 /* }header is ended */
-a {
+/* a {
   text-decoration: none;
   color: #cee1ff;
-}
+} */
 .form {
   width: 290px;
   background-color: #96aaec;
@@ -21,6 +21,7 @@ a {
 }
 label {
   color: #28467f;
+  margin: 5px 0;
 }
 input,
 textarea {
