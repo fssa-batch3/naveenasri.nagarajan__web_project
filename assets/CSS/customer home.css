@@ -10,13 +10,33 @@
 .section3 {
   padding: 40px 0;
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   align-items: center;
   justify-content: space-around;
 }
+.section3,
+.section2,
+.section4,
+.section5 {
+  background: linear-gradient(
+    214deg,
+    rgba(2, 0, 36, 1) 2%,
+    rgba(34, 58, 103, 1) 10%,
+    rgba(68, 93, 153, 1) 20%,
+    rgba(93, 116, 178, 1) 33%,
+    rgba(95, 118, 180, 1) 44%,
+    rgba(122, 143, 208, 1) 56%,
+    rgba(150, 170, 236, 1) 66%,
+    rgba(178, 197, 255, 1) 76%,
+    rgba(255, 255, 255, 1) 89%,
+    rgba(235, 253, 255, 1) 99%
+  );
+  border-radius: 20px;
+  margin: 35px 40px 0px 40px;
+}
 .About-interior-design,
 .why-us {
-  color: black;
+  color: #000000;
   font-size: 20px;
   width: 500px;
 }
@@ -38,7 +58,7 @@ h3 {
   border-radius: 12px;
 }
 section.section4 {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   text-align: center;

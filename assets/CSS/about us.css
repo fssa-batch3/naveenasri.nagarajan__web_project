@@ -7,7 +7,6 @@
 }
 /* }header is ended */
 
-.h3,
 h2 {
   color: #28467f;
   text-align: center;
@@ -28,7 +27,23 @@ p {
   justify-content: space-around;
   margin-top: 40px;
   margin-bottom: 40px;
+  background: linear-gradient(
+    214deg,
+    rgba(2, 0, 36, 1) 2%,
+    rgba(34, 58, 103, 1) 10%,
+    rgba(68, 93, 153, 1) 20%,
+    rgba(93, 116, 178, 1) 33%,
+    rgba(95, 118, 180, 1) 44%,
+    rgba(122, 143, 208, 1) 56%,
+    rgba(150, 170, 236, 1) 66%,
+    rgba(178, 197, 255, 1) 76%,
+    rgba(255, 255, 255, 1) 89%,
+    rgba(235, 253, 255, 1) 99%
+  );
+  padding: 20px;
+  border-radius: 25px;
 }
+
 .review {
   width: 400px;
   text-align: center;

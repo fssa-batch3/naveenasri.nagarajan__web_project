@@ -15,10 +15,7 @@
         place-items: center;
         margin-top: 50px;
       }
-      /* a {
-        text-decoration: none;
-        color: #cee1ff;
-      } */
+
       button {
         margin-top: 20px;
         color: #cee1ff;
@@ -29,6 +26,7 @@
         width: 350px;
         border-radius: 12px;
         font-weight: bolder;
+        cursor: pointer;
       }
       .form {
         width: 350px;
@@ -66,6 +64,9 @@
         align-items: center;
         margin-top: 70px;
       }
+      .holder {
+        border: 5px solid #96aaec;
+      }
     </style>
   </head>
   <body>
@@ -82,24 +83,28 @@
         <div>
           <form class="form">
             <label>Name:</label>
-            <input type="text" placeholder="Naveen" />
+            <input type="text" placeholder="Naveen" style="margin-left: 40px" />
             <br /><br />
-            <label>email:</label>
-            <input type="email" placeholder="naveen32@gmail.com" />
+            <label>Email:</label>
+            <input
+              type="email"
+              placeholder="naveen32@gmail.com"
+              style="margin-left: 40px"
+            />
             <br /><br />
             <label>password:</label>
             <input type="password" placeholder="password" />
             <br /><br />
             <div>
               <button>
-                <a href="../pages/customer home.html">Login as customer</a>
+                <a href="../pages/customer home.html">Login as Customer</a>
               </button>
               <button>
                 <a href="../pages/architect required qualification.html"
-                  >Login as architect</a
+                  >Login as Architect</a
                 >
               </button>
-              <button><a href="#">Sign in</a></button>
+              <button><a href="../pages/begin profile.html">Sign in</a></button>
             </div>
           </form>
         </div>
