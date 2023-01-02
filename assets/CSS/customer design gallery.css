@@ -10,6 +10,7 @@
 /* container is started */
 .section2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 20px;
 }
@@ -19,12 +20,7 @@
   font-size: 30px;
   font-weight: bold;
 }
-.free-img {
-  width: 400px;
-  height: 270px;
-  margin: 10px;
-  border-radius: 12px;
-}
+
 .section3 {
   margin: 100px;
 }

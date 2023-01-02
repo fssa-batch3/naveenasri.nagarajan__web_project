@@ -6,21 +6,13 @@
   text-align: center;
   background: linear-gradient(
     214deg,
-    rgba(2, 0, 36, 1) 2%,
-    rgba(34, 58, 103, 1) 10%,
-    rgba(68, 93, 153, 1) 20%,
-    rgba(93, 116, 178, 1) 33%,
-    rgba(95, 118, 180, 1) 44%,
-    rgba(122, 143, 208, 1) 56%,
-    rgba(150, 170, 236, 1) 66%,
-    rgba(178, 197, 255, 1) 76%,
-    rgba(255, 255, 255, 1) 89%,
-    rgba(235, 253, 255, 1) 99%
+    rgb(147, 174, 249) 10%,
+    rgba(178, 197, 255, 1) 60%,
+    rgb(202, 215, 254) 100%
   );
   padding: 50px;
   font-size: 25px;
   border-radius: 25px;
-  color: #ebfdff;
   overflow-y: scroll;
 }
 .list::-webkit-scrollbar,
@@ -36,18 +28,11 @@ a {
   width: 550px;
   background: linear-gradient(
     214deg,
-    rgba(2, 0, 36, 1) 2%,
-    rgba(34, 58, 103, 1) 10%,
-    rgba(68, 93, 153, 1) 20%,
-    rgba(93, 116, 178, 1) 33%,
-    rgba(95, 118, 180, 1) 44%,
-    rgba(122, 143, 208, 1) 56%,
-    rgba(150, 170, 236, 1) 66%,
-    rgba(178, 197, 255, 1) 76%,
-    rgba(255, 255, 255, 1) 89%,
-    rgba(235, 253, 255, 1) 99%
+    rgb(147, 174, 249) 10%,
+    rgba(178, 197, 255, 1) 60%,
+    rgb(202, 215, 254) 100%
   );
-  font-size: 25px;
+  font-size: 23px;
   height: 350px;
   padding: 50px;
   border-radius: 13px;
@@ -87,9 +72,7 @@ button {
 .both-btn {
   width: 250px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   float: right;
-}
-label {
-  color: #cee1ff;
 }

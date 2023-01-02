@@ -1,0 +1,102 @@
+/* header is started */
+#section1 {
+  background-image: url("../../assets/image/login as customer/home/image 1.jpg");
+}
+.hold {
+  width: 250px;
+}
+
+.Login {
+  color: white;
+  background-color: #28467f;
+  border-radius: 7px;
+  padding: 5px;
+  width: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* header is ended */
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.number {
+  font-size: 120px;
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+}
+.plan {
+  width: 250px;
+  text-align: center;
+  border: 2px solid #28467f;
+  height: 530px;
+  padding: 15px;
+}
+.plan p {
+  text-align: left;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.six-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 85%;
+}
+.history p {
+  width: 500px;
+}
+.review {
+  width: 400px;
+  text-align: center;
+}
+.Testimonial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.our-works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.works {
+  margin-left: 60px;
+}
+
+button {
+  margin-top: 20px;
+  color: #cee1ff;
+  background-color: #28467f;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  width: 350px;
+  border-radius: 12px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.all-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+}

@@ -7,7 +7,7 @@
 }
 nav {
   display: flex;
-  width: 650px;
+  width: 700px;
   justify-content: space-between;
   font-size: 23px;
   margin-right: 50px;
@@ -15,7 +15,6 @@ nav {
 .a {
   text-decoration: none;
   color: #28467f;
-  font-weight: bold;
   padding: 5px;
 }
 a {
@@ -33,6 +32,7 @@ a {
   width: 100%;
   background-size: cover;
   background-position: center;
+  margin: 0px;
 }
 .section1 {
   display: flex;
@@ -67,6 +67,46 @@ h1 {
   color: white;
 }
 /* header is ended */
+
+body {
+  font-size: 18px;
+  font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+  background-color: rgb(234, 239, 251);
+  color: black;
+}
+img {
+  border-radius: 3px;
+}
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #28467f;
+  text-align: center;
+}
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #28467f;
+  text-align: center;
+}
+.free_img {
+  width: 400px;
+  height: 270px;
+  margin: 10px;
+  border-radius: 12px;
+}
+.free_img:hover {
+  transform: scale(1.01);
+  box-shadow: 3px 3px 10px 2px rgb(155, 155, 155);
+}
+.border {
+  border-radius: 20px;
+  margin: 35px 40px 0px 40px;
+  transition: 0.4s;
+}
+.border:hover {
+  border: 2px solid #28467f;
+}
 /* footer is started */
 .footer {
   background-color: #28467f;
@@ -94,4 +134,19 @@ h1 {
 .footdiv3 {
   width: 400px;
 }
+
+footer h3 {
+  color: #cee1ff;
+  text-align: left;
+}
 /* footer is ended */
+
+/*mobile resposive */
+@media screen and (max-width: 600px) {
+  * body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
