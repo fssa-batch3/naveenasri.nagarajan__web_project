@@ -54,16 +54,26 @@
   <body>
     <form class="form">
       <label>First name</label>
-      <input type="text" placeholder="Naveen" />
+      <input type="text" value="Naveena" id="fname" placeholder="Naveen" />
       <br />
       <label>Last name</label>
-      <input type="text" placeholder="kumar" />
+      <input type="text" value="sri" id="lname" placeholder="kumar" />
       <br />
       <label>Email</label>
-      <input type="email" placeholder="naveen32@gmail.com" />
+      <input
+        type="email"
+        value="naveen32@gmail.com"
+        id="email"
+        placeholder="naveen32@gmail.com"
+      />
       <br />
       <label>phone number</label>
-      <input type="tel" placeholder="9218457240" />
+      <input
+        type="tel"
+        value="9218457240"
+        id="number"
+        placeholder="9218457240"
+      />
       <br />
       <label for="textarea">Your message</label>
       <textarea id="textarea" name="textarea" rows="6" cols="21"></textarea>
@@ -72,4 +82,15 @@
       <button><a href="../pages/successfully completed.html">Submit</a></button>
     </form>
   </body>
+  <script>
+    const lname = document.getElementById("lname").value;
+    const fname = document.getElementById("fname").value;
+    const email = document.getElementById("email").value;
+    const number = document.getElementById("number").value;
+
+    console.log(fname);
+    console.log(lname);
+    console.log(email);
+    console.log(number);
+  </script>
 </html>

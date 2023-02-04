@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="../assets/CSS/universe.css" />
     <title>login 2</title>
     <style>
-      body {
-        background-color: #cee1ff;
-      }
       .all {
         display: grid;
         place-items: center;
@@ -51,16 +48,10 @@
         width: 600px;
         border: 5px solid #96aaec;
       }
-      .img2 {
-        display: flex;
-        justify-content: flex-start;
-      }
-      .img3 {
-        display: flex;
-        justify-content: flex-end;
-      }
+
       .main-container {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
         margin-top: 70px;
@@ -81,28 +72,42 @@
         <div>
           <form class="form">
             <label>Name:</label>
-            <input type="text" placeholder="Naveen" style="margin-left: 40px" />
+            <input
+              type="text"
+              value="Naveena sri"
+              id="name"
+              placeholder="Naveen"
+              style="margin-left: 40px"
+            />
             <br /><br />
             <label>Email:</label>
             <input
               type="email"
               placeholder="naveen32@gmail.com"
               style="margin-left: 45px"
+              id="email"
             />
             <br /><br />
             <label>password:</label>
-            <input type="password" placeholder="password" />
+            <input
+              type="password"
+              value="656776878978"
+              id="password"
+              placeholder="password"
+            />
             <br /><br />
             <div>
-              <button>
-                <a href="../pages/customer home.html">Login as Customer</a>
+              <button type="button" onclick="getData1()">
+                <a href="../pages/customer home.html"> Login as Customer </a>
               </button>
-              <button>
-                <a href="../pages/architect required qualification.html"
-                  >Login as Architect</a
-                >
+              <button type="button" onclick="getData2()">
+                <a href="../pages/architect required qualification.html">
+                  login as Architect
+                </a>
               </button>
-              <button><a href="../pages/begin profile.html">Sign in</a></button>
+              <button type="button" onclick="getData3()">
+                <a href="../pages/begin profile.html"> sign up </a>
+              </button>
             </div>
           </form>
         </div>
@@ -127,4 +132,54 @@
       </div>
     </div>
   </body>
+  <!-- java  -->
+  <script>
+    function getData1() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      console.log(name);
+      console.log(email);
+      console.log(password);
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+
+      window.location.href = "./customer home.html";
+    }
+
+    function getData2() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      console.log(name);
+      console.log(email);
+      console.log(password);
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+
+      window.location.href = "./architect required qualification.html";
+    }
+
+    function getData3() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      console.log(name);
+      console.log(email);
+      console.log(password);
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+
+      window.location.href = "./begin profile.html";
+    }
+  </script>
 </html>

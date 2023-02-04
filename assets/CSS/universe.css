@@ -27,7 +27,7 @@ a {
   border-radius: 7px;
   padding: 5px;
 }
-
+/* header is ended */
 #section1 {
   width: 100%;
   background-size: cover;
@@ -94,6 +94,7 @@ h3 {
   height: 270px;
   margin: 10px;
   border-radius: 12px;
+  
 }
 .free_img:hover {
   transform: scale(1.01);
@@ -111,6 +112,7 @@ h3 {
 .footer {
   background-color: #28467f;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px;
   font-size: 20px;
@@ -120,6 +122,7 @@ h3 {
 .social-media {
   width: 300px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
 }
@@ -143,10 +146,24 @@ footer h3 {
 
 /*mobile resposive */
 @media screen and (max-width: 600px) {
+  /* header is started */
+
+  /* header is ended */
   * body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 100%;
+  }
+  .free_img {
+    width: 300px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 6px;
+  }
+
+  /* footer phone resposive */
+  footer h3 {
+    text-align: center;
   }
 }

@@ -19,7 +19,7 @@
 }
 .architect-list {
   width: 300px;
-  height: 1000px;
+  height: auto;
   left: 140px;
   text-align: center;
   background: linear-gradient(

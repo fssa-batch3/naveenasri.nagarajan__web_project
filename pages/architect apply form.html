@@ -30,42 +30,67 @@
 
     <section class="all-form">
       <form class="form">
+        <label for="image">Photo:</label>
+        <input type="url" id="image" name="image" placeholder="Profileimage" /><br /><br />
+        <!-- <br /> -->
         <label>First name:</label>
-        <input type="text" placeholder="Naveen" />
+        <input type="text" id="firstname" placeholder="Naveen" />
         <br />
         <br />
         <label>Last name:</label>
-        <input type="text" placeholder="kumar" />
+        <input type="text" id="lastname" placeholder="kumar" />
         <br />
         <br />
         <label>phone number:</label>
-        <input type="tel" placeholder="9218457240" />
+        <input type="tel" id="phonenumber"placeholder="9218457240" />
         <br />
         <br />
         <label>Aadhar number:</label>
-        <input type="text" placeholder="4345 8767 9766" />
+        <input type="text" id="Aadharnumber"placeholder="4345 8767 9766" />
         <br />
         <br />
         <label>educational qualification:</label>
-        <input type="text" placeholder="Bachelor of architects" />
+        <input type="text" id="education"placeholder="Bachelor of architects" />
         <br />
         <br />
         <label>Experience:</label>
-        <input type="text" placeholder="2 years" />
+        <input type="text" id="Experience" placeholder="2 years" />
         <br />
         <br />
         <label>Email:</label>
-        <input type="email" placeholder="naveen32@gmail.com" />
+        <input type="email" id="email"placeholder="naveen32@gmail.com" />
         <br />
         <br />
+        <label for="image">Document:</label>
+        <input type="url" id="Document" name="image" placeholder="Profileimage" /><br /><br />
+        
         <label for="image">model design:</label>
-        <input type="file" id="image" name="image" value="image" /><br /><br />
+        <input type="url" id="modeldesign"name="image" placeholder="Profileimage" /><br /><br />
         <br />
 
-        <button>
-          <a href="../pages/successfully completed.html">Apply now</a>
+        <button type="submit" onclick="getdata()" href="../pages/successfully completed.html">Apply now
+          <!-- <a href="../pages/successfully completed.html">Apply now</a> -->
         </button>
       </form>
     </section>
+
+
+    <script>
+      function getdata(){
+        const getUrl =document.getElementById("image").value;
+        const getFirstName= document.getElementById("").value;
+        const getLastName= document.getElementById("").value;
+        const getPhoneNumber = document.getElementById("").value;
+        const getAadharNumber = document.getElementById("").value;
+        const  getEducation= document.getElementById("").value;
+        const  getExperience= document.getElementById("").value;
+        const  getEmail= document.getElementById("").value;
+        const  getDocument= document.getElementById("").value;
+        const getModelDesign = document.getElementById("").value;
+
+
+        console.log()
+      }
+    </script>
   </body>
 </html>

@@ -30,7 +30,6 @@ section.section4 {
 section.section4 div.sec_4 {
   text-align: center;
   display: flex;
-  flex-wrap: wrap;
   align-content: center;
   flex-wrap: wrap;
   width: 1500px;
@@ -48,4 +47,10 @@ section.section4 div.sec_4 {
   width: 400px;
   text-align: center;
   font-size: 19px;
+}
+@media screen and (max-width: 600px) {
+  .home-img1 {
+    width: 300px;
+    height: 200px;
+  }
 }
