@@ -8,7 +8,7 @@ let architect = [
         "location": "chennai",
         "document": "Document",
         "image1": "../assets/image/login as architect/sample design/sample 1.jpg",
-        "image2": "../assets/image/login as architect/sample design/sample 2.webp",
+        // "image2": "../assets/image/login as architect/sample design/sample 2.webp",
         "button": "Book now",
       },
       {
@@ -17,7 +17,7 @@ let architect = [
         "location": "Madurai",
         "document": "Document",
         "image1": "../assets/image/login as architect/sample design/sample 3.jpg",
-        "image2": "../assets/image/login as architect/sample design/sample 4.jpg",
+        // "image2": "../assets/image/login as architect/sample design/sample 4.jpg",
         "button": "Book now",
       },
       {
@@ -26,7 +26,7 @@ let architect = [
         "location": "Erumapatti",
         "document": "Document",
         "image1": "../assets/image/login as architect/sample design/sample 5.webp",
-        "image2": "../assets/image/login as architect/sample design/sample 6.webp",
+        // "image2": "../assets/image/login as architect/sample design/sample 6.webp",
         "button": "Book now",
       },
       {
@@ -35,7 +35,7 @@ let architect = [
         "location": "Namakkal",
         "document": "Document",
         "image1": "../assets/image/login as architect/sample design/sample 7.webp",
-        "image2": "../assets/image/login as architect/sample design/sample 8.webp",
+        // "image2": "../assets/image/login as architect/sample design/sample 8.webp",
         "button": "Book now",
       },
 

@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/CSS/universe.css" />
-    <title>login 2</title>
-    <style>
-      .all {
-        display: grid;
-        place-items: center;
-        margin-top: 50px;
-      }
 
-      button {
-        margin-top: 20px;
-        color: #cee1ff;
-        background-color: #28467f;
-        font-size: 20px;
-        padding: 10px;
-        border: none;
-        width: 350px;
-        border-radius: 12px;
-        font-weight: bolder;
-        cursor: pointer;
-      }
-      .form {
-        width: 360px;
-        background-color: #96aaec;
-        font-size: 25px;
-        height: 360px;
-        padding: 50px;
-        border-radius: 13px;
-        position: relative;
-      }
-      label {
-        color: #28467f;
-      }
-      input,
-      textarea {
-        font-size: 18px;
-        padding: 5px;
-        border-radius: 7px;
-        border: none;
-      }
-      .holder {
-        width: 600px;
-        border: 5px solid #96aaec;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/CSS/universe.css" />
+  <title>login 2</title>
+  <style>
+    .all {
+      display: grid;
+      place-items: center;
+      margin-top: 50px;
+    }
 
-      .main-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 70px;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <div class="all">
-        <img
-          src="../assets/image/common/logo.png"
-          alt="logo"
-          height="170px"
-          width="430px"
-        />
-      </div>
-      <div class="main-container">
-        <div>
-          <form class="form">
-            <label>Name:</label>
+    input:valid {
+      border: 2px solid green;
+    }
+
+    input:invalid {
+      border: 2px solid red;
+    }
+
+    button {
+      margin-top: 20px;
+      color: #cee1ff;
+      background-color: #28467f;
+      font-size: 20px;
+      padding: 10px;
+      border: none;
+      width: 350px;
+      border-radius: 12px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+
+    .form {
+      width: 360px;
+      background-color: #96aaec;
+      font-size: 25px;
+      height: 360px;
+      padding: 50px;
+      border-radius: 13px;
+      position: relative;
+    }
+
+    label {
+      color: #28467f;
+    }
+
+    input,
+    textarea {
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 7px;
+      border: none;
+    }
+
+    .holder {
+      width: 600px;
+      border: 5px solid #96aaec;
+    }
+
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 70px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="all">
+      <img src="../assets/image/common/logo.png" alt="logo" height="170px" width="430px" />
+    </div>
+    <div class="main-container">
+      <div>
+        <form id="form3" class="form">
+          <!-- <label>Name:</label>
             <input
               type="text"
               value="Naveena sri"
@@ -79,107 +88,89 @@
               placeholder="Naveen"
               style="margin-left: 40px"
             />
-            <br /><br />
-            <label>Email:</label>
-            <input
-              type="email"
-              placeholder="naveen32@gmail.com"
-              style="margin-left: 45px"
-              id="email"
-            />
-            <br /><br />
-            <label>password:</label>
-            <input
-              type="password"
-              value="656776878978"
-              id="password"
-              placeholder="password"
-            />
-            <br /><br />
-            <div>
-              <button type="button" onclick="getData1()">
-                <a href="../pages/customer home.html"> Login as Customer </a>
-              </button>
-              <button type="button" onclick="getData2()">
+            <br /><br /> -->
+          <label>Email:</label>
+          <input type="email" required="true" placeholder="naveen32@gmail.com" autocomplete="email"
+            style="margin-left: 45px" id="email" />
+          <br /><br />
+          <label>password:</label>
+          <input type="password" required="true" value="656776878978" autocomplete="current-password" id="password"
+            placeholder="password" />
+          <br /><br />
+          <div>
+            <!-- <button type="submit">
+              Login as Customer
+            </button> -->
+            <!-- <button type="button" onclick="getData2()">
                 <a href="../pages/architect required qualification.html">
                   login as Architect
                 </a>
-              </button>
-              <button type="button" onclick="getData3()">
-                <a href="../pages/begin profile.html"> sign up </a>
-              </button>
-            </div>
-          </form>
+              </button> -->
+            <button type="submit">
+              sign up
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="holder">
+        <div class="img2">
+          <img src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design" width="300px"
+            height="220px" />
         </div>
-        <div class="holder">
-          <div class="img2">
-            <img
-              src="../assets/image/login as customer/contact us/image 2.jpg"
-              alt="interior design"
-              width="300px"
-              height="220px"
-            />
-          </div>
-          <div class="img3">
-            <img
-              src="../assets/image/login as customer/design gallery/living room/image 3.webp"
-              alt="interior design"
-              width="300px"
-              height="220px"
-            />
-          </div>
+        <div class="img3">
+          <img src="../assets/image/login as customer/design gallery/living room/image 3.webp" alt="interior design"
+            width="300px" height="220px" />
         </div>
       </div>
     </div>
-  </body>
-  <!-- java  -->
-  <script>
-    function getData1() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+  </div>
+</body>
+<!-- java  -->
+<script>
+  let logIn = document.getElementById("form3");
 
-      console.log(name);
-      console.log(email);
-      console.log(password);
+  logIn.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let defult = JSON.parse(localStorage.getItem("register"));
+    console.log(defult);
 
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
 
-      window.location.href = "./customer home.html";
+
+    const getEmail = document.getElementById("email").value;
+    const getPassword = document.getElementById("password").value;
+
+    // let match = false;
+
+
+
+    for (let i = 0; i < defult.length; i++) {
+      if (
+        getEmail == defult[i].getEmail &&
+        getPassword == defult[i].getPassword
+      ) {
+        match = true;
+        break;
+      }
+      else {
+        match = false;
+        break;
+      }
     }
 
-    function getData2() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      console.log(name);
-      console.log(email);
-      console.log(password);
-
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
-
-      window.location.href = "./architect required qualification.html";
+    if ((match = true)) {
+      alert("successfully completed");
+      const matchObject = defult.find(o => o['userEmail'] == getEmail)
+      const thisUser = JSON.stringify(matchObject);
+      localStorage.setItem("this_user", thisUser);
+      window.location.href = "../pages/customer home.html";
+    } else {
+      alert("failed");
     }
 
-    function getData3() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
 
-      console.log(name);
-      console.log(email);
-      console.log(password);
+  })
 
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
+</script>
 
-      window.location.href = "./begin profile.html";
-    }
-  </script>
+
 </html>

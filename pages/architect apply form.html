@@ -1,96 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/CSS/universe.css" />
-    <link rel="stylesheet" href="../assets/CSS/architect apply form.css" />
-    <title>architect apply form</title>
-  </head>
-  <body>
-    <header class="header">
-      <div>
-        <img
-          src="../assets/image/common/logo.png"
-          alt="logo"
-          height="100px"
-          width="300px"
-        />
-      </div>
-      <nav>
-        <a class="a" href="../pages/architect required qualification.html"
-          >Required qualification</a
-        >
-        <a class="a" href="../pages/architect apply form.html">Apply from</a>
-        <a class="a" href="../pages/architect about us.html">About us</a>
-        <a class="a" href="../pages/architect  contact us .html">Contact us</a>
-      </nav>
-    </header>
 
-    <section class="all-form">
-      <form class="form">
-        <label for="image">Photo:</label>
-        <input type="url" id="image" name="image" placeholder="Profileimage" /><br /><br />
-        <!-- <br /> -->
-        <label>First name:</label>
-        <input type="text" id="firstname" placeholder="Naveen" />
-        <br />
-        <br />
-        <label>Last name:</label>
-        <input type="text" id="lastname" placeholder="kumar" />
-        <br />
-        <br />
-        <label>phone number:</label>
-        <input type="tel" id="phonenumber"placeholder="9218457240" />
-        <br />
-        <br />
-        <label>Aadhar number:</label>
-        <input type="text" id="Aadharnumber"placeholder="4345 8767 9766" />
-        <br />
-        <br />
-        <label>educational qualification:</label>
-        <input type="text" id="education"placeholder="Bachelor of architects" />
-        <br />
-        <br />
-        <label>Experience:</label>
-        <input type="text" id="Experience" placeholder="2 years" />
-        <br />
-        <br />
-        <label>Email:</label>
-        <input type="email" id="email"placeholder="naveen32@gmail.com" />
-        <br />
-        <br />
-        <label for="image">Document:</label>
-        <input type="url" id="Document" name="image" placeholder="Profileimage" /><br /><br />
-        
-        <label for="image">model design:</label>
-        <input type="url" id="modeldesign"name="image" placeholder="Profileimage" /><br /><br />
-        <br />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/CSS/universe.css" />
+  <link rel="stylesheet" href="../assets/CSS/architect apply form.css" />
+  <title>architect apply form</title>
+</head>
 
-        <button type="submit" onclick="getdata()" href="../pages/successfully completed.html">Apply now
-          <!-- <a href="../pages/successfully completed.html">Apply now</a> -->
-        </button>
-      </form>
-    </section>
+<body>
+  <header class="header">
+    <div>
+      <img src="../assets/image/common/logo.png" alt="logo" height="100px" width="300px" />
+    </div>
+    <nav>
+      <a class="a" href="../pages/architect required qualification.html">Required qualification</a>
+      <a class="a" href="../pages/architect apply form.html">Apply from</a>
+      <a class="a" href="../pages/architect about us.html">About us</a>
+      <a class="a" href="../pages/architect  contact us .html">Contact us</a>
+    </nav>
+  </header>
+
+  <section class="all-form">
+    <form id="form1" class="form">
+      <label for="image">Photo:</label>
+      <input type="url" id="image" name="image" placeholder="Profileimage" /><br /><br />
+      <!-- <br /> -->
+      <label>First name:</label>
+      <input type="text" id="firstname" placeholder="Naveen" />
+      <br />
+      <br />
+      <label>Last name:</label>
+      <input type="text" id="lastname" placeholder="kumar" />
+      <br />
+      <br />
+      <label>phone number:</label>
+      <input type="tel" id="phonenumber" placeholder="9218457240" />
+      <br />
+      <br />
+      <label>Aadhar number:</label>
+      <input type="text" id="Aadharnumber" placeholder="4345 8767 9766" />
+      <br />
+      <br />
+      <label>educational qualification:</label>
+      <input type="text" id="education" placeholder="Bachelor of architects" />
+      <br />
+      <br />
+      <label>Experience:</label>
+      <input type="text" id="Experience" placeholder="2 years" />
+      <br />
+      <br />
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="naveen32@gmail.com" />
+      <br />
+      <br />
+      <label for="image">Document:</label>
+      <input type="url" id="Document" name="image" placeholder="Profileimage" /><br /><br />
+
+      <label for="image">model design:</label>
+      <input type="url" id="modeldesign" name="image" placeholder="Profileimage" /><br /><br />
+      <br />
+
+      <button type="submit">Apply now
+        <!-- <a href="../pages/successfully completed.html">Apply now</a> -->
+      </button>
+    </form>
+  </section>
 
 
-    <script>
-      function getdata(){
-        const getUrl =document.getElementById("image").value;
-        const getFirstName= document.getElementById("").value;
-        const getLastName= document.getElementById("").value;
-        const getPhoneNumber = document.getElementById("").value;
-        const getAadharNumber = document.getElementById("").value;
-        const  getEducation= document.getElementById("").value;
-        const  getExperience= document.getElementById("").value;
-        const  getEmail= document.getElementById("").value;
-        const  getDocument= document.getElementById("").value;
-        const getModelDesign = document.getElementById("").value;
+  <script>
+    let form = document.getElementById("form1")
+    form.addEventListener("submit", function (event) {
+      event.preventDefault()
+
+      let person = {}
 
 
-        console.log()
-      }
-    </script>
-  </body>
+      const getUrl = document.getElementById("image").value;
+      person["image_URL"] = getUrl;
+      const getFirstName = document.getElementById("firstname").value;
+      person["firstname"] = getFirstName;
+      const getLastName = document.getElementById("lastname").value;
+      person["lastname"] = getLastName;
+      const getPhoneNumber = document.getElementById("phonenumber").value;
+      person["phonenumber"] = getPhoneNumber;
+      const getAadharNumber = document.getElementById("Aadharnumber").value;
+      person["Aadharnumber"] = getAadharNumber;
+      const getEducation = document.getElementById("education").value;
+      person["education"] = getEducation;
+      const getExperience = document.getElementById("Experience").value;
+      person["Experience"] = getExperience;
+      const getEmail = document.getElementById("email").value;
+      person["email"] = getEmail;
+      const getDocument = document.getElementById("Document").value;
+      person["Document"] = getDocument;
+      const getModelDesign = document.getElementById("modeldesign").value;
+      person["modeldesign"] = getModelDesign;
+
+      console.log(person)
+
+      localStorage.setItem("person", JSON.stringify(person));
+
+    });
+
+
+
+
+
+
+    window.location.herf = "http://127.0.0.1:5500/pages/successfully%20completed.html"
+
+  </script>
+</body>
+
 </html>
