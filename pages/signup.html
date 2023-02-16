@@ -127,49 +127,63 @@
 </body>
 <!-- java  -->
 <script>
-    let checker = false;
+
     const signupfrom = document.getElementById("form2");
+    console.log(signupfrom)
     signupfrom.addEventListener("submit", function (event) {
         event.preventDefault();
 
         let userNew = [];
+        console.log(userNew)
+
         if (localStorage.getItem("register") != null) {
             userNew = JSON.parse(localStorage.getItem("register"));
         }
-        console.log(userNew)
+
 
         const getName = document.getElementById("name").value.trim();
         const getEmail = document.getElementById("email").value.trim();
         const getPassword = document.getElementById("password").value.trim();
         const getConfirmPassword = document.getElementById("confirm_password").value.trim();
 
-        let userData = {
-            userName: getName,
-            userEmail: getEmail,
-            userPassword: getPassword,
-            conPassword: getConfirmPassword
-        }
+
+
+        let checker = false;
         for (let i = 0; i < userNew.length; i++) {
-            if (getEmail === userNew[i]["userEmail"]) {
+            if (userNew[i]["userEmail"] === getEmail) {
                 checker = true;
-                alert("email alreaqdy exist");
                 break;
 
             } else {
                 checker = false;
             }
         }
-        if (checker === false) {
-            // console.log(userNew[0]["userEmail"])
-            if (getPassword === getConfirmPassword) {
-                userNew.push(userData);
-                const str = JSON.stringify(userNew);
-                localStorage.setItem("register", str);
-                window.location.href = "../pages/customer home.html";
-            } else {
-                alert("Invalid Password")
+        if (checker === true) {
+
+            alert("User already exit")
+        } else {
+
+            let userData = {
+                userName: getName,
+                userEmail: getEmail,
+                userPassword: getPassword,
+                userconPassword: getConfirmPassword
             }
+
+            console.log(userData);
+
+
+            userNew.push(userData);
+
+            const str = JSON.stringify(userNew)
+            alert("Sucess")
+            window.localStorage.setItem("register", str)
+            window.location.href = "./login 2.html"
+
         }
+
+
+
     });
 
 </script>
