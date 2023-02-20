@@ -21,5 +21,5 @@ I finished my
 
  4.profile edit [completed]
 
- 5.delet user [pending]
+ 5.delete user [pending] [tomorrow]
 
