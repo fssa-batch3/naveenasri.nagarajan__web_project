@@ -12,8 +12,8 @@ wireframe:https://drive.google.com/drive/folders/1AgcYHYFxFjlH5QCMbliGspjMYDlu3F
 
 
 I finished my
-register page [completed]
-login page [completed]
-profile page [completed]
-profile edit [completed]
-delet user [pending]
+ 1.register page [completed]
+ 2.login page [completed]
+ 3.profile page [completed]
+ 4.profile edit [completed]
+ 5.delet user [pending]
