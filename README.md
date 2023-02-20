@@ -9,3 +9,11 @@ Market research:https://design2design.in/
 user flow:https://drive.google.com/drive/folders/1q4Oj9Yr7CedCbgcAZkTnHdwm4zpqFll3
 
 wireframe:https://drive.google.com/drive/folders/1AgcYHYFxFjlH5QCMbliGspjMYDlu3FXc
+
+
+I finished my
+register page [completed]
+login page [completed]
+profile page [completed]
+profile edit [completed]
+delet user [pending]
