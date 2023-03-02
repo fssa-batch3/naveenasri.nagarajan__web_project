@@ -1,5 +1,10 @@
+.full_form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .form {
-  width: 500px;
+  /* width: 500px; */
   background-color: #96aaec;
   font-size: 25px;
   padding: 50px;
@@ -29,9 +34,9 @@ button {
   font-weight: bold;
 }
 
-.all-form {
-  /* background-color: #cee1ff; */
+/* .all-form {
+ 
   height: 750px;
   display: grid;
   place-items: center;
-}
+} */
