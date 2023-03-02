@@ -99,7 +99,7 @@
                     <br /><br />
                     <div>
                         <button type="submit">
-                            Login as Customer
+                            Login
                         </button>
                         <!-- <button type="button" onclick="getData2()">
                             <a href="../pages/architect required qualification.html">
@@ -127,7 +127,7 @@
 </body>
 <!-- java  -->
 <script>
-
+    let checker = false;
     const signupfrom = document.getElementById("form2");
     console.log(signupfrom)
     signupfrom.addEventListener("submit", function (event) {
@@ -140,158 +140,53 @@
             userNew = JSON.parse(localStorage.getItem("register"));
         }
 
-
         const getName = document.getElementById("name").value.trim();
         const getEmail = document.getElementById("email").value.trim();
         const getPassword = document.getElementById("password").value.trim();
         const getConfirmPassword = document.getElementById("confirm_password").value.trim();
+        const userId = Date.now();
+
+        let userData = {
+            userId: userId,
+            userName: getName,
+            userEmail: getEmail,
+            userPassword: getPassword,
+            userconPassword: getConfirmPassword
+        }
+
+        console.log(userData);
 
 
 
-        let checker = false;
         for (let i = 0; i < userNew.length; i++) {
             if (userNew[i]["userEmail"] === getEmail) {
                 checker = true;
+                alert("User already exit")
                 break;
 
-            } else {
+            }
+            else {
                 checker = false;
             }
         }
-        if (checker === true) {
+        if (checker === false) {
 
-            alert("User already exit")
-        } else {
 
-            let userData = {
-                userName: getName,
-                userEmail: getEmail,
-                userPassword: getPassword,
-                userconPassword: getConfirmPassword
+
+            if (getPassword === getConfirmPassword) {
+                userNew.push(userData);
+                const str = JSON.stringify(userNew)
+                alert("Sucess")
+                window.localStorage.setItem("register", str)
+                window.location.href = "./login 2.html"
+            } else {
+                alert("Password and confirmpassword should be same")
             }
 
-            console.log(userData);
-
-
-            userNew.push(userData);
-
-            const str = JSON.stringify(userNew)
-            alert("Sucess")
-            window.localStorage.setItem("register", str)
-            window.location.href = "./login 2.html"
-
         }
-
-
 
     });
 
 </script>
 
 </html>
-
-
-
-
-
-
-
-
--->
-<!-- 
-
- if (getName == "" || getName === null) {
-    alert("enter your Name");
-
-} else if (getEmail == "" || getEmail == null) {
-    alert("Enter your Email ID");
-
-} else if (getPassword.length < 6) {
-    alert("enter your password ,password should be more than 6 characters");
-
-} else if (getConfirmPassword.length < 6) {
-    alert("your password and confirm password should be same");
-
-}
-
-
-
-if (getPassword != getConfirmPassword) {
-    // alert("Invalid Password")
-    match = true;
-}
-else {
-    match = false;
-}
-
-if (match = true) {
-    alert("Invalid Password");
-
-}
-
-for (let i = 0; i < userNew.length; i++) {
-    if (userNew[i]["email"] === getEmail) {
-        match = true;
-        break;
-    }
-    else {
-        match = false;
-    }
-}
-if (match === true) {
-    alert("This email is already exists");
-}
-else {
-    let userData = {
-        userName: getName,
-        userEmail: getEmail,
-        userPassword: getPassword,
-        conPassword: getConfirmPassword,
-    };
-    userNew.push(userData);
-    const str = JSON.stringify(userNew);
-    localStorage.setItem("register", str);
-    window.location.href = "../pages/customer home.html";
-} -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- let form = document.getElementById("form2")
-
-    form.addEventListener("submit", function (event) {
-
-        event.preventDefault()
-
-
-
-        let userNew = {}
-
-
-
-        const getName = document.getElementById("name").value;
-        userNew["name"] = getName;
-        const getEmail = document.getElementById("email").value;
-        userNew["email"] = getEmail;
-        const getPassword = document.getElementById("password").value;
-        userNew["password"] = getPassword;
-        const getConPass = document.getElementById("confirm_password").value;
-        userNew["confirm_password"] = getConPass;
-
-        localStorage.setItem("users", JSON.stringify(userNew));
-    }) -->

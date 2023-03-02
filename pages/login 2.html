@@ -22,6 +22,7 @@
       border: 2px solid red;
     }
 
+    .signupbtn,
     button {
       margin-top: 20px;
       color: #cee1ff;
@@ -90,11 +91,11 @@
             />
             <br /><br /> -->
           <label>Email:</label>
-          <input type="email" required="true" placeholder="naveen32@gmail.com" autocomplete="email"
-            style="margin-left: 45px" id="email" />
+          <input type="email" required placeholder="naveen32@gmail.com" autocomplete="email" style="margin-left: 45px"
+            id="email" />
           <br /><br />
           <label>password:</label>
-          <input type="password" required="true" value="656776878978" autocomplete="current-password" id="password"
+          <input type="password" required value="656776878978" autocomplete="current-password" id="password"
             placeholder="password" />
           <br /><br />
           <div>
@@ -107,9 +108,13 @@
                 </a>
               </button> -->
             <button type="submit">
-              sign up
+              Log in
             </button>
+
           </div>
+          <a class="signupbtn" href="../pages/signup.html">
+            Sign up
+          </a>
         </form>
       </div>
       <div class="holder">
@@ -131,44 +136,37 @@
 
   logIn.addEventListener("submit", (event) => {
     event.preventDefault();
+
     let defult = JSON.parse(localStorage.getItem("register"));
     console.log(defult);
-
 
 
     const getEmail = document.getElementById("email").value;
     const getPassword = document.getElementById("password").value;
 
-    // let match = false;
-
-
+    let match = false;
 
     for (let i = 0; i < defult.length; i++) {
-      if (
-        getEmail == defult[i].getEmail &&
-        getPassword == defult[i].getPassword
-      ) {
+      if (getEmail == defult[i].userEmail && getPassword == defult[i].userPassword) {
         match = true;
         break;
       }
       else {
         match = false;
-        break;
       }
     }
 
-    if ((match = true)) {
+    if ((match === true)) {
       alert("successfully completed");
-      const matchObject = defult.find(o => o['userEmail'] == getEmail)
-      const thisUser = JSON.stringify(matchObject);
+      const matchObject = defult.find((o) => o["userEmail"] == getEmail)
+      const thisUser = JSON.stringify(matchObject.userEmail);
       localStorage.setItem("this_user", thisUser);
       window.location.href = "../pages/customer home.html";
-    } else {
+    }
+    else {
       alert("failed");
     }
-
-
-  })
+  });
 
 </script>
 

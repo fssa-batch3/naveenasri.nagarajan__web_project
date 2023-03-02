@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../assets/CSS/universe.css" />
+        <link rel="stylesheet" href="../assets/CSS/architect.css" />
+        <link rel="stylesheet" href="../assets/CSS/design.css">
+        <title>customer Architect</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div>
+                <img src="../assets/image/common/logo.png" alt="logo" height="100px" width="300px" />
+            </div>
+            <nav>
+                <a class="a" href="../pages/customer home.html">Home</a>
+                <a class="a" href="../pages/customer architect.html">Architect</a>
+                <a class="a" href="../pages/customer design gallery.html">Free design</a>
+                <a class="a" href="../pages/customer about us.html">About us</a>
+                <a class="a" href="../pages/customer contact us.html">Contact us</a>
+            </nav>
+        </header>
+
+        <section>
+            <div class="designs">
+
+                <div class="card">
+                    <img class="free_img"
+                        src="../assets/image/login as customer/design gallery/living room/image 3.webp"
+                        alt="living-room">
+                    <div class="info">
+                        <h3>Asian Theme living room</h3>
+                        <p>
+                            <strong>1200 sqft</strong><br>
+                            An Asian living room theme makes use of the colors gold, bronze, and brown to lend a warm
+                            design.
+                        </p>
+
+                        <a href="#" class="btn">More details</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../assets/image/login as customer/design gallery/living room/image 3.webp"
+                        alt="Nature Image">
+                    <div class="info">
+                        <h3>Asian Theme living room</h3>
+                        <p>
+                            <strong>1200 sqft</strong><br>
+                            An Asian living room theme makes use of the colors gold, bronze, and brown to lend a warm
+                            design.
+                        </p>
+
+                        <a href="#" class="btn">More details</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </section>
+        <!-- main contanier is ended -->
+        <!-- footer -->
+
+        <div class="whole"></div>
+        <footer>
+            <div class="footer">
+                <div class="footdiv1">
+                    <h3>About us</h3>
+                    <p>
+                        Interior design is a fast-growing enterprise rendering cutting edge
+                        solutions across the domains of architecture, interior design and
+                        continuum. The range of services provided include planning,
+                        designing, interior design, engineering and construction of
+                        commercial and residential spaces.
+                    </p>
+                </div>
+                <div class="social-media">
+                    <img class="icons" src="../assets/image/common/instagram.png" alt="instagram" />
+                    <img class="icons" src="../assets/image/common/youtube.webp" alt="youtube" />
+                    <img class="icons" src="../assets/image/common/twiter.webp" alt="twiter" />
+                    <img class="icons" src="../assets/image/common/facebook images.jfif" alt="facebook" />
+                    <img class="icons" src="../assets/image/common/gmail images.png" alt="gmail" />
+                </div>
+                <div class="footdiv3">
+                    <h3>CONTACT US</h3>
+                    <h4>Head office</h4>
+                    <p>
+                        Vijay Shanthi Block-B, Global Infocity, 40, MGR Main Rd, Perungudi,
+                        Chennai, Tamil Nadu 600096.
+                    </p>
+                    <h4>Phone Number</h4>
+                    <p>9678453665</p>
+                    <h4>Email us</h4>
+                    <p>interiordesign@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- <script src="../assets/JS/script.js"> -->
+
+
+        <script>
+            let card;
+            let img;
+            let info_div;
+            let design_div;
+            let para_div;
+            let details;
+
+
+            card = document.createElement("div");
+            card.setAttribute("class", "card");
+            document.querySelector("div.designs").append(card);
+            console.log(card);
+
+            img = document.createElement("img")
+            img.setAttribute("class", "free_img")
+            img.setAttribute("alt", "Architect_image");
+            card.append("img")
+
+            info_div = document.createElement("div")
+            info_div.setAttribute("class", "info")
+            card.append("info_div")
+
+            design_div = document.createElement("h3")
+            info_div.append("design_div")
+
+            para_div = document.createElement("p")
+            info_div.append("para_div")
+
+            details = document.createElement("a")
+            details.setAttribute("class", "info")
+            details.setAttribute("href", "#")
+            info_div.append("info_div")
+
+        </script>
+
+    </body>
+
+    </html>
+</body>
+
+</html>

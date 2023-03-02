@@ -70,29 +70,6 @@
             align-items: center;
         }
 
-        .edit_btn {
-            text-decoration: none;
-            color: black;
-            /* margin-left: 2px; */
-            text-align: center;
-            /* padding: 0px; */
-            /* text-align: justify; */
-            font-size: 2rem;
-            font-weight: bolder;
-            border-radius: 1px;
-            width: 12rem;
-            height: 5rem;
-            /* border-radius: 0px 20px 0px; */
-            border: none;
-            box-shadow: 0px 0px 20px white;
-            background-image: linear-gradient(90deg, #dcc12d 0%, #23dddd 100%);
-            /* background-image: linear-gradient(90deg, #0D0F0F 0%, #F9F8F2 100%); */
-            transition: 0.7s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .submit_btn {
             font-size: 2rem;
             font-weight: bolder;
@@ -107,17 +84,13 @@
         }
 
         .submit_btn:hover {
-            transform: scale(1.03);
-        }
-
-        .edit_btn:hover {
-            transform: scale(1.03);
+            transform: scale(1.1);
         }
     </style>
 </head>
 
 <body>
-    <form class="profile_form" id="form_p">
+    <form class="profile_form" id="form_E">
         <div class="head_div">
             <h2 class="head">User Profile</h2>
         </div>
@@ -126,7 +99,7 @@
             <label for="name" class="all_label">username:</label>
             <br />
             <br />
-            <input type="text" class="form-control" id="userName" disabled />
+            <input type="text" class="form-control" id="userName" />
         </div>
         <br />
         <div class="form-group">
@@ -140,31 +113,25 @@
             <label for="pwd" class="all_label">Password:</label>
             <br />
             <br />
-            <input type="text" class="form-control" id="password" disabled />
+            <input type="text" class="form-control" id="password" />
         </div>
+
         <div class="form-group">
-            <label for="pwd" class="all_label"> Confirm Password:</label>
+            <label for="pwd" class="all_label">Confirm Password:</label>
             <br />
             <br />
-            <input type="text" class="form-control" id="c_password" disabled />
+            <input type="text" class="form-control" id="c_password" />
         </div>
         <br>
         <br>
         <div class="submit">
+            <!-- <button class="submit_btn" id="submit">edit</button> -->
+            <button type="submit" class="submit_btn">Submit</button>
 
-            <a href="./customer_profile_edit.html" class="edit_btn">edit</a>
-            <!-- <button type="submit" class="submit_btn">Submit</button> -->
-            <button type="submit" class="submit_btn" id="delete_btn">Delete</button>
         </div>
-
+        <!-- <button type="submit" class="submit_btn" id="delete_btn">Delete</button> -->
     </form>
-
-
-
-
-
-
-
+    <!-- java script -->
     <script>
         //get data from local storage
         const thisUser = JSON.parse(localStorage.getItem("this_user"));
@@ -186,20 +153,50 @@
         const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
 
 
-        let delete_user = document.getElementById("delete_btn");
-        delete_user.addEventListener("click", function (event) {
+        // edit page function
+        let submit = document.getElementById("form_E");
+        submit.addEventListener("submit", function (event) {
             event.preventDefault();
-            let index = userinfo.indexOf(singleUser);
-            let msg = confirm("Are you sure you want to delete this account");
-            if (msg !== true) {
-                return;
-            } else {
-                userinfo.splice(index, 1);
-                localStorage.setItem("register", JSON.stringify(userinfo));
-                window.location.href = "../index home.html";
-            }
-        });
+            // get data from edit form
+            let userName = document.getElementById("userName").value;
+            let userEmail = document.getElementById("email").value;
+            let userPassword = document.getElementById("password").value;
+            let userconPassword = document.getElementById("c_password").value;
 
+            let editUser_data = {
+                userName,
+                userEmail,
+                userPassword,
+                userconPassword,
+            };
+
+            // console.log(singleUser);
+            // console.log(editUser_data);
+            let newData = JSON.parse(localStorage.getItem("register"));
+            // console.log(newData);
+            if (userPassword === userconPassword) {
+                let oldData = newData.find((i) => i.userEmail == userEmail);
+                // console.log(oldData);
+
+                // if (oldData == undefined) {
+                //     alert("Email Id not match");
+                // }
+                // else {
+
+                let change = Object.assign(oldData, editUser_data);
+                // console.log(newData);
+                // console.log(oldData);
+                let index = newData.indexOf(oldData);
+                newData[index] = change;
+                // console.log(newData);
+                localStorage.setItem("register", JSON.stringify(newData));
+                window.location.href = "./customer profile.html";
+            } else {
+                alert("password and confirm password should be same")
+            }
+
+            // }
+        })
 
     </script>
 </body>
