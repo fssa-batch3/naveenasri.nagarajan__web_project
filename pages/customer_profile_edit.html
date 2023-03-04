@@ -170,25 +170,14 @@
                 userconPassword,
             };
 
-            // console.log(singleUser);
-            // console.log(editUser_data);
+
             let newData = JSON.parse(localStorage.getItem("register"));
-            // console.log(newData);
+
             if (userPassword === userconPassword) {
                 let oldData = newData.find((i) => i.userEmail == userEmail);
-                // console.log(oldData);
-
-                // if (oldData == undefined) {
-                //     alert("Email Id not match");
-                // }
-                // else {
-
                 let change = Object.assign(oldData, editUser_data);
-                // console.log(newData);
-                // console.log(oldData);
                 let index = newData.indexOf(oldData);
                 newData[index] = change;
-                // console.log(newData);
                 localStorage.setItem("register", JSON.stringify(newData));
                 window.location.href = "./customer profile.html";
             } else {

@@ -80,7 +80,7 @@
         </div>
         <div class="main-container">
             <div>
-                <form id="form3" class="form">
+                <form id="architectForm2" class="form">
 
                     <br /><br />
                     <label>Email:</label>
@@ -95,6 +95,7 @@
                         Log in
                     </button>
                 </form>
+                <!-- <a href="../pages/begin profile.html"></a> -->
             </div>
             <div class="holder">
                 <div class="img2">
@@ -111,42 +112,41 @@
 </body>
 <!-- java  -->
 <script>
-    let logIn = document.getElementById("form3");
 
-    logIn.addEventListener("submit", (event) => {
+    let arcLogin = document.getElementById("architectForm2");
+
+    arcLogin.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        let defult = JSON.parse(localStorage.getItem("register"));
-        console.log(defult);
-
+        let wholeData = JSON.parse(localStorage.getItem("personArchitect"));
+        console.log(wholeData);
 
         const getEmail = document.getElementById("email").value;
         const getPassword = document.getElementById("password").value;
 
         let match = false;
 
-        for (let i = 0; i < defult.length; i++) {
-            if (getEmail == defult[i].userEmail &&
-                getPassword == defult[i].userPassword) {
+        for (let i = 0; i < wholeData.length; i++) {
+            if (getEmail == wholeData[i].arcEmail &&
+                getPassword == wholeData[i].arcPassword) {
                 match = true;
                 break;
-            }
-            else {
+            } else {
                 match = false;
             }
         }
 
-        if ((match === true)) {
+        if (match === true) {
             alert("successfully completed");
-            const matchObject = defult.find((o) => o["userEmail"] == getEmail)
-            const thisUser = JSON.stringify(matchObject.userEmail);
-            localStorage.setItem("this_user", thisUser);
-            window.location.href = "../pages/customer home.html";
+            const matchData = wholeData.find((o) => o["arcEmail"] == getEmail)
+            const singleData = JSON.stringify(matchData.arcEmail);
+            localStorage.setItem("Single_Data", singleData);
+            window.location.href = "../pages/begin profile.html";
+        } else {
+            alert("Failed")
         }
-        else {
-            alert("failed");
-        }
-    });
+    })
+
 
 </script>
 

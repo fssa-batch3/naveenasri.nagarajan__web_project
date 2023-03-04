@@ -24,7 +24,7 @@
   </header>
 
   <section class="all-form">
-    <form id="form1">
+    <form id="architectForm1">
       <div class="full_form">
         <div class="form">
           <h2>personal information</h2>
@@ -52,6 +52,7 @@
         </div>
         <div class="form">
           <h2>professional information</h2>
+
           <label>Education:</label>
           <input type="text" id="education" placeholder="Bachelor of architects" />
           <br />
@@ -62,6 +63,10 @@
           <br />
           <label>Email:</label>
           <input type="email" id="email" placeholder="naveen32@gmail.com" />
+          <br />
+          <br />
+          <label>Password:</label>
+          <input type="text" id="password" />
           <br />
           <br />
           <label for="image">Document:</label>
@@ -80,50 +85,120 @@
         sign up
       </button>
     </form>
+    <!-- <a href="../pages/architect login page.html"></a> -->
   </section>
 
 
   <script>
-    let form = document.getElementById("form1")
-    form.addEventListener("submit", function (event) {
-      event.preventDefault()
+    let check = false;
+    const applyFrom = document.getElementById("architectForm1");
+    console.log(applyFrom);
 
-      let person = {}
+    applyFrom.addEventListener("submit", function (event) {
+      event.preventDefault();
 
 
-      const getUrl = document.getElementById("image").value;
-      person["image_URL"] = getUrl;
-      const getFirstName = document.getElementById("name").value;
-      person["name"] = getFirstName;
-      const getLastName = document.getElementById("gender").value;
-      person["gender"] = getLastName;
-      const getPhoneNumber = document.getElementById("phonenumber").value;
-      person["phonenumber"] = getPhoneNumber;
-      const getAadharNumber = document.getElementById("address").value;
-      person["address"] = getAadharNumber;
-      const getEducation = document.getElementById("education").value;
-      person["education"] = getEducation;
-      const getExperience = document.getElementById("experience").value;
-      person["experience"] = getExperience;
-      const getEmail = document.getElementById("email").value;
-      person["email"] = getEmail;
-      const getDocument = document.getElementById("document").value;
-      person["document"] = getDocument;
-      const getModelDesign = document.getElementById("modeldesign").value;
-      person["modeldesign"] = getModelDesign;
+      let architectNew = [];
+      console.log(architectNew)
 
-      console.log(person)
+      if (localStorage.getItem("personArchitect") != null) {
+        architectNew = JSON.parse(localStorage.getItem("personArchitect"));
+      }
 
-      localStorage.setItem("person", JSON.stringify(person));
+      const getUrl = document.getElementById("image").value.trim();
+      const getName = document.getElementById("name").value.trim();
+      const getGender = document.getElementById("gender").value.trim();
+      const getPhoneNumber = document.getElementById("phonenumber").value.trim();
+      const getAddress = document.getElementById("address").value.trim();
+      const getEducation = document.getElementById("education").value.trim();
+      const getExperience = document.getElementById("experience").value.trim();
+      const getEmail = document.getElementById("email").value.trim();
+      const getPassword = document.getElementById("password").value.trim();
+      const getDocument = document.getElementById("document").value.trim();
+      const getModelDesign = document.getElementById("modeldesign").value.trim();
+      const getId = Date.now();
+
+
+      let architectData = {
+        arcId: getId,
+        arcUrl: getUrl,
+        arcName: getName,
+        arcGender: getGender,
+        arcPhoneNumber: getPhoneNumber,
+        arcAddress: getAddress,
+        arcEducation: getEducation,
+        arcExperience: getExperience,
+        arcEmail: getEmail,
+        arcPassword: getPassword,
+        arcDocument: getDocument,
+        arcModelDesign: getModelDesign,
+      }
+
+      console.log(architectData);
+
+      for (let i = 0; i < architectNew.length; i++) {
+        if (architectNew[i]["arcEmail"] === getEmail) {
+          check = true;
+          alert("user already exit")
+          break;
+        } else {
+          check = false
+        }
+      }
+
+      if (check === false) {
+        architectNew.push(architectData);
+        const data = JSON.stringify(architectNew)
+        alert("sucessfully completed")
+        window.localStorage.setItem("personArchitect", data)
+        window.location.href = "../pages/architect login page.html"
+      }
 
     });
 
 
 
 
+    // let form = document.getElementById("form1")
+    // form.addEventListener("submit", function (event) {
+    //   event.preventDefault()
+
+    //   let person = {}
 
 
-    window.location.herf = "http://127.0.0.1:5500/pages/successfully%20completed.html"
+    //   const getUrl = document.getElementById("image").value;
+    //   person["image_URL"] = getUrl;
+    //   const name = document.getElementById("name").value;
+    //   person["name"] = getFirstName;
+    //   const getGender = document.getElementById("gender").value;
+    //   person["gender"] = getLastName;
+    //   const getPhoneNumber = document.getElementById("phonenumber").value;
+    //   person["phonenumber"] = getPhoneNumber;
+    //   const getAddress = document.getElementById("address").value;
+    //   person["address"] = getAadharNumber;
+    //   const getEducation = document.getElementById("education").value;
+    //   person["education"] = getEducation;
+    //   const getExperience = document.getElementById("experience").value;
+    //   person["experience"] = getExperience;
+    //   const getEmail = document.getElementById("email").value;
+    //   person["email"] = getEmail;
+    //   const getDocument = document.getElementById("document").value;
+    //   person["document"] = getDocument;
+    //   const getModelDesign = document.getElementById("modeldesign").value;
+    //   person["modeldesign"] = getModelDesign;
+
+    //   console.log(person)
+
+    //   localStorage.setItem("person", JSON.stringify(person));
+
+    // });
+
+
+
+
+
+
+    // window.location.herf = "http://127.0.0.1:5500/pages/successfully%20completed.html"
 
   </script>
 </body>

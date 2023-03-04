@@ -27,8 +27,7 @@
     <div class="main">
       <div class="information">
         <div>
-          <img src="../assets/image/login as architect/profile/boy.jpg" alt="Architect image" height="300px"
-            width="300px" style="border-radius: 9px;" />
+          <img id="userImage" alt="Architect image" height="300px" width="300px" style="border-radius: 9px;" />
         </div>
         <div class="list">
           <p class="info">
@@ -49,16 +48,16 @@
           <h2>personal information</h2>
           <div class="brief-info">
             <p>
-              Name:<span class="username">Susi Kumar<span>
+              Name:<span id="userName">Susi Kumar<span>
             </p>
             <p>
-              Gender:<span>Male</span>
+              Gender:<span id="userGender">Male</span>
             </p>
             <p>
-              Phone number:<span>9445533779</span>
+              Phone number:<span id="userPhoneNumber">9445533779</span>
             </p>
             <p>
-              Address:<span>3/567,kumar illam,Anna nagar,Namakkal,Tamil Nadu-637001</span>
+              Address:<span id="userAddress">3/567,kumar illam,Anna nagar,Namakkal,Tamil Nadu-637001</span>
             </p>
           </div>
         </div>
@@ -67,76 +66,118 @@
           <h2>professional information</h2>
           <div class="brief-info">
             <p>
-              Education:<span>B. Arch,NAAB</span>
+              Education:<span id="userEducation">B. Arch,NAAB</span>
             </p>
             <p>
-              Experience:<span>2 years</span>
+              Experience:<span id="userExperience">2 years</span>
             </p>
             <p>
-              Email:<span class="useremail">susikumar79@gmail.com</span>
+              Email:<span id="userEmail">susikumar79@gmail.com</span>
             </p>
             <p>
-              Password:<span class="userPassword">5437 9876 6543</span>
+              Password:<span id="userPassword">5437 9876 6543</span>
             </p>
           </div>
         </div>
 
+        <div class="basic-information">
+          <h2>Document</h2>
+          <div>
 
-        <!-- <div class="basic-information">
-          <h2>Social media</h2>
-          <div class="brief-info">
-            <p>Instagram:<span>its_me_lovely_s2k</span></p>
-            <p>Twitter:<span>susi</span></p>
-            <p>Facebook:<span>susi_designer</span></p>
+            <img id="userDocument" class="free-img" alt="interior design">
+
           </div>
-        </div> -->
+        </div>
 
         <div class="basic-information">
           <h2>Works</h2>
           <div>
-            <img class="free-img" src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/architect/image 3.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/kitchen/image 3.jpg"
-              alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/architect/image 8.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/architect/image 6.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/black and white/image 3.jpg"
-              alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/about us/image 4.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/office/image 3.webp"
-              alt="interior design">
+
+            <img id="userModelDesign" class="free-img" alt="interior design">
+            <!-- <img class="free-img" src="../assets/image/login as customer/architect/image 3.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/kitchen/image 3.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/contact us/image 2.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/architect/image 8.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/architect/image 6.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/black and white/image 3.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/about us/image 4.webp" alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/office/image 3.webp"
+                alt="interior design"> -->
 
           </div>
         </div>
 
       </div>
     </div>
+    <div class="submit">
+
+      <a href="../pages/begin edit page.html" class="edit_btn">Edit</a>
+
+      <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
+    </div>
   </section>
 
 
+  <script>
+
+
+    const singleData = JSON.parse(localStorage.getItem("Single_Data"));
+    const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+
+
+    let oneArchitect = arcInfo.find(function (event) {
+      let arcEmail = event["arcEmail"];
+      if (singleData == arcEmail) {
+        return true;
+      }
+    });
+
+    console.log(oneArchitect);
+
+
+    const url = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
+    const name = document.getElementById("userName").innerHTML = oneArchitect["arcName"];
+    const gender = document.getElementById("userGender").innerHTML = oneArchitect["arcGender"];
+    const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = oneArchitect["arcPhoneNumber"];
+    const address = document.getElementById("userAddress").innerHTML = oneArchitect["arcAddress"];
+    const education = document.getElementById("userEducation").innerHTML = oneArchitect["arcEducation"];
+    const experience = document.getElementById("userExperience").innerHTML = oneArchitect["arcExperience"];
+    const email = document.getElementById("userEmail").innerHTML = oneArchitect["arcEmail"];
+    const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
+    const graduatedocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
+    const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
 
 
 
-  <!-- <script>
-    const thisUser = JSON.parse(localStorage.getItem("this_user"))
+    let deleteUser = document.getElementById("deletebtn");
+    deleteUser.addEventListener("click", function (event) {
+      event.preventDefault();
 
-    const usename = document.querySelector(".username")
-    const useemail = document.querySelector(".useremail")
-    const usePassword = document.querySelector(".userPassword")
-
-    usename.innerHTML = thisUser['userName']
-    useemail.innerHTML = thisUser['userEmail']
-    usePassword.innerHTML = thisUser['userPassword']
+      let identify = arcInfo.indexOf(oneArchitect);
+      let message = confirm("Are you sure you want to delete this account");
 
 
-    // get data from form
-    let profile = document.getElementById(form3);
-    event.preventDefault();
-    let defult = JSON.parse(localStorage.getItem("register"));
-    console.log(defult);
+      if (message !== true) {
+        return;
+      } else {
+        arcInfo.splice(identify, 1);
+        localStorage.setItem("personArchitect", JSON.stringify(arcInfo));
+        window.location.href = "../index home.html";
 
-  </script> -->
+      }
+
+    });
+
+  </script>
+
+
+
 </body>
 
 </html>
