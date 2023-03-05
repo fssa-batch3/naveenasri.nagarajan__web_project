@@ -60,7 +60,7 @@
                     <br />
                     <br />
                     <label>Email:</label>
-                    <input type="email" id="userEmail" placeholder="naveen32@gmail.com" disabled />
+                    <input type="email" id="userEmail" placeholder="naveen32@gmail.com" />
                     <br />
                     <br />
                     <label>Password:</label>
@@ -90,33 +90,30 @@
     <script>
 
 
-        //get data from local storage
         const singleData = JSON.parse(localStorage.getItem("Single_Data"));
         const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
 
-        //get object from local storage used by email
+
         let oneArchitect = arcInfo.find(function (event) {
             let arcEmail = event["arcEmail"];
-            if (singleData === arcEmail) {
+            if (singleData == arcEmail) {
                 return true;
             }
-            return false;
         });
 
         console.log(oneArchitect);
 
-
-        const url = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
-        const name = document.getElementById("userName").innerHTML = oneArchitect["arcName"];
-        const gender = document.getElementById("userGender").innerHTML = oneArchitect["arcGender"];
-        const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = oneArchitect["arcPhoneNumber"];
-        const address = document.getElementById("userAddress").innerHTML = oneArchitect["arcAddress"];
-        const education = document.getElementById("userEducation").innerHTML = oneArchitect["arcEducation"];
-        const experience = document.getElementById("userExperience").innerHTML = oneArchitect["arcExperience"];
-        const email = document.getElementById("userEmail").innerHTML = oneArchitect["arcEmail"];
-        const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
-        const graduatedocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
-        const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
+        const url = document.getElementById("userImage").value = oneArchitect["arcUrl"];
+        const name = document.getElementById("userName").value = oneArchitect["arcName"];
+        const gender = document.getElementById("userGender").value = oneArchitect["arcGender"];
+        const phoneNumber = document.getElementById("userPhoneNumber").value = oneArchitect["arcPhoneNumber"];
+        const address = document.getElementById("userAddress").value = oneArchitect["arcAddress"];
+        const education = document.getElementById("userEducation").value = oneArchitect["arcEducation"];
+        const experience = document.getElementById("userExperience").value = oneArchitect["arcExperience"];
+        const email = document.getElementById("userEmail").value = oneArchitect["arcEmail"];
+        const password = document.getElementById("userPassword").value = oneArchitect["arcPassword"];
+        const graduatedocument = document.getElementById("userDocument").value = oneArchitect["arcDocument"];
+        const modelDesign = document.getElementById("userModelDesign").value = oneArchitect["arcModelDesign"];
 
         // edit page function
         let complete = document.getElementById("architectForm3");
@@ -127,126 +124,45 @@
         complete.addEventListener("submit", function (event) {
             event.preventDefault();
             // get data from edit form
-            let idurl = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
-            console.log(idurl);
-            let idname = document.getElementById("userName").innerHTML;
-            let idgender = document.getElementById("userGender").innerHTML;
-            let idphoneNumber = document.getElementById("userPhoneNumber").innerHTML;
-            let idaddress = document.getElementById("userAddress").innerHTML;
-            let ideducation = document.getElementById("userEducation").innerHTML;
-            let idexperience = document.getElementById("userExperience").innerHTML;
-            let idemail = document.getElementById("userEmail").innerHTML;
-            let idpassword = document.getElementById("userPassword").innerHTML;
-            let iddocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
-            let idmodelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
+            let arcUrl = document.getElementById("userImage").value;
+            let arcName = document.getElementById("userName").value;
+            let arcGender = document.getElementById("userGender").value;
+            let arcPhoneNumber = document.getElementById("userPhoneNumber").value;
+            let arcAddress = document.getElementById("userAddress").value;
+            let arcEducation = document.getElementById("userEducation").value;
+            let arcExperience = document.getElementById("userExperience").value;
+            let arcEmail = document.getElementById("userEmail").value;
+            let arcPassword = document.getElementById("userPassword").value;
+            let arcDocument = document.getElementById("userDocument").value;
+            let arcModelDesign = document.getElementById("userModelDesign").value;
 
 
             let architectUser_data = {
-                idurl,
-                idname,
-                idgender,
-                idphoneNumber,
-                idaddress,
-                ideducation,
-                idexperience,
-                idemail,
-                idpassword,
-                iddocument,
-                idmodelDesign
+                arcUrl,
+                arcName,
+                arcGender,
+                arcPhoneNumber,
+                arcAddress,
+                arcEducation,
+                arcExperience,
+                arcEmail,
+                arcPassword,
+                arcDocument,
+                arcModelDesign,
             };
 
 
+
             let architectData = JSON.parse(localStorage.getItem("personArchitect"));
-            let lastData = architectData.find((i) => i.arcEmail === idemail);
+            let lastData = architectData.find((i) => i.arcEmail == arcEmail);
             let convert = Object.assign(lastData, architectUser_data);
             console.log(convert);
             let index = architectData.indexOf(lastData);
             architectData[index] = convert;
             localStorage.setItem("personArchitect", JSON.stringify(architectData));
             window.location.href = "../pages/begin profile.html";
-        })
 
-
-
-
-
-
-        /**
-                //get data from local storage
-                const singleData = JSON.parse(localStorage.getItem("Single_Data"));
-                const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
-        
-                //get object from local storage used by email
-                let oneArchitect = arcInfo.find(function (event) {
-                    let arcEmail = event["arcEmail"];
-                    if (singleData == arcEmail) {
-                        return true;
-                    }
-                });
-        
-                console.log(oneArchitect);
-        
-        
-                const url = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
-                const name = document.getElementById("userName").innerHTML = oneArchitect["arcName"];
-                const gender = document.getElementById("userGender").innerHTML = oneArchitect["arcGender"];
-                const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = oneArchitect["arcPhoneNumber"];
-                const address = document.getElementById("userAddress").innerHTML = oneArchitect["arcAddress"];
-                const education = document.getElementById("userEducation").innerHTML = oneArchitect["arcEducation"];
-                const experience = document.getElementById("userExperience").innerHTML = oneArchitect["arcExperience"];
-                const email = document.getElementById("userEmail").innerHTML = oneArchitect["arcEmail"];
-                const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
-                const graduatedocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
-                const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
-        
-                // edit page function
-                let complete = document.getElementById("architectForm3");
-        
-        
-                console.log(complete);
-        
-                complete.addEventListener("submit", function (event) {
-                    event.preventDefault();
-                    // get data from edit form
-                    let idurl = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
-                    console.log(idurl);
-                    let idname = document.getElementById("userName").innerHTML;
-                    let idgender = document.getElementById("userGender").innerHTML;
-                    let idphoneNumber = document.getElementById("userPhoneNumber").innerHTML;
-                    let idaddress = document.getElementById("userAddress").innerHTML;
-                    let ideducation = document.getElementById("userEducation").innerHTML;
-                    let idexperience = document.getElementById("userExperience").innerHTML;
-                    let idemail = document.getElementById("userEmail").innerHTML;
-                    let idpassword = document.getElementById("userPassword").innerHTML;
-                    let iddocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
-                    let idmodelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
-        
-        
-                    let architectUser_data = {
-                        idurl,
-                        idname,
-                        idgender,
-                        idphoneNumber,
-                        idaddress,
-                        ideducation,
-                        idexperience,
-                        idemail,
-                        idpassword,
-                        iddocument,
-                        idmodelDesign
-                    };
-        
-        
-                    let architectData = JSON.parse(localStorage.getItem("personArchitect"));
-                    let lastData = architectData.find((i) => i.arcEmail == idemail);
-                    let convert = Object.assign(lastData, architectUser_data);
-                    console.log(convert);
-                    let index = architectData.indexOf(lastData);
-                    architectData[index] = convert;
-                    localStorage.setItem("personArchitect", JSON.stringify(architectData));
-                    window.location.href = "../pages/begin profile.html";
-                })
-        **/
+        });
 
     </script>
 </body>
