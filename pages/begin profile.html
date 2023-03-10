@@ -127,8 +127,10 @@
   <script>
 
 
+
     const singleData = JSON.parse(localStorage.getItem("Single_Data"));
     const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+    console.log(arcInfo);
 
 
     let oneArchitect = arcInfo.find(function (event) {
@@ -173,6 +175,10 @@
       }
 
     });
+
+
+
+
 
   </script>
 
