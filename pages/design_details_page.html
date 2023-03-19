@@ -11,8 +11,27 @@
 </head>
 
 <body>
-    <img class="mainimage" src="../assets/image/login as architect/sample design/sample 6.webp" alt="interior design">
     <div class="AboutArchitect">
+        <div class="photos">
+            <div>
+                <img class="mainimage" id="mainimage"
+                    src="../assets/image/login as architect/sample design/sample 6.webp" alt="interior design">
+            </div>
+            <div class="minilist">
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+            </div>
+        </div>
         <div class="card">
             <div class="cover-photo">
                 <img src="../assets/image/common/person.png" class="profile" alt="architect-profile">
@@ -35,32 +54,88 @@
             <button class="btn">Book now</button>
 
         </div>
-        <div class="bio">
+
+    </div>
+
+    <div class="details">
+        <div>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt
-                vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit in nesciunt
-                vitae fugit? Ad officiis
-                eum aut explicabo libero commodi dignissimos architecto. Dignissimos dolorum culpa debitis blanditiis
-                amet aliquid quisquam.
+                Design name:<br> <span id="dname">modern bed room </span>
+            </p>
+            <p>
+                Price of design(&#8377): <br> <span id="pdesign">22,000</span>
+            </p>
+            <p>
+                sq/ft:<br> <span id="squarefeet">1213</span>
+            </p>
+            <p>
+                Price per sq/ft: <br><span id="ppsquarefeet">22.67</span>
+            </p>
+        </div>
+        <div>
+            <p>
+                Required dates: <br><span id="dates">3 months</span>
+            </p>
+            <p>
+                Bathrooms: <br><span id="bathroom">3</span>
+            </p>
+            <p>
+                Bedroom: <br><span id="bedroom">3</span>
+            </p>
+            <p>
+                Balcony: <br><span id="balcony">3</span>
+            </p>
+        </div>
+        <div>
+            <p>
+                About the design :<br>
+                <span id="para">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt doloremque laboriosam dolor
+                    incidunt
+                    iste voluptatem neque vitae, enim a ab alias excepturi, atque labore beatae ipsa nostrum architecto
+                    dicta quibusdam.
+                </span>
             </p>
         </div>
     </div>
+
+
+    <script>
+        const desInfo = JSON.parse(localStorage.getItem("personDesign"))
+        // console.log(arcInfo);
+
+        let urlSearch = window.location.search;
+        console.log(urlSearch);
+        let url_params = new URLSearchParams(urlSearch);
+        console.log(url_params);
+        let get_id = url_params.get("id");
+        console.log(get_id);
+
+        let designObj = desInfo.find(function (select_design) {
+            let id = select_design["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(designObj);
+
+
+        const url = document.getElementById("mainimage").setAttribute("src", designObj["designimg"]);
+        const dname = document.getElementById("dname").innerHTML = designObj["designdname"];
+        const pdesign = document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
+        const squarefeet = document.getElementById("squarefeet").innerHTML = designObj["designsquarefeet"];
+        const ppsquarefeet = document.getElementById("ppsquarefeet").innerHTML = designObj["designppsquarefeet"];
+        const dates = document.getElementById("dates").innerHTML = designObj["designdates"];
+        const bathroom = document.getElementById("bathroom").innerHTML = designObj["designbathroom"];
+        const bedroom = document.getElementById("bedroom").innerHTML = designObj["designbedroom"];
+        const balcony = document.getElementById("balcony").innerHTML = designObj["designbalcony"];
+        const para = document.getElementById("para").innerHTML = designObj["designpara"];
+
+    </script>
 
 </body>
 

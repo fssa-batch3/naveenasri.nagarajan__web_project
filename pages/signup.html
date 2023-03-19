@@ -126,66 +126,68 @@
     </div>
 </body>
 <!-- java  -->
-<script>
-    let checker = false;
-    const signupfrom = document.getElementById("form2");
-    console.log(signupfrom)
-    signupfrom.addEventListener("submit", function (event) {
-        event.preventDefault();
+<script src="../assets/JS/customer_profile.js">
 
-        let userNew = [];
-        console.log(userNew)
+    // register()
+    // let checker = false;
+    // const signupfrom = document.getElementById("form2");
+    // console.log(signupfrom)
+    // signupfrom.addEventListener("submit", function (event) {
+    //     event.preventDefault();
 
-        if (localStorage.getItem("register") != null) {
-            userNew = JSON.parse(localStorage.getItem("register"));
-        }
+    //     let userNew = [];
+    //     console.log(userNew)
 
-        const getName = document.getElementById("name").value.trim();
-        const getEmail = document.getElementById("email").value.trim();
-        const getPassword = document.getElementById("password").value.trim();
-        const getConfirmPassword = document.getElementById("confirm_password").value.trim();
-        const userId = Date.now();
+    //     if (localStorage.getItem("register") != null) {
+    //         userNew = JSON.parse(localStorage.getItem("register"));
+    //     }
 
-        let userData = {
-            userId: userId,
-            userName: getName,
-            userEmail: getEmail,
-            userPassword: getPassword,
-            userconPassword: getConfirmPassword
-        }
+    //     const getName = document.getElementById("name").value.trim();
+    //     const getEmail = document.getElementById("email").value.trim();
+    //     const getPassword = document.getElementById("password").value.trim();
+    //     const getConfirmPassword = document.getElementById("confirm_password").value.trim();
+    //     const userId = Date.now();
 
-        console.log(userData);
+    //     let userData = {
+    //         userId: userId,
+    //         userName: getName,
+    //         userEmail: getEmail,
+    //         userPassword: getPassword,
+    //         userconPassword: getConfirmPassword
+    //     }
 
-
-
-        for (let i = 0; i < userNew.length; i++) {
-            if (userNew[i]["userEmail"] === getEmail) {
-                checker = true;
-                alert("User already exit")
-                break;
-
-            }
-            else {
-                checker = false;
-            }
-        }
-        if (checker === false) {
+    //     console.log(userData);
 
 
 
-            if (getPassword === getConfirmPassword) {
-                userNew.push(userData);
-                const str = JSON.stringify(userNew)
-                alert("Sucess")
-                window.localStorage.setItem("register", str)
-                window.location.href = "./login 2.html"
-            } else {
-                alert("Password and confirmpassword should be same")
-            }
+    //     for (let i = 0; i < userNew.length; i++) {
+    //         if (userNew[i]["userEmail"] === getEmail) {
+    //             checker = true;
+    //             alert("User already exit")
+    //             break;
 
-        }
+    //         }
+    //         else {
+    //             checker = false;
+    //         }
+    //     }
+    //     if (checker === false) {
 
-    });
+
+
+    //         if (getPassword === getConfirmPassword) {
+    //             userNew.push(userData);
+    //             const str = JSON.stringify(userNew)
+    //             alert("Sucess")
+    //             window.localStorage.setItem("register", str)
+    //             window.location.href = "./login 2.html"
+    //         } else {
+    //             alert("Password and confirmpassword should be same")
+    //         }
+
+    //     }
+
+    // });
 
 </script>
 

@@ -1,14 +1,41 @@
 .mainimage {
-  width: 100%;
-  height: 600px;
+  width: 630px;
+  height: 460px;
 }
-
+.miniimage {
+  width: 200px;
+  height: 150px;
+}
+.photos {
+  width: 835px;
+  display: flex;
+  justify-content: space-between;
+}
+.minilist {
+  display: block;
+}
 .AboutArchitect {
-  padding: 30px 80px;
+  padding: 20px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .bio {
   width: 700px;
+}
+.details {
+  display: flex;
+  width: 1250px;
+  justify-content: space-between;
+  padding-left: 90px;
+}
+.details div {
+  width: 400px;
+}
+p {
+  font-size: 23px;
+}
+span {
+  padding-left: 40px;
+  color: grey;
 }

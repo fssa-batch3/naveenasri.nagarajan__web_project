@@ -1,6 +1,7 @@
 const select_architect_list = [];
 
 let arclist = JSON.parse(localStorage.getItem("personArchitect"));
+let oneArc = JSON.parse(localStorage.getItem("Single_Data"));
 
 console.log(arclist);
 
@@ -10,7 +11,7 @@ for (i = 0; i < arclist.length; i++) {
 }
 
 for (i = 0; i < select_architect_list.length; i++) {
-  const singleArchitect = select_architect_list[i];
+  // const singleArchitect = select_architect_list[i];
 
   let card;
   let design_img_div;
@@ -91,31 +92,20 @@ for (i = 0; i < select_architect_list.length; i++) {
   // star5.setAttribute("class", "star-icon");
   // rating.append(star5);
 
-  detailsbtn = document.createElement("button");
-  // detailsbtn.setAttribute(
-  //   "href",
-  //   "../pages/begin profile.html?arcId=" + select_architect_list[i]["arcId"]
-  // );
+  detailsbtn = document.createElement("a");
+
   detailsbtn.setAttribute("class", "btn");
+  detailsbtn.setAttribute(
+    "href",
+    "./detail_profile.html?id=" + arclist[i].arcId
+  );
+  detailsbtn.setAttribute("id", "detailsbtn");
   detailsbtn.innerText = " More Details";
   card.append(detailsbtn);
 
   bookbtn = document.createElement("button");
   bookbtn.setAttribute("class", "btn");
+  bookbtn.setAttribute("id", "bookbtn");
   bookbtn.innerText = "Book now";
   card.append(bookbtn);
 }
-
-// let url = new URL("http://www.test.com/t.html?a=1&b=3&c=m2-m3-m4-m5");
-// const urlSearch = window.location.search;
-// const url_params = new URLSearchParams(urlSearch);
-// const get_id = url_params.get("arcId");
-// console.log(get_id);
-
-// let pro_obj = arclist.find(function (select_architect) {
-//   let check_id = select_architect["arcId"];
-//   if (check_id == get_id) {
-//     return true;
-//   }
-// });
-// console.log(pro_obj);

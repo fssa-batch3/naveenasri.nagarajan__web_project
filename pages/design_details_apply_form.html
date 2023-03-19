@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/architect apply form.css" />
+    <title>design apply form</title>
+</head>
+
+<body>
+    <section class="all-form" style="padding-top: 150px;">
+        <form id="designForm1">
+            <div class="full_form">
+                <div class="form">
+                    <label for="image">Photo:</label>
+                    <input type="url" id="designimage" name="image" placeholder="Designimage" /><br /><br />
+                    <label>design Name:</label>
+                    <input type="text" id="designname" placeholder="modern bed room" />
+                    <br />
+                    <br />
+                    <label>Email:</label>
+                    <input type="email" id="email" placeholder="architectemail" />
+                    <br />
+                    <br />
+                    <label>Price of design(₹):</label>
+                    <input type="text" id="pricedesign" placeholder="22,000" />
+                    <br />
+                    <br />
+                    <label>sq/ft:</label>
+                    <input type="text" id="squarefeet" placeholder="1213sq/ft" />
+                    <br />
+                    <br />
+                    <label>Price per sq/ft:</label>
+                    <input type="text" id="pricepersquarefeet" />
+                    <br />
+                    <br />
+                </div>
+                <div class="form">
+
+                    <label for="browser">type of room:</label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="Bedroom">
+                        <option value="livingroom">
+                        <option value="kitchen">
+                        <option value="Bathroom">
+                    </datalist>
+                    <br />
+                    <br />
+                    <label>Required dates:</label>
+                    <input type="text" id="dates" placeholder="3 months" />
+                    <br />
+                    <br />
+                    <label>no.of.Bathrooms:</label>
+                    <input type="text" id="bathrooms" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>no.of.Bedroom:</label>
+                    <input type="text" id="bedroom" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>no.of.Balcony:</label>
+                    <input type="text" id="balcony" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>paragraph about the design:</label>
+                    <textarea type="text" id="paragraph"></textarea>
+                    <br />
+                    <br />
+
+                    <button type="submit">submit
+                        <!-- <a href="../pages/successfully completed.html">Apply now</a> -->
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </section>
+
+
+    <script>
+        let check = false;
+        const designapplyFrom = document.getElementById("designForm1");
+        console.log(designapplyFrom);
+
+        designapplyFrom.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let designNew = [];
+            console.log(designNew)
+
+            if (localStorage.getItem("personDesign") != null) {
+                designNew = JSON.parse(localStorage.getItem("personDesign"))
+            }
+
+            const detailimg = document.getElementById("designimage").value.trim();
+            const detaildname = document.getElementById("designname").value.trim();
+            const detailemail = document.getElementById("email").value.trim();
+            const detailpdesign = document.getElementById("pricedesign").value.trim();
+            const detailsquarefeet = document.getElementById("squarefeet").value.trim();
+            const detailppsquarefeet = document.getElementById("pricepersquarefeet").value.trim();
+            const detailtype = document.getElementById("browser").value.trim();
+            const detaildates = document.getElementById("dates").value.trim();
+            const detailbathroom = document.getElementById("bathrooms").value.trim();
+            const detailbedroom = document.getElementById("bedroom").value.trim();
+            const detailbalcony = document.getElementById("balcony").value.trim();
+            const detailpara = document.getElementById("paragraph").value.trim();
+            const detailid = Date.now();
+
+            let designData = {
+                designid: detailid,
+                designimg: detailimg,
+                designdname: detaildname,
+                designemail: detailemail,
+                designpdesign: detailpdesign,
+                designsquarefeet: detailsquarefeet,
+                designppsquarefeet: detailppsquarefeet,
+                designtype: detailtype,
+                designdates: detaildates,
+                designbathroom: detailbathroom,
+                designbedroom: detailbedroom,
+                designbalcony: detailbalcony,
+                designpara: detailpara,
+            }
+
+
+            console.log(designData)
+
+
+            if (check === false) {
+                designNew.push(designData);
+                const data = JSON.stringify(designNew)
+                alert("sucessfully completed")
+                window.localStorage.setItem("personDesign", data)
+                window.location.href = "../pages/design list.html"
+            }
+        })
+    </script>
+</body>
+
+</html>

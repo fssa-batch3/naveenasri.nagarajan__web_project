@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/begin profile.css">
+    <title>Profile detail</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="main">
+            <div class="information">
+                <div>
+                    <img id="userImage" alt="Architect image" height="300px" width="300px"
+                        style="border-radius: 9px;" />
+                </div>
+                <div class="list">
+                    <p class="info">
+                        personal information
+                    </p>
+                    <p class="info">
+                        Contact information
+                    </p>
+                    <p class="info">
+                        Works
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="clear-information">
+                <div class="basic-information">
+                    <h2>personal information</h2>
+                    <div class="brief-info">
+                        <p>
+                            Name:<span id="userName">Susi Kumar<span>
+                        </p>
+                        <p>
+                            Gender:<span id="userGender">Male</span>
+                        </p>
+                        <p>
+                            Phone number:<span id="userPhoneNumber">9445533779</span>
+                        </p>
+                        <p>
+                            Address:<span id="userAddress">3/567,kumar illam,Anna nagar,Namakkal,Tamil
+                                Nadu-637001</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="basic-information">
+                    <h2>professional information</h2>
+                    <div class="brief-info">
+                        <p>
+                            Education:<span id="userEducation">B. Arch,NAAB</span>
+                        </p>
+                        <p>
+                            Experience:<span id="userExperience">2 years</span>
+                        </p>
+                        <p>
+                            Email:<span id="userEmail">susikumar79@gmail.com</span>
+                        </p>
+                        <p>
+                            Password:<span id="userPassword">5437 9876 6543</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="basic-information">
+                    <h2>Document</h2>
+                    <div>
+
+                        <img id="userDocument" class="free-img" alt="interior design">
+
+                    </div>
+                </div>
+
+                <div class="basic-information">
+                    <h2>Works</h2>
+                    <div>
+
+                        <img id="userModelDesign" class="free-img" alt="interior design">
+                        <!-- <img class="free-img" src="../assets/image/login as customer/architect/image 3.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/kitchen/image 3.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/contact us/image 2.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/architect/image 8.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/architect/image 6.webp"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/black and white/image 3.jpg"
+                alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/about us/image 4.webp" alt="interior design">
+              <img class="free-img" src="../assets/image/login as customer/design gallery/office/image 3.webp"
+                alt="interior design"> -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <script>
+
+
+
+
+        const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+        // console.log(arcInfo);
+
+        let urlSearch = window.location.search;
+        console.log(urlSearch);
+        let url_params = new URLSearchParams(urlSearch);
+        console.log(url_params);
+        let get_id = url_params.get("id");
+        console.log(get_id);
+
+        let urlObj = arcInfo.find(function (select_architect) {
+            let id = select_architect["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(urlObj);
+
+
+        const url = document.getElementById("userImage").setAttribute("src", urlObj["arcUrl"]);
+        const name = document.getElementById("userName").innerHTML = urlObj["arcName"];
+        const gender = document.getElementById("userGender").innerHTML = urlObj["arcGender"];
+        const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = urlObj["arcPhoneNumber"];
+        const address = document.getElementById("userAddress").innerHTML = urlObj["arcAddress"];
+        const education = document.getElementById("userEducation").innerHTML = urlObj["arcEducation"];
+        const experience = document.getElementById("userExperience").innerHTML = urlObj["arcExperience"];
+        const email = document.getElementById("userEmail").innerHTML = urlObj["arcEmail"];
+        const password = document.getElementById("userPassword").innerHTML = urlObj["arcPassword"];
+        const graduatedocument = document.getElementById("userDocument").setAttribute("src", urlObj["arcDocument"]);
+        const modelDesign = document.getElementById("userModelDesign").setAttribute("src", urlObj["arcModelDesign"]);
+
+    </script>
+
+
+
+</body>
+
+</html>
