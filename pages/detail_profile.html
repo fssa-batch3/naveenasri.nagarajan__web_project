@@ -120,11 +120,11 @@
         // console.log(arcInfo);
 
         let urlSearch = window.location.search;
-        console.log(urlSearch);
+        // console.log(urlSearch);
         let url_params = new URLSearchParams(urlSearch);
-        console.log(url_params);
+        // console.log(url_params);
         let get_id = url_params.get("id");
-        console.log(get_id);
+        // console.log(get_id);
 
         let urlObj = arcInfo.find(function (select_architect) {
             let id = select_architect["arcId"];
@@ -136,7 +136,7 @@
                 return false;
             }
         })
-        console.log(urlObj);
+        // console.log(urlObj);
 
 
         const url = document.getElementById("userImage").setAttribute("src", urlObj["arcUrl"]);

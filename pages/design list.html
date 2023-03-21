@@ -83,22 +83,29 @@
                         <a href="#" class="btn">More details</a>
                     </div>
                 </div>
-                <div class="card">
+
+
+
+                <!-- <div class="card">
                     <div>
                         <img src="../assets/image/login as customer/design gallery/living room/image 3.webp"
                             alt="Nature Image">
                     </div>
                     <div class="info">
-                        <h3>Asian Theme living room</h3>
-                        <P>1200 sqft</P>
-                        <p>
+                        <h3 class="room_name">Asian Theme living room</h3>
+                        <P class="rate">1200 sqft</P>
+                        <p class="rate">
                             An Asian living room theme makes use of the colors gold, bronze, and brown to lend a warm
                             design.
                         </p>
 
                         <a href="#" class="btn">More details</a>
                     </div>
-                </div>
+                </div> -->
+
+
+
+
             </div>
         </section>
         <!-- main contanier is ended -->
@@ -142,7 +149,7 @@
         <script>
             const select_design_list = [];
 
-            const deslist = JSON.parse(localStorage.getItem("personDesign"));
+            let deslist = JSON.parse(localStorage.getItem("personDesign"));
             // const onedes = JSON.parse(localStorage.getItem("Single_Data"));
 
             console.log(deslist);
@@ -154,12 +161,12 @@
             }
 
             for (i = 0; i < select_design_list.length; i++) {
-                const singleDesign = select_design_list[i];
+                // const singleDesign = select_design_list[i];
 
 
 
                 let card;
-                let img_div;
+                // let img_div;
                 let img;
                 let info_div;
                 let design_name;
@@ -168,38 +175,48 @@
                 let details;
 
 
+
+
+
                 card = document.createElement("div");
                 card.setAttribute("class", "card");
                 document.querySelector("div.designs").append(card);
                 console.log(card);
 
-                img_div = document.createElement("div");
-                card.append("img_div")
+                // img_div = document.createElement("div");
+                // card.append("img_div")
 
                 img = document.createElement("img");
-                img.setAttribute("class", "free_img");
+                // img.setAttribute("class", "card img");
                 img.setAttribute("alt", "inteior design");
-                img.setAttribute("src", "../assets/image/login as customer/design gallery/living room/image 3.webp");
-                // img.setAttribute("src", select_design_list[i]["designimg"]);
-                img_div.append("img");
+                // img.setAttribute("src", "../assets/image/login as customer/design gallery/living room/image 3.webp");
+                img.setAttribute("src", select_design_list[i]["designimg"]);
+                card.append(img);
 
                 info_div = document.createElement("div");
                 info_div.setAttribute("class", "info");
-                card.append("info_div");
+                card.append(info_div);
 
                 design_name = document.createElement("h3");
-                info_div.append("design_name");
+                // design_name.setAttribute("class", " room_name")
+                design_name.innerText = select_design_list[i]["designdname"];
+                info_div.append(design_name);
 
                 square_feet = document.createElement("p");
-                info_div.append("square_feet");
+                square_feet.innerText = select_design_list[i]["designsquarefeet"]
+                // square_feet.setAttribute("class", "rate")
+                info_div.append(square_feet);
 
                 para = document.createElement("p");
-                info_div.append("para");
+                para.innerText = select_design_list[i]["designpara"]
+                // para.setAttribute("class", "rate")
+                info_div.append(para);
 
                 details = document.createElement("a");
-                details.setAttribute("class", "info");
+                details.setAttribute("class", "btn");
+                details.innerText = " More details";
                 details.setAttribute("href", "./design_details_page.html?id=" + deslist[i].designid);
-                info_div.append("details");
+                info_div.append(details);
 
             }
 

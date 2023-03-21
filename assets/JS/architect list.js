@@ -1,7 +1,7 @@
 const select_architect_list = [];
 
 let arclist = JSON.parse(localStorage.getItem("personArchitect"));
-let oneArc = JSON.parse(localStorage.getItem("Single_Data"));
+// let oneArc = JSON.parse(localStorage.getItem("Single_Data"));
 
 console.log(arclist);
 
