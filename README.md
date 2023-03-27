@@ -57,8 +57,7 @@ Scenario 1: Successfully create an account
          Steps:     
               a.Navigate to the registration page.    
               b.Enter the required information such as name, email, password and confirm password.   
-              c.Click the "sign up" button.    
-            
+              c.Click the "sign up" button.      
            Expected Result:   
                1. The user is redirected to the login page.   
                 
