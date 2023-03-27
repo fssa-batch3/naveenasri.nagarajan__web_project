@@ -16,6 +16,7 @@ I finished my
  customer user
 
 1.register page [completed]  
+
 2.login page [completed]  
 
 3.profile page [completed]  
@@ -69,11 +70,11 @@ Scenario 1: Successfully create an account
 login an account
 
 Scenario 1: Successfully login in to account  
-          Steps:   
-             a.Navigate to the login page.  
-             b.Enter the required information such as email and password.  
-             c.Click the "login" button.  
-          Expected Result:  
+          Steps:                  
+              a.Navigate to the login page.          
+             b.Enter the required information such as email and password.                      
+             c.Click the "login" button.          
+          Expected Result:                
           The user is redirected to the customer home page.  
           
           
