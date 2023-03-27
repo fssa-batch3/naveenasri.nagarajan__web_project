@@ -51,45 +51,45 @@ design crud
  
 
 booking page    
-customer       
-Create an account     
-Scenario 1: Successfully create an account     
-         Steps:     
+customer:        
+*Create an account     
+  *Scenario 1: Successfully create an account     
+         *Steps:     
               a.Navigate to the registration page.    
               b.Enter the required information such as name, email, password and confirm password.   
               c.Click the "sign up" button.       
-           Expected Result:   
+           *Expected Result:   
                1. The user is redirected to the login page.   
                 
 login an account    
-Scenario 1: Successfully login in to account    
-          Steps:                     
+*Scenario 1: Successfully login in to account    
+          *Steps:                     
              a.Navigate to the login page.           
              b.Enter the required information such as email and password.                       
              c.Click the "login" button.           
-          Expected Result:                 
+          *Expected Result:                 
              1. The user is redirected to the customer profile page.    
              a.Click the "Edit" button.   
              b.You can edit your profile.  
              c.Click the "delete" button.   
              d.You can delete your profile.
              
-Architect   
+Architect:    
 Create an account   
-Scenario 1: Successfully create an account     
-            Steps:      
+*Scenario 1: Successfully create an account     
+            *Steps:      
                 a.Navigate to the registration page.      
                 b.Enter the required information such as photo,name,gender,phone number,address,education,experience,document,model design, email, and password.      
                 c.Click the "sign up" button.      
-            Expected Result:     
+            *Expected Result:     
                 1. The user is redirected to the login page.             
 login an account    
-Scenario 1: Successfully login in to account        
-              Steps:     
+*Scenario 1: Successfully login in to account        
+              *Steps:     
                   a.Navigate to the login page.    
                   b.Enter the required information such as email and password.    
                   c.Click the "login" button.     
-               Expected Result:    
+               *Expected Result:    
                   1. The user is redirected to the profile page.   
                    a.Click the "Edit" button.     
                    b.You can edit your profile.     
