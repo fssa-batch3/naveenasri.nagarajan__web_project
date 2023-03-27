@@ -21,7 +21,8 @@ input {
 label {
   color: #28467f;
 }
-button {
+button,
+.logbtn {
   float: right;
   margin-top: 10px;
   color: #cee1ff;

@@ -160,40 +160,40 @@
     </form>
 
 
-    <script src="../assets/JS/customer_profile.js">
-        // //get data from local storage
-        // const thisUser = JSON.parse(localStorage.getItem("this_user"));
-        // const userinfo = JSON.parse(localStorage.getItem("register"));
-        // //get object from local storage used by email
-        // let singleUser = userinfo.find(function (event) {
-        //     let useremail = event["userEmail"];
-        //     if (thisUser == useremail) {
-        //         return true;
-        //     }
-        // });
+    <script>
+        //get data from local storage
+        const thisUser = JSON.parse(localStorage.getItem("this_user"));
+        const userinfo = JSON.parse(localStorage.getItem("register"));
+        //get object from local storage used by email
+        let singleUser = userinfo.find(function (event) {
+            let useremail = event["userEmail"];
+            if (thisUser == useremail) {
+                return true;
+            }
+        });
 
-        // const email = document.getElementById("email").value = singleUser["userEmail"];
+        const email = document.getElementById("email").value = singleUser["userEmail"];
 
-        // const proname = document.getElementById("userName").value = singleUser["userName"];
+        const proname = document.getElementById("userName").value = singleUser["userName"];
 
-        // const pass = document.getElementById("password").value = singleUser["userPassword"];
+        const pass = document.getElementById("password").value = singleUser["userPassword"];
 
-        // const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
+        const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
 
 
-        // let delete_user = document.getElementById("delete_btn");
-        // delete_user.addEventListener("click", function (event) {
-        //     event.preventDefault();
-        //     let index = userinfo.indexOf(singleUser);
-        //     let msg = confirm("Are you sure you want to delete this account");
-        //     if (msg !== true) {
-        //         return;
-        //     } else {
-        //         userinfo.splice(index, 1);
-        //         localStorage.setItem("register", JSON.stringify(userinfo));
-        //         window.location.href = "../index home.html";
-        //     }
-        // });
+        let delete_user = document.getElementById("delete_btn");
+        delete_user.addEventListener("click", function (event) {
+            event.preventDefault();
+            let index = userinfo.indexOf(singleUser);
+            let msg = confirm("Are you sure you want to delete this account");
+            if (msg !== true) {
+                return;
+            } else {
+                userinfo.splice(index, 1);
+                localStorage.setItem("register", JSON.stringify(userinfo));
+                window.location.href = "../index home.html";
+            }
+        });
 
 
     </script>
