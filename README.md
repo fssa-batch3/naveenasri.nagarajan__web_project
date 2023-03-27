@@ -57,7 +57,7 @@ Scenario 1: Successfully create an account
          Steps:     
               a.Navigate to the registration page.    
               b.Enter the required information such as name, email, password and confirm password.   
-              c.Click the "sign up" button.      
+              c.Click the "sign up" button.       
            Expected Result:   
                1. The user is redirected to the login page.   
                 
@@ -68,7 +68,11 @@ Scenario 1: Successfully login in to account
              b.Enter the required information such as email and password.                       
              c.Click the "login" button.           
           Expected Result:                 
-             1. The user is redirected to the customer home page.    
+             1. The user is redirected to the customer profile page.    
+             a.Click the "Edit" button.   
+             b.You can edit your profile.  
+             c.Click the "delete" button.   
+             d.You can delete your profile.
              
 Architect   
 Create an account   
@@ -86,4 +90,8 @@ Scenario 1: Successfully login in to account
                   b.Enter the required information such as email and password.    
                   c.Click the "login" button.     
                Expected Result:    
-                  The user is redirected to the profile page.    
+                  1. The user is redirected to the profile page.   
+                   a.Click the "Edit" button.     
+                   b.You can edit your profile.     
+                   c.Click the "delete" button.      
+                   d.You can delete your profile.    
