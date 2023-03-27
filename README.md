@@ -15,27 +15,42 @@ I finished my
 
  customer user
 
-1.register page [completed] 2.login page [completed]
-3.profile page [completed]
-4.profile edit [completed]
-5.delete user [completed]
+1.register page [completed]  
+2.login page [completed]  
+
+3.profile page [completed]  
+
+4.profile edit [completed]  
+
+5.delete user [completed]  
+
 
 architect user
 
-1.register page [completed]
-2.login page [completed]
-3.profile page [completed]
-4.profile edit [completed]
-5.delete user [completed]
+1.register page [completed]  
+
+2.login page [completed]  
+
+3.profile page [completed]  
+
+4.profile edit [completed]  
+
+5.delete user [completed]  
+
 
 design crud
 
-1.design list [completed]
-2. design params [completed]
-3. design edit [bending]
-4. design delete [bending]
+1.design list [completed]  
 
-booking page
+2. design params [completed]  
+ 
+3. design edit [bending]  
+
+4. design delete [bending]  
+ 
+
+booking page  
+
 
 customer
 
