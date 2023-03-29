@@ -10,18 +10,17 @@ user flow:https://drive.google.com/drive/folders/1q4Oj9Yr7CedCbgcAZkTnHdwm4zpqFl
 
 wireframe:https://drive.google.com/drive/folders/1AgcYHYFxFjlH5QCMbliGspjMYDlu3FXc
 
-
 I finished my
 
- 1.register page [completed]
+1.register page [completed]
 
- 2.login page [completed]
+2.login page [completed]
 
- 3.profile page [completed]
+3.profile page [completed]
 
- 4.profile edit [completed]
+4.profile edit [completed]
 
- 5.delete user [pending] [tomorrow]
+5.delete user [pending] [tomorrow]
 
 UUID [2 days]
 
