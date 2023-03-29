@@ -161,12 +161,8 @@
             }
 
             for (i = 0; i < select_design_list.length; i++) {
-                // const singleDesign = select_design_list[i];
-
-
 
                 let card;
-                // let img_div;
                 let img;
                 let info_div;
                 let design_name;
@@ -174,22 +170,13 @@
                 let para;
                 let details;
 
-
-
-
-
                 card = document.createElement("div");
                 card.setAttribute("class", "card");
                 document.querySelector("div.designs").append(card);
                 console.log(card);
 
-                // img_div = document.createElement("div");
-                // card.append("img_div")
-
                 img = document.createElement("img");
-                // img.setAttribute("class", "card img");
                 img.setAttribute("alt", "inteior design");
-                // img.setAttribute("src", "../assets/image/login as customer/design gallery/living room/image 3.webp");
                 img.setAttribute("src", select_design_list[i]["designimg"]);
                 card.append(img);
 
@@ -198,18 +185,15 @@
                 card.append(info_div);
 
                 design_name = document.createElement("h3");
-                // design_name.setAttribute("class", " room_name")
                 design_name.innerText = select_design_list[i]["designdname"];
                 info_div.append(design_name);
 
                 square_feet = document.createElement("p");
                 square_feet.innerText = select_design_list[i]["designsquarefeet"]
-                // square_feet.setAttribute("class", "rate")
                 info_div.append(square_feet);
 
                 para = document.createElement("p");
                 para.innerText = select_design_list[i]["designpara"]
-                // para.setAttribute("class", "rate")
                 info_div.append(para);
 
                 details = document.createElement("a");
