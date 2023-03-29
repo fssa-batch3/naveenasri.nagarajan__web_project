@@ -13,20 +13,83 @@ wireframe:https://drive.google.com/drive/folders/1AgcYHYFxFjlH5QCMbliGspjMYDlu3F
 
 I finished my
 
- 1.register page [completed]
 
- 2.login page [completed]
+customer user  
 
- 3.profile page [completed]
+ 1.register page [completed] 
+ 2.login page [completed]  
+ 3.profile page [completed]  
+ 4.profile edit [completed]  
+ 5.delete user [completed]  
 
- 4.profile edit [completed]
 
- 5.delete user [pending] [tomorrow]
+architect user  
 
-UUID [2 days]
+ 1.register page [completed]  
+ 2.login page [completed]  
+ 3.profile page [completed]  
+ 4.profile edit [completed]  
+ 5.delete user [completed]  
 
-add design = [2 days]
-design list = [2 days]
-design with architect =[2 days]
-update design =[2 days]
-close or deactive the design =[4 days]
+
+design crud
+
+1.design list [completed]  
+2. design params [completed]  
+3. design edit [bending]  
+4. design delete [bending]  
+
+
+booking page
+
+
+customer  
+
+Create an account  
+* Scenario 1: Successfully create an account
+    Steps:  
+         a.Navigate to the registration page.
+         b.Enter the required information such as name, email, password and confirm password.
+         c.Click the "sign up" button.  
+     Expected Result:
+            The user is redirected to the login page.  
+
+
+login an account
+ * Scenario 1: Successfully login in to account
+      Steps:
+            a.Navigate to the login page.
+            b.Enter the required information such as email and password.
+            c.Click the "login" button.
+      Expected Result:
+             The user is redirected to the customer home page.
+
+
+Architect
+
+Create an account  
+* Scenario 1: Successfully create an account
+    Steps:  
+         a.Navigate to the registration page.
+         b.Enter the required information such as photo,name,gender,phone number,address,education,experience,document,model design, email, and password.
+         c.Click the "sign up" button.  
+     Expected Result:
+            The user is redirected to the login page.  
+
+
+Create an account
+ * Scenario 1: Successfully login in to account
+      Steps:
+            a.Navigate to the login page.
+            b.Enter the required information such as email and password.
+            c.Click the "login" button.
+      Expected Result:
+             The user is redirected to the profile page.  
+
+
+
+
+
+
+
+
