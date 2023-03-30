@@ -21,11 +21,82 @@ I finished my
 4.profile edit [completed]
 
 5.delete user [pending] [tomorrow]
+customer user
 
-UUID [2 days]
+1.register page [completed]
 
-add design = [2 days]
-design list = [2 days]
-design with architect =[2 days]
-update design =[2 days]
-close or deactive the design =[4 days]
+2.login page [completed]
+
+3.profile page [completed]
+
+4.profile edit [completed]
+
+5.delete user [completed]
+
+architect user
+
+1.register page [completed]
+
+2.login page [completed]
+
+3.profile page [completed]
+
+4.profile edit [completed]
+
+5.delete user [completed]
+
+design crud
+
+1.design list [completed]
+
+2. design params [completed]
+
+3. design edit [bending]
+
+4. design delete [bending]
+
+booking page  
+customer:  
+*Create an account  
+ *Scenario 1: Successfully create an account  
+ *Steps:  
+ a.Navigate to the registration page.  
+ b.Enter the required information such as name, email, password and confirm password.  
+ c.Click the "sign up" button.  
+ *Expected Result:  
+ 1. The user is redirected to the login page.
+
+login an account  
+*Scenario 1: Successfully login in to account  
+ *Steps:  
+ a.Navigate to the login page.  
+ b.Enter the required information such as email and password.  
+ c.Click the "login" button.  
+ \*Expected Result:  
+ 1. The user is redirected to the customer profile page.  
+ a.Click the "Edit" button.  
+ b.You can edit your profile.  
+ c.Click the "delete" button.  
+ d.You can delete your profile.
+
+Architect:  
+Create an account  
+*Scenario 1: Successfully create an account  
+ *Steps:  
+ a.Navigate to the registration page.  
+ b.Enter the required information such as photo,name,gender,phone number,address,education,experience,document,model design, email, and password.  
+ c.Click the "sign up" button.  
+ *Expected Result:  
+ 1. The user is redirected to the login page.  
+login an account  
+*Scenario 1: Successfully login in to account  
+ *Steps:  
+ a.Navigate to the login page.  
+ b.Enter the required information such as email and password.  
+ c.Click the "login" button.  
+ *Expected Result:  
+ 1. The user is redirected to the profile page.  
+ a.Click the "Edit" button.  
+ b.You can edit your profile.  
+ c.Click the "delete" button.  
+ d.You can delete your profile.
