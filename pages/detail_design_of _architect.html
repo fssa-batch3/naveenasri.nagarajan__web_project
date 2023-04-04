@@ -61,14 +61,37 @@
 
 
     <script>
-
-        const singleData = JSON.parse(localStorage.getItem("Single_Data"));
-        let oneArchitectdesign = [];
-
         let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
+        const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+
+        let urlSearch = window.location.search;
+        // console.log(urlSearch);
+        let url_params = new URLSearchParams(urlSearch);
+        // console.log(url_params);
+        let get_id = url_params.get("id");
+        // console.log(get_id);
+
+        let urlarc = arcInfo.find(function (select_architect) {
+            let id = select_architect["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+
+
+        // const singleData = JSON.parse(localStorage.getItem("Single_Data"));
+        let oneArchitectdesign = [];
+
+
+
         for (let i = 0; i < deslist.length; i++) {
-            if (singleData === deslist[i]["designemail"]) {
+            if (urlarc["arcEmail"] === deslist[i]["designemail"]) {
                 oneArchitectdesign.push(deslist[i]);
             }
 
