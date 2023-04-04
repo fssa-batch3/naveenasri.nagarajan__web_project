@@ -137,13 +137,13 @@
 
 
 
-        const singleData = JSON.parse(localStorage.getItem("Single_Data"));
+        // const singleData = JSON.parse(localStorage.getItem("Single_Data"));
         let oneArchitectdesign = [];
 
         let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
         for (let i = 0; i < deslist.length; i++) {
-            if (singleData == deslist[i]["designemail"]) {
+            if (urlObj["arcEmail"] == deslist[i]["designemail"]) {
                 oneArchitectdesign.push(deslist[i]);
             }
 

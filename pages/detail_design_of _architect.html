@@ -68,7 +68,7 @@
         let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
         for (let i = 0; i < deslist.length; i++) {
-            if (singleData == deslist[i]["designemail"]) {
+            if (singleData === deslist[i]["designemail"]) {
                 oneArchitectdesign.push(deslist[i]);
             }
 

@@ -170,7 +170,6 @@
         arcInfo.splice(identify, 1);
         localStorage.setItem("personArchitect", JSON.stringify(arcInfo));
         window.location.href = "../index home.html";
-
       }
 
     });
@@ -182,7 +181,7 @@
     let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
     for (let i = 0; i < deslist.length; i++) {
-      if (singleData == deslist[i]["designemail"]) {
+      if (singleData === deslist[i]["designemail"]) {
         oneArchitectdesign.push(deslist[i]);
       }
 
@@ -198,8 +197,6 @@
       let square_feet;
       let para;
       let details;
-      let edit;
-      let deletedesign;
 
       card = document.createElement("div");
       card.setAttribute("class", "card");
@@ -233,24 +230,7 @@
       details.setAttribute("href", "./design_details_page.html?id=" + oneArchitectdesign[i].designid);
       info_div.append(details);
 
-      edit = document.createElement("a");
-      edit.setAttribute("class", "btn");
-      edit.innerText = "Edit";
-      // edit.setAttribute("href", "./design_details_page.html?id=" + oneArchitectdesign[i].designid);
-      info_div.append(edit);
-
-
-      deletedesign = document.createElement("button");
-      deletedesign.setAttribute("class", "btn");
-      deletedesign.setAttribute("id", "deletedes");
-      deletedesign.innerText = " Delete";
-      info_div.append(deletedesign);
-
-
     }
-
-
-
 
     let moredes;
     moredes = document.createElement("a");
@@ -265,6 +245,8 @@
 
 
   </script>
+
+
 
 </body>
 
