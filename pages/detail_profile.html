@@ -80,12 +80,11 @@
                     </div>
                 </div>
 
-                <div class="basic-information Works">
+                <div class="basic-information">
                     <h2>Works</h2>
                     <div class="designs">
                         <img id="userModelDesign" class="free-img" alt="interior design">
                     </div>
-                    <!-- <a href="./detail_design_of _architect.html">more design</a> -->
                 </div>
 
             </div>
@@ -152,7 +151,6 @@
 
         for (let i = 0; i < 4; i++) {
 
-            let works;
             let card;
             let img;
             let info_div;
@@ -160,11 +158,6 @@
             let square_feet;
             let para;
             let details;
-
-            works = document.createElement("div");
-            works.setAttribute("class", "works");
-            document.querySelector("div.clear-information").append(works);
-            console.log(works);
 
             card = document.createElement("div");
             card.setAttribute("class", "card");
@@ -205,11 +198,12 @@
         moredes.setAttribute("class", "btn");
         moredes.innerText = " More design";
         moredes.setAttribute("href", "../pages/detail_design_of _architect.html?id=" + urlObj.arcId);
-        works.append(moredes);
+        document.querySelector("div.designs").append(moredes);
 
 
 
     </script>
+
 
 </body>
 
