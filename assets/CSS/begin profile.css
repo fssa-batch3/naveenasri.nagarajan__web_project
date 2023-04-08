@@ -81,7 +81,7 @@
 .clear-information::-webkit-scrollbar {
   display: none;
 }
-.info {
+.info_para {
   font-size: 25px;
   text-align: center;
   padding-left: 1px;
@@ -96,7 +96,7 @@ h2 {
   color: #28467f;
   margin: 5px;
 }
-.basic-information {
+/* .basic-information {
   background: linear-gradient(
     214deg,
     rgb(147, 174, 249) 10%,
@@ -107,10 +107,10 @@ h2 {
   font-size: 25px;
   border-radius: 25px;
   margin-bottom: 50px;
-}
-.free-img {
+} */
+/* .free-img {
   height: 200px;
   width: 280px;
   margin: 5px;
   border-radius: 9px;
-}
+} */

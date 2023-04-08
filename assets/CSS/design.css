@@ -64,7 +64,9 @@
   transition: 0.4s;
 }
 
-.btn {
+.btn,
+.editdes,
+.deletedes {
   display: inline-block;
   font-size: 16px;
   text-decoration: none;
@@ -75,6 +77,8 @@
   cursor: pinter;
   opacity: 0;
   transition: 0.4s;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .card:hover .info {

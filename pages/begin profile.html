@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../assets/CSS/universe.css" />
   <link rel="stylesheet" href="../assets/CSS/begin profile.css">
-  <!-- <link rel="stylesheet" href="../assets/CSS/design.css"> -->
+  <link rel="stylesheet" href="../assets/CSS/design.css">
   <title>begin profile</title>
 </head>
 
@@ -31,13 +31,13 @@
           <img id="userImage" alt="Architect image" height="300px" width="300px" style="border-radius: 9px;" />
         </div>
         <div class="list">
-          <p class="info">
+          <p class="info_para">
             personal information
           </p>
-          <p class="info">
+          <p class="info_para">
             Contact information
           </p>
-          <p class="info">
+          <p class="info_para">
             Works
           </p>
         </div>
@@ -95,23 +95,11 @@
           <div class="design">
 
             <img id="userModelDesign" class="free-img" alt="interior design">
-            <!-- <img class="free-img" src="../assets/image/login as customer/architect/image 3.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/kitchen/image 3.jpg"
-              alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/architect/image 8.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/architect/image 6.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/black and white/image 3.jpg"
-              alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/about us/image 4.webp" alt="interior design">
-            <img class="free-img" src="../assets/image/login as customer/design gallery/office/image 3.webp"
-              alt="interior design"> -->
 
             <a href="../pages/design_details_apply_form.html">
               <img src="../assets/image/common/add.png" alt="add image">
             </a>
           </div>
-          <a type="sumbit"> More design</a>
         </div>
 
       </div>
@@ -197,6 +185,8 @@
       let square_feet;
       let para;
       let details;
+      let editdes;
+      let deletedes;
 
       card = document.createElement("div");
       card.setAttribute("class", "card");
@@ -230,18 +220,65 @@
       details.setAttribute("href", "./design_details_page.html?id=" + oneArchitectdesign[i].designid);
       info_div.append(details);
 
+      editdes = document.createElement("a");
+      // editdes.setAttribute("class", "btn");
+      editdes.setAttribute("class", "editdes");
+      editdes.setAttribute("id", oneArchitectdesign[i].designid)
+      editdes.innerText = "Edit";
+      // editdes.setAttribute("href", "./design_details_edit_from.html?id=" + oneArchitectdesign[i].designid);
+      info_div.append(editdes);
+
+      deletedes = document.createElement("a");
+      // deletedes.setAttribute("class", "btn");
+      deletedes.setAttribute("class", "deletedes");
+      deletedes.setAttribute("id", "deletedes")
+      deletedes.innerText = "Delete";
+      info_div.append(deletedes);
+
     }
 
-    let moredes;
-    moredes = document.createElement("a");
-    moredes.setAttribute("class", "#");
-    moredes.setAttribute("href", "#");
-    document.querySelector("div.basic-information").append(moredes);
-    console.log(moredes);
+    let editdes = document.querySelectorAll("a.editdes");
+    editdes.forEach(function (findId) {
+      findId.addEventListener("click", function () {
+        let designCard = this.closest(".card")
+        const Id = designCard.querySelector(".editdes").getAttribute("id")
+        console.log(Id);
+        localStorage.setItem("designID", JSON.stringify(Id));
+        window.location.href = "./design_details_edit_from.html";
+      })
+    })
+
+
+
+    let deletedesign = document.querySelectorAll("a.deletedes");
+    deletedesign.forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (confirm("Are you sure to delete this design")) {
+          let dData = JSON.parse(window.localStorage.getItem("personDesign"));
+          let card = this.closest(".card");
+          let indexOf = dData.indexOf(card);
+          console.log(indexOf);
+          console.log("its working");
+          dData.splice(indexOf, 1);
+          // Save updated data to local storage
+          window.localStorage.setItem("personDesign", JSON.stringify(dData));
+          // Redirect to Doctorslist page
+          alert("successfully deleted")
+          window.location.href = "./begin profile.html";
+        }
+      });
+    });
 
 
 
 
+
+    // let moredes;
+    // moredes = document.createElement("a");
+    // moredes.setAttribute("class", "btn");
+    // moredes.innerText = " More design";
+    // moredes.setAttribute("href", "../pages/own_design_list.html?id=" + urlObj.arcId);
+    // document.querySelector("div.design").append(moredes);
 
 
   </script>
