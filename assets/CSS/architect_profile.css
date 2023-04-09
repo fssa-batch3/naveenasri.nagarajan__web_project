@@ -96,21 +96,12 @@ h2 {
   color: #28467f;
   margin: 5px;
 }
-/* .basic-information {
-    background: linear-gradient(
-      214deg,
-      rgb(147, 174, 249) 10%,
-      rgba(178, 197, 255, 1) 60%,
-      rgb(202, 215, 254) 100%
-    );
-    padding: 50px;
-    font-size: 25px;
-    border-radius: 25px;
-    margin-bottom: 50px;
-  } */
-/* .free-img {
-    height: 200px;
-    width: 280px;
-    margin: 5px;
-    border-radius: 9px;
-  } */
+
+.free-img {
+  /* height: 200px;
+  width: 280px; */
+  margin: 5px;
+  border-radius: 9px;
+  width: 400px;
+  height: 270px;
+}

@@ -1,3 +1,16 @@
+/* header is started */
+.profileofuser {
+  width: 40px;
+}
+
+#section1 {
+  background-image: url("../../assets/image/login as customer/design gallery/bed room/image 2.webp");
+}
+.hold {
+  width: 250px;
+}
+/* header is ended */
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
 
 * {

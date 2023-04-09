@@ -62,15 +62,14 @@
 <!-- java  -->
 <script>
 
-    register()
     let checker = false;
     const signupfrom = document.getElementById("form2");
-    console.log(signupfrom)
+    console.log(signupfrom);
     signupfrom.addEventListener("submit", function (event) {
         event.preventDefault();
 
         let userNew = [];
-        console.log(userNew)
+        console.log(userNew);
 
         if (localStorage.getItem("register") != null) {
             userNew = JSON.parse(localStorage.getItem("register"));
@@ -79,7 +78,9 @@
         const getName = document.getElementById("name").value.trim();
         const getEmail = document.getElementById("email").value.trim();
         const getPassword = document.getElementById("password").value.trim();
-        const getConfirmPassword = document.getElementById("confirm_password").value.trim();
+        const getConfirmPassword = document
+            .getElementById("confirm_password")
+            .value.trim();
         const userId = Date.now();
 
         let userData = {
@@ -87,40 +88,31 @@
             userName: getName,
             userEmail: getEmail,
             userPassword: getPassword,
-            userconPassword: getConfirmPassword
-        }
+            userconPassword: getConfirmPassword,
+        };
 
         console.log(userData);
-
-
 
         for (let i = 0; i < userNew.length; i++) {
             if (userNew[i]["userEmail"] === getEmail) {
                 checker = true;
-                alert("User already exit")
+                alert("User already exit");
                 break;
-
-            }
-            else {
+            } else {
                 checker = false;
             }
         }
         if (checker === false) {
-
-
-
             if (getPassword === getConfirmPassword) {
                 userNew.push(userData);
-                const str = JSON.stringify(userNew)
-                alert("Sucess")
-                window.localStorage.setItem("register", str)
-                window.location.href = "./user_login.html"
+                const str = JSON.stringify(userNew);
+                alert("Sucess");
+                window.localStorage.setItem("register", str);
+                window.location.href = "./user_login.html";
             } else {
-                alert("Password and confirmpassword should be same")
+                alert("Password and confirmpassword should be same");
             }
-
         }
-
     });
 
 </script>

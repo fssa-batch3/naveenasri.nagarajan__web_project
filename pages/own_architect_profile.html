@@ -115,7 +115,7 @@
         </div>
         <div class="submit">
 
-            <a href="./own_user_profile_edit.html" class="edit_btn">Edit</a>
+            <a href="./own_architect_profile_edit.html" class="edit_btn">Edit</a>
 
             <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
         </div>
@@ -255,7 +255,6 @@
         })
 
 
-
         let deletedesign = document.querySelectorAll("a.deletedes");
         deletedesign.forEach(function (button) {
             button.addEventListener("click", function () {
@@ -276,12 +275,6 @@
         });
 
 
-        let moredes;
-        moredes = document.createElement("a");
-        moredes.setAttribute("class", "btn");
-        moredes.innerText = " More design";
-        moredes.setAttribute("href", "./user_detail_design_list_of_one_architect.html?id=" + urlObj.arcId);
-        document.querySelector("div.designs").append(moredes);
 
     </script>
 
