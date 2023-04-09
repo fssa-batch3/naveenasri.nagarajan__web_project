@@ -4,10 +4,17 @@
   align-items: center;
   background-color: #ffffff;
   justify-content: space-between;
+  padding: 1px 40px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
 }
 nav {
   display: flex;
-  width: 700px;
+  width: 800px;
+  align-items: center;
   justify-content: space-between;
   font-size: 23px;
   margin-right: 50px;
@@ -17,17 +24,22 @@ nav {
   color: #28467f;
   padding: 5px;
 }
+
+.a:hover {
+  text-decoration: underline;
+}
+
+.profile,
+.profileofuser {
+  width: 40px;
+}
+/* header is ended */
+
 a {
   text-decoration: none;
   color: #cee1ff;
 }
-.a:hover {
-  color: white;
-  background-color: #28467f;
-  border-radius: 7px;
-  padding: 5px;
-}
-/* header is ended */
+
 #section1 {
   width: 100%;
   background-size: cover;
@@ -71,7 +83,7 @@ h1 {
 body {
   font-size: 18px;
   font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
-  background-color: rgb(234, 239, 251);
+  /* background-color: rgb(234, 239, 251); */
   color: black;
 }
 img {
@@ -94,7 +106,6 @@ h3 {
   height: 270px;
   margin: 10px;
   border-radius: 12px;
-  
 }
 .free_img:hover {
   transform: scale(1.01);
@@ -108,6 +119,10 @@ h3 {
 .border:hover {
   border: 2px solid #28467f;
 }
+
+.reviewer {
+  height: 100px;
+}
 /* footer is started */
 .footer {
   background-color: #28467f;
@@ -120,7 +135,7 @@ h3 {
   color: #cee1ff;
 }
 .social-media {
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -129,7 +144,8 @@ h3 {
 .icons {
   height: 50px;
   width: 50px;
-  border-radius: 20px;
+  cursor: pointer;
+  border-radius: 40px;
   border: 4px solid rgb(7, 7, 7);
   background-color: #ffffff;
 }

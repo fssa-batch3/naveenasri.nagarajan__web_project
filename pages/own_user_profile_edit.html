@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/user_profile.css">
+    <title>user edit profile</title>
+</head>
+
+<body>
+    <form class="profile_form" id="form_E">
+        <div class="head_div">
+            <h2 class="head">User Profile</h2>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">username:</label>
+            <br />
+            <br />
+            <input type="text" required class="form-control" id="userName" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="email" class="all_label">Email:</label>
+            <br />
+            <br />
+            <input type="email" required class="form-control" id="email" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="pwd" class="all_label">Password:</label>
+            <br />
+            <br />
+            <input type="text" required class="form-control" id="password" />
+        </div>
+
+        <div class="form-group">
+            <label for="pwd" class="all_label">Confirm Password:</label>
+            <br />
+            <br />
+            <input type="text" required class="form-control" id="c_password" />
+        </div>
+        <br>
+        <br>
+        <div class="submit">
+            <button type="submit" class="submit_btn">Submit</button>
+
+        </div>
+
+    </form>
+
+    <!-- java script -->
+    <script>
+        //get data from local storage
+        const thisUser = JSON.parse(localStorage.getItem("this_user"));
+        const userinfo = JSON.parse(localStorage.getItem("register"));
+        //get object from local storage used by email
+        let singleUser = userinfo.find(function (event) {
+            let useremail = event["userEmail"];
+            if (thisUser == useremail) {
+                return true;
+            }
+        });
+
+        const email = document.getElementById("email").value = singleUser["userEmail"];
+
+        const proname = document.getElementById("userName").value = singleUser["userName"];
+
+        const pass = document.getElementById("password").value = singleUser["userPassword"];
+
+        const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
+
+
+        // edit page function
+        let submit = document.getElementById("form_E");
+        submit.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // get data from edit form
+            let userName = document.getElementById("userName").value;
+            let userEmail = document.getElementById("email").value;
+            let userPassword = document.getElementById("password").value;
+            let userconPassword = document.getElementById("c_password").value;
+
+            let editUser_data = {
+                userName,
+                userEmail,
+                userPassword,
+                userconPassword,
+            };
+
+
+            let newData = JSON.parse(localStorage.getItem("register"));
+
+            if (userPassword === userconPassword) {
+                let oldData = newData.find((i) => i.userEmail == userEmail);
+                let change = Object.assign(oldData, editUser_data);
+                let index = newData.indexOf(oldData);
+                newData[index] = change;
+                localStorage.setItem("register", JSON.stringify(newData));
+                window.location.href = "./own_user_profile.html";
+            } else {
+                alert("password and confirm password should be same")
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

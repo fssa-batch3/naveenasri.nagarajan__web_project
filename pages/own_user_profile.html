@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/user_profile.css">
+    <title>user profile</title>
+</head>
+
+<body>
+    <form class="profile_form" id="form_p">
+        <div class="head_div">
+            <h2 class="head">User Profile</h2>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">username:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="userName" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="email" class="all_label">Email:</label>
+            <br />
+            <br />
+            <input type="email" class="form-control" id="email" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="pwd" class="all_label">Password:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="password" disabled />
+        </div>
+        <div class="form-group">
+            <label for="pwd" class="all_label"> Confirm Password:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="c_password" disabled />
+        </div>
+        <br>
+        <br>
+        <div class="submit">
+
+            <a href="./own_user_profile_edit.html" class="edit_btn">Edit</a>
+
+            <button type="submit" class="submit_btn" id="delete_btn">Delete</button>
+        </div>
+
+    </form>
+
+
+    <script>
+        //get data from local storage
+        const thisUser = JSON.parse(localStorage.getItem("this_user"));
+        const userinfo = JSON.parse(localStorage.getItem("register"));
+        //get object from local storage used by email
+        let singleUser = userinfo.find(function (event) {
+            let useremail = event["userEmail"];
+            if (thisUser == useremail) {
+                return true;
+            }
+        });
+
+        const email = document.getElementById("email").value = singleUser["userEmail"];
+
+        const proname = document.getElementById("userName").value = singleUser["userName"];
+
+        const pass = document.getElementById("password").value = singleUser["userPassword"];
+
+        const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
+
+
+        let delete_user = document.getElementById("delete_btn");
+        delete_user.addEventListener("click", function (event) {
+            event.preventDefault();
+            let index = userinfo.indexOf(singleUser);
+            let msg = confirm("Are you sure you want to delete this account");
+            if (msg !== true) {
+                return;
+            } else {
+                userinfo.splice(index, 1);
+                localStorage.setItem("register", JSON.stringify(userinfo));
+                window.location.href = "../index.html";
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

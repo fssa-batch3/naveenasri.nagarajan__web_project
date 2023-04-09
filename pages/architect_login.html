@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/user_login.css">
+    <title>architect login</title>
+
+</head>
+
+<body>
+    <div>
+        <div class="all">
+            <a href="#">
+                <img src="../assets/image/common/logo.png" alt="logo" class="logo" />
+            </a>
+        </div>
+        <div class="main-container">
+            <div>
+                <form id="architectForm2" class="form">
+
+                    <br /><br />
+                    <label>Email:</label>
+                    <input type="email" required placeholder="abc@gmail.com" autocomplete="email"
+                        style="margin-left: 45px" id="email" />
+                    <br /><br />
+                    <label>password:</label>
+                    <input type="password" required value="656776878978" autocomplete="current-password" id="password"
+                        placeholder="password" />
+                    <br /><br />
+                    <button type="submit">
+                        Log in
+                    </button>
+                </form>
+
+            </div>
+            <div class="holder">
+                <div class="img2">
+                    <img src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design"
+                        width="300px" height="220px" />
+                </div>
+                <div class="img3">
+                    <img src="../assets/image/login as customer/design gallery/living room/image 3.webp"
+                        alt="interior design" width="300px" height="220px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- java  -->
+<script>
+
+    let arcLogin = document.getElementById("architectForm2");
+
+    arcLogin.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let wholeData = JSON.parse(localStorage.getItem("personArchitect"));
+        console.log(wholeData);
+
+        const getEmail = document.getElementById("email").value;
+        const getPassword = document.getElementById("password").value;
+
+        let match = false;
+
+        for (let i = 0; i < wholeData.length; i++) {
+            if (getEmail == wholeData[i].arcEmail &&
+                getPassword == wholeData[i].arcPassword) {
+                match = true;
+                break;
+            } else {
+                match = false;
+            }
+        }
+
+        if (match === true) {
+            alert("successfully completed");
+            const matchData = wholeData.find((o) => o["arcEmail"] == getEmail)
+            const singleData = JSON.stringify(matchData.arcEmail);
+            localStorage.setItem("Single_Data", singleData);
+            window.location.href = "./architect_architect_list.html";
+        } else {
+            alert("Failed")
+        }
+    })
+
+
+</script>
+
+
+
+</html>

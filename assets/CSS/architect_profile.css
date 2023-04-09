@@ -1,0 +1,116 @@
+.submit {
+  /* margin-top: 5%; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.edit_btn {
+  text-decoration: none;
+  color: black;
+
+  text-align: center;
+
+  font-size: 2rem;
+  font-weight: bolder;
+  border-radius: 1px;
+  width: 12rem;
+  height: 5rem;
+
+  border: none;
+  box-shadow: 0px 0px 20px white;
+  /* background-image: linear-gradient(90deg, #dcc12d 0%, #23dddd 100%); */
+  background: linear-gradient(
+    214deg,
+    rgb(147, 174, 249) 10%,
+    rgba(178, 197, 255, 1) 60%,
+    rgb(202, 215, 254) 100%
+  );
+  transition: 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit_btn {
+  font-size: 2rem;
+  font-weight: bolder;
+  width: 12rem;
+  height: 5rem;
+  border-radius: 1px;
+  border: none;
+  box-shadow: 0px 0px 20px white;
+  /* background-color: #2db1b1; */
+  background: linear-gradient(
+    214deg,
+    rgb(147, 174, 249) 10%,
+    rgba(178, 197, 255, 1) 60%,
+    rgb(202, 215, 254) 100%
+  );
+  transition: 0.7s;
+}
+/* btn css  */
+/* rohiotrgdhjlhrtuoljjjjjuaglbfbjbn rofghyb hn lfgorbnroasfhn */
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.information {
+  position: fixed;
+  left: 140px;
+  background: linear-gradient(
+    214deg,
+    rgb(147, 174, 249) 10%,
+    rgba(178, 197, 255, 1) 60%,
+    rgb(202, 215, 254) 100%
+  );
+  padding: 50px;
+  font-size: 25px;
+  border-radius: 25px;
+}
+.clear-information {
+  margin-left: 650px;
+  font-size: 20px;
+  overflow-y: scroll;
+  height: 680px;
+  margin-right: 150px;
+}
+.clear-information::-webkit-scrollbar {
+  display: none;
+}
+.info_para {
+  font-size: 25px;
+  text-align: center;
+  padding-left: 1px;
+  list-style: none;
+}
+.brief-info {
+  margin-left: 120px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #28467f;
+  margin: 5px;
+}
+/* .basic-information {
+    background: linear-gradient(
+      214deg,
+      rgb(147, 174, 249) 10%,
+      rgba(178, 197, 255, 1) 60%,
+      rgb(202, 215, 254) 100%
+    );
+    padding: 50px;
+    font-size: 25px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+  } */
+/* .free-img {
+    height: 200px;
+    width: 280px;
+    margin: 5px;
+    border-radius: 9px;
+  } */

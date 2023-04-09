@@ -1,73 +1,90 @@
 /* header is started */
+.profileofuser {
+  width: 40px;
+}
+
 #section1 {
-  background-image: url("../../assets/image/login as customer/architect/image 1.webp");
+  background-image: url("../../assets/image/login as customer/design gallery/bed room/image 2.webp");
 }
 .hold {
   width: 250px;
 }
-/* }header is ended */
-/* main container is started */
-.full-container {
+/* header is ended */
+.exp_div {
   display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.all-architect-list {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: space-around;
+}
+.card {
   margin: 40px;
-}
-.architect-list::-webkit-scrollbar,
-.all-architect-details::-webkit-scrollbar {
-  display: none;
-}
-.architect-list {
-  width: 300px;
-  height: auto;
-  left: 140px;
-  text-align: center;
-  background: linear-gradient(
-    214deg,
-    rgb(147, 174, 249) 10%,
-    rgba(178, 197, 255, 1) 60%,
-    rgb(202, 215, 254) 100%
-  );
-  padding: 50px;
-  font-size: 25px;
-  border-radius: 25px;
-  overflow-y: scroll;
-}
-.all-architect-details {
-  overflow-y: scroll;
-  height: 1100px;
-}
-.one-architect-detail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 700px;
-  background: linear-gradient(
-    214deg,
-    rgb(147, 174, 249) 10%,
-    rgba(178, 197, 255, 1) 60%,
-    rgb(202, 215, 254) 100%
-  );
-  font-size: 25px;
-  height: 450px;
-  padding: 50px;
-  border-radius: 13px;
-  margin-bottom: 40px;
-}
-button {
-  color: #cee1ff;
-  background-color: #28467f;
-  border: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px;
+  width: 350px;
+  height: 400px;
+  background: #96aaec;
   border-radius: 5px;
+  text-align: center;
+  box-shadow: 12px 10px 15px#0101018f;
+  user-select: none;
 }
-input {
-  font-size: 18px;
+
+.cover-photo {
+  position: relative;
+  /* background: url("../image/login as architect/sample design/sample 3.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+}
+
+.profile {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  bottom: -60px;
+  left: 15px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background: #fffefe;
   padding: 5px;
-  border-radius: 7px;
-  border: none;
-  width: 300px;
+}
+
+.profile-name {
+  font-size: 20px;
+  margin: 25px 0 0 70px;
+  color: #fff;
+}
+
+.about {
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  margin: 30px 15px;
+  background: #28467f;
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: 1px solid #28467f;
+  font-weight: bold;
+  font-family: Montserrat;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.btn:last-of-type {
+  background: transparent;
+  border-color: #28467f;
+  color: #28467f;
+}
+
+.btn:hover {
+  background: #28467f;
+  color: #020202;
 }

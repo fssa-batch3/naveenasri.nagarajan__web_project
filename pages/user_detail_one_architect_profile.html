@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/architect_profile.css">
+    <link rel="stylesheet" href="../assets/CSS/design.css">
+    <title>user detail one architect profile</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="main">
+            <div class="information">
+                <div>
+                    <img id="userImage" alt="Architect image" height="300px" width="300px"
+                        style="border-radius: 9px;" />
+                </div>
+                <div class="list">
+                    <p class="info_para">
+                        personal information
+                    </p>
+                    <p class="info_para">
+                        Contact information
+                    </p>
+                    <p class="info_para">
+                        Works
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="clear-information">
+                <div class="basic-information">
+                    <h2>personal information</h2>
+                    <div class="brief-info">
+                        <p>
+                            Name:<span id="userName">Susi Kumar<span>
+                        </p>
+                        <p>
+                            Gender:<span id="userGender">Male</span>
+                        </p>
+                        <p>
+                            Phone number:<span id="userPhoneNumber">9445533779</span>
+                        </p>
+                        <p>
+                            Address:<span id="userAddress">3/567,kumar illam,Anna nagar,Namakkal,Tamil
+                                Nadu-637001</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="basic-information">
+                    <h2>professional information</h2>
+                    <div class="brief-info">
+                        <p>
+                            Education:<span id="userEducation">B. Arch,NAAB</span>
+                        </p>
+                        <p>
+                            Experience:<span id="userExperience">2 years</span>
+                        </p>
+                        <p>
+                            Email:<span id="userEmail">susikumar79@gmail.com</span>
+                        </p>
+                        <p>
+                            Password:<span id="userPassword">5437 9876 6543</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="basic-information">
+                    <h2>Document</h2>
+                    <div>
+                        <img id="userDocument" class="free-img" alt="interior design">
+                    </div>
+                </div>
+
+                <div class="basic-information works">
+                    <h2>Works</h2>
+                    <div class="designs">
+                        <img id="userModelDesign" class="free-img" alt="interior design">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <script>
+
+
+
+
+        const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+        // console.log(arcInfo);
+        let urlSearch = window.location.search;
+        // console.log(urlSearch);
+        let url_params = new URLSearchParams(urlSearch);
+        // console.log(url_params);
+        let get_id = url_params.get("id");
+        // console.log(get_id);
+
+        let urlObj = arcInfo.find(function (select_architect) {
+            let id = select_architect["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        // console.log(urlObj);
+
+
+        const url = document.getElementById("userImage").setAttribute("src", urlObj["arcUrl"]);
+        const name = document.getElementById("userName").innerHTML = urlObj["arcName"];
+        const gender = document.getElementById("userGender").innerHTML = urlObj["arcGender"];
+        const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = urlObj["arcPhoneNumber"];
+        const address = document.getElementById("userAddress").innerHTML = urlObj["arcAddress"];
+        const education = document.getElementById("userEducation").innerHTML = urlObj["arcEducation"];
+        const experience = document.getElementById("userExperience").innerHTML = urlObj["arcExperience"];
+        const email = document.getElementById("userEmail").innerHTML = urlObj["arcEmail"];
+        const password = document.getElementById("userPassword").innerHTML = urlObj["arcPassword"];
+        const graduatedocument = document.getElementById("userDocument").setAttribute("src", urlObj["arcDocument"]);
+        const modelDesign = document.getElementById("userModelDesign").setAttribute("src", urlObj["arcModelDesign"]);
+
+
+
+
+        let oneArchitectdesign = [];
+
+        let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+        for (let i = 0; i < deslist.length; i++) {
+            if (urlObj["arcEmail"] == deslist[i]["designemail"]) {
+                oneArchitectdesign.push(deslist[i]);
+            }
+
+
+        }
+
+        for (let i = 0; i < 4; i++) {
+
+            let card;
+            let img;
+            let info_div;
+            let design_name;
+            let square_feet;
+            let para;
+            let details;
+
+            card = document.createElement("div");
+            card.setAttribute("class", "card");
+            document.querySelector("div.designs").append(card);
+            console.log(card);
+
+            img = document.createElement("img");
+            img.setAttribute("alt", "inteior design");
+            img.setAttribute("src", oneArchitectdesign[i]["designimg"]);
+            card.append(img);
+
+            info_div = document.createElement("div");
+            info_div.setAttribute("class", "info");
+            card.append(info_div);
+
+            design_name = document.createElement("h3");
+            design_name.innerText = oneArchitectdesign[i]["designdname"];
+            info_div.append(design_name);
+
+            square_feet = document.createElement("p");
+            square_feet.innerText = oneArchitectdesign[i]["designsquarefeet"]
+            info_div.append(square_feet);
+
+            para = document.createElement("p");
+            para.innerText = oneArchitectdesign[i]["designpara"]
+            info_div.append(para);
+
+            details = document.createElement("a");
+            details.setAttribute("class", "btn");
+            details.innerText = " More details";
+            details.setAttribute("href", "./user_design_detail.html?id=" + oneArchitectdesign[i].designid);
+            info_div.append(details);
+
+        }
+
+        let moredes;
+        moredes = document.createElement("a");
+        moredes.setAttribute("class", "btn");
+        moredes.innerText = " More design";
+        moredes.setAttribute("href", "./user_detail_design_list_of_one_architect.html?id=" + urlObj.arcId);
+        document.querySelector("div.designs").append(moredes);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

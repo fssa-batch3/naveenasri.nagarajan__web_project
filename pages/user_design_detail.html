@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/design_details.css">
+    <link rel="stylesheet" href="../assets/CSS/architect.css">
+    <title>Details design pages</title>
+</head>
+
+<body>
+    <div class="AboutArchitect">
+        <div class="photos">
+            <div>
+                <img class="mainimage" id="mainimage"
+                    src="../assets/image/login as architect/sample design/sample 6.webp" alt="interior design">
+            </div>
+            <div class="minilist">
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+                <div>
+                    <img class="miniimage" src="../assets/image/login as architect/sample design/sample 6.webp"
+                        alt="interior design">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="card">
+            <div class="cover-photo">
+                <img src="../assets/image/common/person.png" class="profile" alt="architect-profile">
+            </div>
+            <h3 class="profile-name">James Carson</h3>
+            <div class="exp_div">
+                <pre class="about">Experience : </pre>
+                <p class="about">
+                    2 years
+                </p>
+            </div>
+            <div class="rate">
+                <span class="star-icon filled">★</span>
+                <span class="star-icon filled">★</span>
+                <span class="star-icon filled">★</span>
+                <span class="star-icon filled">★</span>
+                <span class="star-icon">★</span>
+            </div>
+            <button class="btn">More Details</button>
+            <button class="btn">Book now</button>
+
+        </div> -->
+
+    </div>
+
+    <div class="details">
+        <div>
+            <p>
+                Design name:<br> <span id="dname">modern bed room </span>
+            </p>
+            <p>
+                Price of design(&#8377): <br> <span id="pdesign">22,000</span>
+            </p>
+            <p>
+                sq/ft:<br> <span id="squarefeet">1213</span>
+            </p>
+            <p>
+                Price per sq/ft: <br><span id="ppsquarefeet">22.67</span>
+            </p>
+        </div>
+        <div>
+            <p>
+                Required dates: <br><span id="dates">3 months</span>
+            </p>
+            <p>
+                Bathrooms: <br><span id="bathroom">3</span>
+            </p>
+            <p>
+                Bedroom: <br><span id="bedroom">3</span>
+            </p>
+            <p>
+                Balcony: <br><span id="balcony">3</span>
+            </p>
+        </div>
+        <div>
+            <p>
+                About the design :<br>
+                <span id="para">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt doloremque laboriosam dolor
+                    incidunt
+                    iste voluptatem neque vitae, enim a ab alias excepturi, atque labore beatae ipsa nostrum architecto
+                    dicta quibusdam.
+                </span>
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        const desInfo = JSON.parse(localStorage.getItem("personDesign"));
+        console.log(desInfo);
+
+        let urlSearch = window.location.search;
+        console.log(urlSearch);
+        let url_params = new URLSearchParams(urlSearch);
+        console.log(url_params);
+        let get_id = url_params.get("id");
+        console.log(get_id);
+
+        let designObj = desInfo.find(
+            function (select_design) {
+                let id = select_design["designid"];
+                console.log(id);
+
+                if (get_id == id) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+        console.log(designObj);
+
+
+        const url = document.getElementById("mainimage").setAttribute("src", designObj.designimg);
+        const dname = document.getElementById("dname").innerHTML = designObj["designdname"];
+        const pdesign = document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
+        const squarefeet = document.getElementById("squarefeet").innerHTML = designObj["designsquarefeet"];
+        const ppsquarefeet = document.getElementById("ppsquarefeet").innerHTML = designObj["designppsquarefeet"];
+        const dates = document.getElementById("dates").innerHTML = designObj["designdates"];
+        const bathroom = document.getElementById("bathroom").innerHTML = designObj["designbathroom"];
+        const bedroom = document.getElementById("bedroom").innerHTML = designObj["designbedroom"];
+        const balcony = document.getElementById("balcony").innerHTML = designObj["designbalcony"];
+        const para = document.getElementById("para").innerHTML = designObj["designpara"];
+
+
+        // card java script
+
+        const arclist = JSON.parse(localStorage.getItem("personArchitect"));
+
+        let designEmail = designObj["designemail"];
+
+        let design_owner = arclist.find(function (select_owner) {
+            let arcEmail = select_owner["arcEmail"];
+
+            if (designEmail == arcEmail) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        });
+
+        let card;
+        let design_img_div;
+        let design_img;
+        let arcname;
+        let exp_div;
+        let preExp;
+        let arcexperience;
+        let detailsbtn;
+        let bookbtn;
+
+        card = document.createElement("div");
+        card.setAttribute("class", "card");
+        document.querySelector("div.AboutArchitect").append(card);
+        // console.log(card);
+
+        design_img_div = document.createElement("div");
+        design_img_div.setAttribute("class", "cover-photo");
+        design_img_div.setAttribute(
+            "style",
+            "background: url(" +
+            design_owner["arcModelDesign"] +
+            ") no-repeat center center / contain;"
+        );
+        card.append(design_img_div);
+
+        design_img = document.createElement("img");
+        design_img.setAttribute("src", design_owner["arcUrl"]);
+        design_img.setAttribute("class", "profile");
+        design_img.setAttribute("alt", "architect-profile");
+        design_img_div.append(design_img);
+
+        arcname = document.createElement("h3");
+        arcname.setAttribute("class", "profile-name");
+        arcname.innerText = design_owner["arcName"];
+        card.append(arcname);
+
+        exp_div = document.createElement("div");
+        exp_div.setAttribute("class", "exp_div");
+        card.append(exp_div);
+
+        preExp = document.createElement("pre");
+        preExp.innerText = "Experience : ";
+        exp_div.append(preExp);
+
+        arcexperience = document.createElement("p");
+        arcexperience.setAttribute("class", "about");
+        arcexperience.innerText = design_owner["arcExperience"];
+        exp_div.append(arcexperience);
+
+        detailsbtn = document.createElement("a");
+        detailsbtn.setAttribute("class", "btn");
+        detailsbtn.setAttribute(
+            "href",
+            "./user_detail_one_architect_profile.html?id=" + design_owner.arcId
+        );
+        detailsbtn.setAttribute("id", "detailsbtn");
+        detailsbtn.innerText = " More Details";
+        card.append(detailsbtn);
+
+        bookbtn = document.createElement("button");
+        bookbtn.setAttribute("class", "btn");
+        bookbtn.setAttribute("id", "bookbtn");
+        bookbtn.innerText = "Book now";
+        card.append(bookbtn);
+
+    </script>
+</body>
+
+</html>
