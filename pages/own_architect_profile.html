@@ -138,7 +138,6 @@
             }
         });
 
-
         const url = document.getElementById("userImage").setAttribute("src", oneArchitect["arcUrl"]);
         const name = document.getElementById("userName").innerHTML = oneArchitect["arcName"];
         const gender = document.getElementById("userGender").innerHTML = oneArchitect["arcGender"];
@@ -185,7 +184,7 @@
 
         }
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < oneArchitectdesign.length; i++) {
 
             let card;
             let img;
@@ -255,24 +254,30 @@
         })
 
 
-        let deletedesign = document.querySelectorAll("a.deletedes");
-        deletedesign.forEach(function (button) {
-            button.addEventListener("click", function () {
-                if (confirm("Are you sure to delete this design")) {
-                    let dData = JSON.parse(window.localStorage.getItem("personDesign"));
-                    let card = this.closest(".card");
-                    let indexOf = dData.indexOf(card);
-                    console.log(indexOf);
-                    console.log("its working");
-                    dData.splice(indexOf, 1);
-                    // Save updated data to local storage
-                    window.localStorage.setItem("personDesign", JSON.stringify(dData));
-                    // Redirect to Doctorslist page
-                    alert("successfully deleted")
-                    window.location.href = "./own_architect_profile.html";
-                }
-            });
-        });
+        // let designID = JSON.parse(localStorage.getItem("designID"));
+
+        // let oneID = deslist.find(function (event) {
+        //     let Id = event["designid"];
+        //     if (designID == Id) {
+        //         return true;
+        //     }
+        // });
+
+        // let delete_user = document.getElementById("deletedes")
+        // delete_user.addEventListener("click", function (event) {
+        //     event.preventDefault()
+        //     let index = deslist.indexOf(oneID)
+        //     let msg = confirm("Are you sure you want to delete this account")
+        //     if (msg !== true) {
+        //         return
+        //     } else {
+        //         deslist.splice(index, 1)
+        //         console.log(deslist);
+        //         localStorage.setItem("personDesign", JSON.stringify(deslist))
+        //         window.location.href = "../pages/signUp.html";
+        //     }
+        // });
+
 
 
 
