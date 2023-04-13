@@ -28,7 +28,7 @@
   background: #96aaec;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 12px 10px 15px#0101018f;
+  box-shadow: 12px 10px 15px #0101018f;
   user-select: none;
 }
 
@@ -72,7 +72,7 @@
   border-radius: 3px;
   border: 1px solid #28467f;
   font-weight: bold;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   cursor: pointer;
   color: #fff;
   transition: 0.2s;
