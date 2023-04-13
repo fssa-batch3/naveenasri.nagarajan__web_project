@@ -125,7 +125,6 @@
     <script>
 
 
-
         const singleData = JSON.parse(localStorage.getItem("Single_Data"));
         const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
         console.log(arcInfo);
@@ -237,6 +236,7 @@
             deletedes = document.createElement("a");
             deletedes.setAttribute("class", "deletedes");
             deletedes.setAttribute("id", "deletedes")
+            deletedes.setAttribute("onclick", "deletedesign(" + oneArchitectdesign[i].designid + ")")
             deletedes.innerText = "Delete";
             info_div.append(deletedes);
 
@@ -253,36 +253,23 @@
             })
         })
 
-
-        let designID = JSON.parse(localStorage.getItem("designID"));
-
-        let oneID = deslist.find(function (event) {
-            let Id = event["designid"];
-            if (designID == Id) {
-                return true;
-            }
-        });
-
-        let delete_user = document.getElementById("deletedes")
-        delete_user.addEventListener("click", function (event) {
-            event.preventDefault()
-            let index = deslist.indexOf(oneID)
-            let msg = confirm("Are you sure you want to delete this account")
-            if (msg !== true) {
-                return
-            } else {
+        function deletedesign(id) {
+            let oneDesign = deslist.find((e) => {
+                if (e["designid"] == id) {
+                    return true
+                }
+            })
+            let index = deslist.indexOf(oneDesign)
+            let check = confirm("are you want to delete")
+            console.log(index)
+            if (check === true) {
                 deslist.splice(index, 1)
-                console.log(deslist);
-                localStorage.setItem("personDesign", JSON.stringify(deslist))
+                localStorage.setItem("personDesign", JSON.stringify(deslist));
+                window.location.href = "./own_architect_profile.html";
+                alert("success")
             }
-        });
-
-
-
-
+        }
     </script>
-
-
 </body>
 
 </html>
