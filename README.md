@@ -88,7 +88,7 @@ design crud
 ### View architects details
 - Scenario 1: Successfully View architects details
     - Steps:
-        1. Log in as a buyer.
+        1. Log in as a Customer.
         2. Navigate to the Architects listing page.
         3. Select a Architect to view its details.
         4. Click the "More details" button.
@@ -107,7 +107,7 @@ design crud
 ### View design details
 - Scenario 1: Successfully View Designs details
     - Steps:
-        1. Log in as a buyer.
+        1. Log in as a Customer.
         2. Navigate to the Designs listing page.
         3. Select a Design to view its details.          
         4. Click the "More details" button.
@@ -117,7 +117,7 @@ design crud
 ### View architect profile through architect detail
 - Scenario 1: Successfully View architect profile through architect detail
     - Steps:
-        1. Log in as a buyer.
+        1. Log in as a Customer.
         2. Navigate to the Designs listing page.
         3. Select a Design to view its details.          
         4. Click the "More details" button.
@@ -147,43 +147,120 @@ design crud
         - The user can Delete their profile       
         - The user is redirected to the index page.
 
+## Architect
+
+### Create an account
+- Scenario 1: Successfully create an account
+    - Steps:
+        1. Navigate to the registration page.
+        2. Enter the required information such as  photo, name, gender, phone number,address,education,experience,document,model design, email, and password.
+        3. Click the "sign up" button.
+    - Expected Result:
+        - The user is redirected to the login page.
+
+### Create an account
+- Scenario 1: Successfully login in to account
+    - Steps:
+        1. Navigate to the login page.
+        2. Enter the required information such as email, and password.
+        3. Click the "login" button.
+    - Expected Result:
+        - The user is redirected to the User HomePage. 
+            
+### View architects list
+- Scenario 1: Successfully view architects list
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the architect page ( learn Page ).
+        3. View the list of available architects. 
+    - Expected Result:
+        - The user can view the list of architects.
+
+### View architects details
+- Scenario 1: Successfully View architects details
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the Architects listing page.
+        3. Select a Architect to view its details.
+        4. Click the "More details" button.
+    - Expected Result:
+        - The user can view the details of the selected Architect.
+
+### View Designs list
+- Scenario 1: Successfully view Designs list
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the Design page ( learn Page ).
+        3. View the list of available Designs.
+    - Expected Result:
+        - The user can view the list of Designs.
+
+### View design details
+- Scenario 1: Successfully View Designs details
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the Designs listing page.
+        3. Select a Design to view its details.          
+        4. Click the "More details" button.
+    - Expected Result:
+        - The user can view the details of the selected Design.
+
+### View architect profile through architect detail
+- Scenario 1: Successfully View architect profile through architect detail
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the Designs listing page.
+        3. Select a Design to view its details.          
+        4. Click the "More details" button.
+    - Expected Result:
+        - The user can view the details of the selected Architect profile.
+
+### Edit Design 
+- Scenario 1: Successfully edit Design
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the profile page.
+        3. Click the "Edit" button.
+        4. Navigate to the Edit design form page.
+        5. Update the Design details.
+        6. Click the "Submit" button.
+    - Expected Result:
+        - The Architect Design details are updated.
+
+### Delete Design
+- Scenario 1: Successfully Delete Design
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the profile page.
+        3. Click the "Delete" button.
+        4. confirm message will through in the top of the page.
+        4. Click the "ok" button.
+    - Expected Result:
+        - The Architect can Delete their Design       
+        - The Architect is redirected to the architect profile page.
 
 
+### Edit Architect profile details
+- Scenario 1: Successfully edit user profile details
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the profile page.
+        3. Click the "Edit" button.
+        4. Update the user profile details.
+        5. Click the "Submit" button.
+    - Expected Result:
+        - The Architect profile details are updated.
 
-booking page  
+### Delete Architect profile details
+- Scenario 1: Successfully Delete user profile
+    - Steps:
+        1. Log in as a Architect.
+        2. Navigate to the profile page.
+        3. Click the "Delete" button.
+        4. confirm message will through in the top of the page.
+        4. Click the "ok" button.
+    - Expected Result:
+        - The Architect can Delete their profile       
+        - The Architect is redirected to the index page.
 
 
-login an account  
-*Scenario 1: Successfully login in to account  
- *Steps:  
- a.Navigate to the login page.  
- b.Enter the required information such as email and password.  
- c.Click the "login" button.  
- \*Expected Result:  
- 1. The user is redirected to the customer profile page.  
- a.Click the "Edit" button.  
- b.You can edit your profile.  
- c.Click the "delete" button.  
- d.You can delete your profile.
-
-Architect:  
-Create an account  
-*Scenario 1: Successfully create an account  
- *Steps:  
- a.Navigate to the registration page.  
- b.Enter the required information such as photo,name,gender,phone number,address,education,experience,document,model design, email, and password.  
- c.Click the "sign up" button.  
- *Expected Result:  
- 1. The user is redirected to the login page.  
-login an account  
-*Scenario 1: Successfully login in to account  
- *Steps:  
- a.Navigate to the login page.  
- b.Enter the required information such as email and password.  
- c.Click the "login" button.  
- *Expected Result:  
- 1. The user is redirected to the profile page.  
- a.Click the "Edit" button.  
- b.You can edit your profile.  
- c.Click the "delete" button.  
- d.You can delete your profile.
