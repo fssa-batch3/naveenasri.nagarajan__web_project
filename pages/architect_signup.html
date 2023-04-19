@@ -21,7 +21,9 @@
                     <input type="url" id="image" required name="image" placeholder="Profileimage" /><br /><br />
 
                     <label>Name:</label>
-                    <input type="text" required id="name" placeholder="John robert" />
+                    <input type="text" required pattern="[A-Za-z0-9]+"
+                        title="Make sure that name should not contain space" required id="name"
+                        placeholder="enter your name" />
                     <br />
                     <br />
 
@@ -52,11 +54,15 @@
                     <br />
                     <br />
                     <label>Email:</label>
-                    <input type="email" required id="email" placeholder="abc@gmail.com" />
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        title="Make sure email should be in the correct pattern" required id="email"
+                        placeholder="abc@gmail.com" />
                     <br />
                     <br />
                     <label>Password:</label>
-                    <input type="text" required id="password" />
+                    <input type="text" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+                        title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space "
+                        required id="password" />
                     <br />
                     <br />
                     <label for="image">Document:</label>
