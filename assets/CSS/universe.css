@@ -20,6 +20,7 @@ nav {
   margin-right: 50px;
 }
 .a {
+  display: flex;
   text-decoration: none;
   color: #28467f;
   padding: 5px;
@@ -32,6 +33,10 @@ nav {
 .profile,
 .profileofuser {
   width: 40px;
+}
+
+.hamburger {
+  display: none;
 }
 /* header is ended */
 
@@ -163,7 +168,55 @@ footer h3 {
 /*mobile resposive */
 @media screen and (max-width: 600px) {
   /* header is started */
+  .hamburger {
+    display: block;
+    /* right: 0%; */
+  }
 
+  /* .a {
+    width: 200px;
+    height: 500px;
+    flex-direction: column;
+    display: none;
+    color: black;
+    background-color: aqua;
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+  }
+  nav {
+    display: block;
+    width: 300px;
+  } */
+
+  nav {
+    display: block;
+
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    /* margin-right: 0px; */
+    /* position: relative; */
+  }
+  .a {
+    background-color: rgb(233, 249, 16);
+    width: 150px;
+    color: rgb(100, 0, 98);
+    display: block;
+    text-decoration: none;
+    position: relative;
+    /* transform: translateX(100%); */
+    /* color: #28467f; */
+    padding: 5px;
+    top: 170px;
+    left: 100px;
+    right: 0px;
+  }
+
+  .section1 {
+    display: none;
+  }
   /* header is ended */
   * body {
     box-sizing: border-box;

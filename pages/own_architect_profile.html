@@ -33,90 +33,63 @@
     <!-- header is ended -->
     <section>
         <div class="main">
-            <div class="information">
+            <div class="personal_info">
                 <div>
-                    <img id="userImage" alt="Architect image" height="300px" width="300px"
-                        style="border-radius: 9px;" />
+                    <img id="userImage" class="information" alt="Architect image" height="400px" width="400px"
+                        style="border-radius: 3px;" />
                 </div>
-                <div class="list">
-                    <p class="info_para">
-                        personal information
-                    </p>
-                    <p class="info_para">
-                        Contact information
-                    </p>
-                    <p class="info_para">
-                        Works
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="clear-information">
                 <div class="basic-information">
                     <h2>personal information</h2>
                     <div class="brief-info">
-                        <p>
-                            Name:<span id="userName">john<span>
-                        </p>
-                        <p>
-                            Gender:<span id="userGender">Male</span>
-                        </p>
-                        <p>
-                            Phone number:<span id="userPhoneNumber">9445533779</span>
-                        </p>
-                        <p>
-                            Address:<span id="userAddress">3/567,kumar illam,Anna nagar,Namakkal,Tamil
-                                Nadu-637001</span>
-                        </p>
+                        <pre>Name         :<span id="userName">john<span></pre>
+                        <pre>Gender       :<span id="userGender">Male</span></pre>
+                        <pre>Phone number :<span id="userPhoneNumber">9445533779</span></pre>
+                        <pre>Address      :<span id="userAddress">3/567,kumar illam,Anna nagar,Namakkal,Tamil
+                                Nadu-637001</span></pre>
+                        <pre>Education    :<span id="userEducation">B. Arch,NAAB</span></pre>
+                        <pre>Experience   :<span id="userExperience">2 years</span></pre>
+                        <pre>Email        :<span id="userEmail">susikumar79@gmail.com</span></pre>
+                        <pre>Password     :<span id="userPassword">5437 9876 6543</span></pre>
                     </div>
                 </div>
+            </div>
 
-                <div class="basic-information">
-                    <h2>professional information</h2>
-                    <div class="brief-info">
-                        <p>
-                            Education:<span id="userEducation">B. Arch,NAAB</span>
-                        </p>
-                        <p>
-                            Experience:<span id="userExperience">2 years</span>
-                        </p>
-                        <p>
-                            Email:<span id="userEmail">susikumar79@gmail.com</span>
-                        </p>
-                        <p>
-                            Password:<span id="userPassword">5437 9876 6543</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="basic-information">
-                    <h2>Document</h2>
-                    <div>
-
-                        <img id="userDocument" class="free-img" alt="interior design">
-
-                    </div>
-                </div>
-
-                <div class="basic-information">
-                    <h2>Works</h2>
+            <div class="documentImage">
+                <div>
+                    <h2>Cover photo</h2>
                     <div class="design">
-
-                        <img id="userModelDesign" class="free-img" alt="interior design">
-
-                        <a href="./own_architect_design_apply_form.html">
-                            <img src="../assets/image/common/add.png" alt="add image">
-                        </a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPTGmNggQ1K2sTPUfAm-2I9p2zX0qlgjomg&usqp=CAU"
+                            id="userCoverPhoto" class="free-img" alt="interior design">
                     </div>
                 </div>
+                <div>
+                    <h2>Degree Certificate</h2>
+                    <div>
+                        <img id="userDocument" class="free-img" alt="interior design">
+                    </div>
+                </div>
+                <div>
+                    <h2>Nata Certificate</h2>
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPTGmNggQ1K2sTPUfAm-2I9p2zX0qlgjomg&usqp=CAU"
+                            id="userNataCertificate" class="free-img" alt="interior design">
+                    </div>
+                </div>
+            </div>
 
+
+            <div>
+                <h2>Sample Design</h2>
+                <div id="model-designs" class="modelDesign">
+                    <img id="userModelDesign" class="free-img" alt="interior design">
+                    <a href="./own_architect_design_apply_form.html">
+                        <img src="../assets/image/common/add.png" alt="add image">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="submit">
-
             <a href="./own_architect_profile_edit.html" class="edit_btn">Edit</a>
-
             <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
         </div>
     </section>
@@ -179,8 +152,6 @@
             if (singleData === deslist[i]["designemail"]) {
                 oneArchitectdesign.push(deslist[i]);
             }
-
-
         }
 
         for (let i = 0; i < oneArchitectdesign.length; i++) {
@@ -197,7 +168,7 @@
 
             card = document.createElement("div");
             card.setAttribute("class", "card");
-            document.querySelector("div.design").append(card);
+            document.querySelector("#model-designs").append(card);
             console.log(card);
 
             img = document.createElement("img");
@@ -273,4 +244,3 @@
 </body>
 
 </html>
-
