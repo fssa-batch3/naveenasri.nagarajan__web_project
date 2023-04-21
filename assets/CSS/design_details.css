@@ -1,36 +1,31 @@
 .mainimage {
-  width: 630px;
-  height: 460px;
-}
-.miniimage {
-  width: 200px;
-  height: 150px;
-}
-.photos {
-  width: 835px;
-  display: flex;
-  justify-content: space-between;
-}
-.minilist {
-  display: block;
+  width: 780px;
+  height: 520px;
 }
 .AboutArchitect {
   padding: 20px 80px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 .bio {
   width: 700px;
 }
+pre {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 23px;
+}
 .details {
   display: flex;
-  width: 1250px;
-  justify-content: space-between;
-  padding-left: 90px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#about {
+  width: 780px;
 }
 .details div {
-  width: 400px;
+  width: fit-content;
 }
 p {
   font-size: 23px;
@@ -38,4 +33,22 @@ p {
 span {
   padding-left: 40px;
   color: grey;
+}
+
+@media screen and (max-width: 600px) {
+  .mainimage {
+    width: 470px;
+    height: 340px;
+  }
+  .AboutArchitect {
+    padding: 50px;
+    justify-content: space-evenly;
+  }
+
+  p {
+    font-size: 19px;
+  }
+  #about {
+    width: 470px;
+  }
 }

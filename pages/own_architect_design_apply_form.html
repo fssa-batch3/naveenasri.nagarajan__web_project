@@ -37,9 +37,6 @@
                     <input type="text" id="pricepersquarefeet" />
                     <br />
                     <br />
-                </div>
-                <div class="form">
-
                     <label for="browser">type of room:</label>
                     <input list="browsers" name="browser" id="browser">
                     <datalist id="browsers">
@@ -50,6 +47,8 @@
                     </datalist>
                     <br />
                     <br />
+                </div>
+                <div class="form">
                     <label>Required dates:</label>
                     <input type="text" id="dates" placeholder="3 months" />
                     <br />
@@ -66,8 +65,12 @@
                     <input type="text" id="balcony" placeholder="2" />
                     <br />
                     <br />
-                    <label>paragraph about the design:</label>
+                    <label>Bio about the design:</label>
                     <textarea type="text" id="paragraph"></textarea>
+                    <br />
+                    <br />
+                    <label>Brief about the design:</label>
+                    <textarea type="text" id="brief_paragraph"></textarea>
                     <br />
                     <br />
 
@@ -108,6 +111,7 @@
             const detailbedroom = document.getElementById("bedroom").value.trim();
             const detailbalcony = document.getElementById("balcony").value.trim();
             const detailpara = document.getElementById("paragraph").value.trim();
+            const detailbriefpara = document.getElementById("brief_paragraph").value.trim();
             const detailid = Date.now();
 
             let designData = {
@@ -124,6 +128,7 @@
                 designbedroom: detailbedroom,
                 designbalcony: detailbalcony,
                 designpara: detailpara,
+                designbriefpara: detailbriefpara,
             }
 
 
