@@ -19,7 +19,8 @@
             <label for="name" class="all_label">username:</label>
             <br />
             <br />
-            <input type="text" required class="form-control" id="userName" />
+            <input type="text" pattern="[A-Za-z0-9]+" title="Make sure that name should not contain space" required
+                class="form-control" id="userName" />
         </div>
         <br />
         <div class="form-group">
@@ -30,17 +31,10 @@
         </div>
         <br />
         <div class="form-group">
-            <label for="pwd" class="all_label">Password:</label>
+            <label for="number" class="all_label">Phone Number:</label>
             <br />
             <br />
-            <input type="text" required class="form-control" id="password" />
-        </div>
-
-        <div class="form-group">
-            <label for="pwd" class="all_label">Confirm Password:</label>
-            <br />
-            <br />
-            <input type="text" required class="form-control" id="c_password" />
+            <input type="number" required class="form-control" id="phoneNumber" />
         </div>
         <br>
         <br>
@@ -65,13 +59,8 @@
         });
 
         const email = document.getElementById("email").value = singleUser["userEmail"];
-
         const proname = document.getElementById("userName").value = singleUser["userName"];
-
-        const pass = document.getElementById("password").value = singleUser["userPassword"];
-
-        const c_pass = document.getElementById("c_password").value = singleUser["userconPassword"];
-
+        const number = document.getElementById("phoneNumber").value = singleUser["userNumber"];
 
         // edit page function
         let submit = document.getElementById("form_E");
@@ -80,29 +69,23 @@
             // get data from edit form
             let userName = document.getElementById("userName").value;
             let userEmail = document.getElementById("email").value;
-            let userPassword = document.getElementById("password").value;
-            let userconPassword = document.getElementById("c_password").value;
+            let userNumber = document.getElementById("phoneNumber").value;
+
 
             let editUser_data = {
                 userName,
                 userEmail,
-                userPassword,
-                userconPassword,
+                userNumber
             };
 
 
             let newData = JSON.parse(localStorage.getItem("register"));
-
-            if (userPassword === userconPassword) {
-                let oldData = newData.find((i) => i.userEmail == userEmail);
-                let change = Object.assign(oldData, editUser_data);
-                let index = newData.indexOf(oldData);
-                newData[index] = change;
-                localStorage.setItem("register", JSON.stringify(newData));
-                window.location.href = "./own_user_profile.html";
-            } else {
-                alert("password and confirm password should be same")
-            }
+            let oldData = newData.find((i) => i.userEmail == userEmail);
+            let change = Object.assign(oldData, editUser_data);
+            let index = newData.indexOf(oldData);
+            newData[index] = change;
+            localStorage.setItem("register", JSON.stringify(newData));
+            window.location.href = "./own_user_profile.html";
 
         })
 

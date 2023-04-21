@@ -40,6 +40,14 @@ nav {
 }
 /* header is ended */
 
+input:valid {
+  border: 2px solid green;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
 a {
   text-decoration: none;
   color: #cee1ff;

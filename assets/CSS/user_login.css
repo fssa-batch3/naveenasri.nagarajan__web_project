@@ -4,15 +4,6 @@
   margin-top: 50px;
 }
 
-input:valid,
-input:active {
-  border: 2px solid green;
-}
-
-input:invalid {
-  border: 2px solid red;
-}
-
 .signupbtn {
   margin-top: 20px;
   color: #cee1ff;
@@ -43,7 +34,7 @@ button {
   width: 360px;
   background-color: #96aaec;
   font-size: 25px;
-  height: 360px;
+  height: 430px;
   padding: 50px;
   border-radius: 13px;
   position: relative;
