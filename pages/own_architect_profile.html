@@ -35,11 +35,12 @@
         <div class="main">
             <div class="personal_info">
                 <div>
-                    <img id="userImage" class="information" alt="Architect image" height="400px" width="400px"
-                        style="border-radius: 3px;" />
+                    <img id="userImage" class="information" alt="Architect image" />
                 </div>
                 <div class="basic-information">
-                    <h2>personal information</h2>
+                    <div>
+                        <h2>personal information</h2>
+                    </div>
                     <div class="brief-info">
                         <pre>Name         :<span id="userName">john<span></pre>
                         <pre>Gender       :<span id="userGender">Male</span></pre>
@@ -49,45 +50,44 @@
                         <pre>Education    :<span id="userEducation">B. Arch,NAAB</span></pre>
                         <pre>Experience   :<span id="userExperience">2 years</span></pre>
                         <pre>Email        :<span id="userEmail">susikumar79@gmail.com</span></pre>
-                        <pre>Password     :<span id="userPassword">5437 9876 6543</span></pre>
+                        <!-- <pre>Password     :<span id="userPassword">5437 9876 6543</span></pre> -->
                     </div>
-                </div>
-            </div>
-
-            <div class="documentImage">
-                <div>
-                    <h2>Cover photo</h2>
-                    <div class="design">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPTGmNggQ1K2sTPUfAm-2I9p2zX0qlgjomg&usqp=CAU"
-                            id="userCoverPhoto" class="free-img" alt="interior design">
-                    </div>
-                </div>
-                <div>
-                    <h2>Degree Certificate</h2>
-                    <div>
-                        <img id="userDocument" class="free-img" alt="interior design">
-                    </div>
-                </div>
-                <div>
-                    <h2>Nata Certificate</h2>
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPTGmNggQ1K2sTPUfAm-2I9p2zX0qlgjomg&usqp=CAU"
-                            id="userNataCertificate" class="free-img" alt="interior design">
-                    </div>
-                </div>
-            </div>
-
-
-            <div>
-                <h2>Sample Design</h2>
-                <div id="model-designs" class="modelDesign">
-                    <img id="userModelDesign" class="free-img" alt="interior design">
-                    <a href="./own_architect_design_apply_form.html">
-                        <img src="../assets/image/common/add.png" alt="add image">
-                    </a>
                 </div>
             </div>
         </div>
+
+        <div class="documentImage">
+            <div>
+                <h2>Cover photo</h2>
+                <div>
+                    <img id="userCoverPhoto" class="free-img" alt="coverPhoto">
+                </div>
+            </div>
+            <div>
+                <h2>Degree Certificate</h2>
+                <div>
+                    <img id="userDocument" class="free-img" alt="interior design">
+                </div>
+            </div>
+            <div>
+                <h2>Nata Certificate</h2>
+                <div>
+                    <img id="userNataCertificate" class="free-img" alt="interior design">
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h2>Sample Design</h2>
+            <div id="model-designs" class="modelDesign">
+                <img class="design" id="userModelDesign" class="free-img">
+                <a href="./own_architect_design_apply_form.html">
+                    <img src="../assets/image/common/add.png" alt="add image">
+                </a>
+            </div>
+        </div>
+
         <div class="submit">
             <a href="./own_architect_profile_edit.html" class="edit_btn">Edit</a>
             <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
@@ -115,12 +115,14 @@
         const gender = document.getElementById("userGender").innerHTML = oneArchitect["arcGender"];
         const phoneNumber = document.getElementById("userPhoneNumber").innerHTML = oneArchitect["arcPhoneNumber"];
         const address = document.getElementById("userAddress").innerHTML = oneArchitect["arcAddress"];
+        const coverphoto = document.getElementById("userCoverPhoto").setAttribute("src", oneArchitect["arcCoverPhoto"]);
         const education = document.getElementById("userEducation").innerHTML = oneArchitect["arcEducation"];
         const experience = document.getElementById("userExperience").innerHTML = oneArchitect["arcExperience"];
         const email = document.getElementById("userEmail").innerHTML = oneArchitect["arcEmail"];
-        const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
+        // const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
         const graduatedocument = document.getElementById("userDocument").setAttribute("src", oneArchitect["arcDocument"]);
-        const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
+        const natacertificate = document.getElementById("userNataCertificate").setAttribute("src", oneArchitect["arcNataCertificate"]);
+        // const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
 
 
 

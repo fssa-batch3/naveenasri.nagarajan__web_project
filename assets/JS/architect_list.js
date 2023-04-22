@@ -30,7 +30,7 @@ for (i = 0; i < select_architect_list.length; i++) {
   design_img_div.setAttribute(
     "style",
     "background: url(" +
-      select_architect_list[i]["arcModelDesign"] +
+      select_architect_list[i]["arcCoverPhoto"] +
       ") no-repeat center center / contain;"
   );
   card.append(design_img_div);

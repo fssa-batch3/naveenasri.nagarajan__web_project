@@ -15,6 +15,8 @@
   left: 140px;
   border: 7px solid #28467f;
   border-radius: 3px;
+  width: 400px;
+  height: 400px;
 }
 
 .modelDesign {
@@ -36,8 +38,15 @@ h2 {
   width: 400px;
   height: 270px;
 }
+.brief-info {
+  width: 400px;
+}
+#userAddress {
+  width: 400px;
+}
 
 .submit {
+  /* position: fixed; */
   /* margin-top: 5%; */
   width: 100%;
   display: flex;

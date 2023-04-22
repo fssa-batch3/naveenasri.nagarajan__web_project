@@ -18,8 +18,9 @@
                 <div class="form">
                     <h2>personal information</h2>
                     <label for="image">Photo:</label>
-                    <input type="url" required id="userImage" name="image" placeholder="Profileimage" /><br /><br />
-
+                    <input type="url" required id="userImage" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
                     <label>Name:</label>
                     <input type="text" required id="userName" placeholder="John robert" />
                     <br />
@@ -36,10 +37,26 @@
                     <input type="text" required id="userAddress" />
                     <br />
                     <br />
+                    <label for="image">Cover Photo:</label>
+                    <input type="url" id="userCoverPhoto" required name="image" placeholder="Cover photo design" />
+                    <br />
+                    <br />
+
                 </div>
                 <div class="form">
                     <h2>professional information</h2>
-
+                    <label>Email:</label>
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        title="Make sure email should be in the correct pattern" required id="userEmail"
+                        placeholder="abc@gmail.com" disabled />
+                    <br />
+                    <br />
+                    <!-- <label>Password:</label>
+                    <input type="text" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+                        title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space "
+                        required id="userPassword" />
+                    <br />
+                    <br /> -->
                     <label>Education:</label>
                     <input type="text" required id="userEducation" placeholder="Bachelor of architects" />
                     <br />
@@ -48,21 +65,21 @@
                     <input type="text" required id="userExperience" placeholder="2 years" />
                     <br />
                     <br />
-                    <label>Email:</label>
-                    <input type="email" required id="userEmail" placeholder="naveen32@gmail.com" disabled />
-                    <br />
-                    <br />
-                    <label>Password:</label>
-                    <input type="text" required id="userPassword" />
-                    <br />
-                    <br />
-                    <label for="image">Document:</label>
-                    <input type="url" required id="userDocument" name="image" placeholder="Profileimage" /><br /><br />
 
-                    <label for="image">model design:</label>
+                    <label for="image">Degree Certificate:</label>
+                    <input type="url" required id="userDocument" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
+
+                    <label for="image">NATA certificate:</label>
+                    <input type="url" required id="userNataCertificate" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
+
+                    <!-- <label for="image">model design:</label>
                     <input type="url" required id="userModelDesign" name="image"
                         placeholder="Profileimage" /><br /><br />
-                    <br />
+                    <br /> -->
 
                     <div class="submit">
 
@@ -98,12 +115,14 @@
         const gender = document.getElementById("userGender").value = oneArchitect["arcGender"];
         const phoneNumber = document.getElementById("userPhoneNumber").value = oneArchitect["arcPhoneNumber"];
         const address = document.getElementById("userAddress").value = oneArchitect["arcAddress"];
+        const coverPhoto = document.getElementById("userCoverPhoto").value = oneArchitect["arcCoverPhoto"];
         const education = document.getElementById("userEducation").value = oneArchitect["arcEducation"];
         const experience = document.getElementById("userExperience").value = oneArchitect["arcExperience"];
         const email = document.getElementById("userEmail").value = oneArchitect["arcEmail"];
-        const password = document.getElementById("userPassword").value = oneArchitect["arcPassword"];
+        // const password = document.getElementById("userPassword").value = oneArchitect["arcPassword"];
         const graduatedocument = document.getElementById("userDocument").value = oneArchitect["arcDocument"];
-        const modelDesign = document.getElementById("userModelDesign").value = oneArchitect["arcModelDesign"];
+        const natacertificate = document.getElementById("userNataCertificate").value = oneArchitect["arcNataCertificate"];
+        // const modelDesign = document.getElementById("userModelDesign").value = oneArchitect["arcModelDesign"];
 
         // edit page function
         let complete = document.getElementById("architectForm3");
@@ -119,12 +138,14 @@
             let arcGender = document.getElementById("userGender").value;
             let arcPhoneNumber = document.getElementById("userPhoneNumber").value;
             let arcAddress = document.getElementById("userAddress").value;
+            let arcCoverPhoto = document.getElementById("userCoverPhoto").value;
             let arcEducation = document.getElementById("userEducation").value;
             let arcExperience = document.getElementById("userExperience").value;
             let arcEmail = document.getElementById("userEmail").value;
-            let arcPassword = document.getElementById("userPassword").value;
+            // let arcPassword = document.getElementById("userPassword").value;
             let arcDocument = document.getElementById("userDocument").value;
-            let arcModelDesign = document.getElementById("userModelDesign").value;
+            let arcNataCertificate = document.getElementById("userNataCertificate").value;
+            // let arcModelDesign = document.getElementById("userModelDesign").value;
 
 
             let architectUser_data = {
@@ -133,12 +154,14 @@
                 arcGender,
                 arcPhoneNumber,
                 arcAddress,
+                arcCoverPhoto,
                 arcEducation,
                 arcExperience,
                 arcEmail,
-                arcPassword,
+                // arcPassword,
                 arcDocument,
-                arcModelDesign,
+                arcNataCertificate,
+                // arcModelDesign,
             };
 
 

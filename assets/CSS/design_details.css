@@ -19,18 +19,16 @@ pre {
 .details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
-#about {
+.details div div {
   width: 780px;
 }
-.details div {
-  width: fit-content;
-}
 p {
-  font-size: 23px;
+  font-size: 25px;
 }
 span {
+  font-size: 23px;
   padding-left: 40px;
   color: grey;
 }
@@ -48,7 +46,10 @@ span {
   p {
     font-size: 19px;
   }
-  #about {
+  /* #about {
+    width: 470px;
+  } */
+  .details div div {
     width: 470px;
   }
 }
