@@ -69,8 +69,12 @@ for (i = 0; i < select_architect_list.length; i++) {
   detailsbtn.innerText = " More Details";
   card.append(detailsbtn);
 
-  bookbtn = document.createElement("button");
+  bookbtn = document.createElement("a");
   bookbtn.setAttribute("class", "btn");
+  bookbtn.setAttribute(
+    "href",
+    "./user_book_now_form.html?id=" + arclist[i].arcId
+  );
   bookbtn.setAttribute("id", "bookbtn");
   bookbtn.innerText = "Book now";
   card.append(bookbtn);

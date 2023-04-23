@@ -33,7 +33,9 @@
                     <br />
 
                     <label>Phone number:</label>
-                    <input type="tel" required id="phonenumber" placeholder="9218457240" />
+                    <input type="tel" required pattern="[789]{1}[0-9]{9}"
+                        title="Phone number with 7-9 and remaing 9 digit with 0-9" id="phonenumber"
+                        placeholder="9218457240" />
                     <br />
                     <br />
 
@@ -42,7 +44,9 @@
                     <br />
                     <br />
                     <label for="image">Cover Photo:</label>
-                    <input type="url" id="coverphoto" required name="image" placeholder="Cover photo design" />
+                    <input type="url"
+                        pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                        id="coverphoto" required name="image" placeholder="Cover photo design" />
                     <br />
                     <br />
 
@@ -70,11 +74,15 @@
                     <br />
                     <br />
                     <label for="image">Degree certificate:</label>
-                    <input type="url" required id="document" name="image" placeholder="b.arch certificate" />
+                    <input type="url"
+                        pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                        required id="document" name="image" placeholder="b.arch certificate" />
                     <br />
                     <br />
                     <label for="image">NATA certificate:</label>
-                    <input type="url" required id="natacertificate" name="image" placeholder="nata certificate" />
+                    <input type="url"
+                        pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                        required id="natacertificate" name="image" placeholder="nata certificate" />
                     <br />
                     <br />
                     <!-- <label for="image">model design:</label>

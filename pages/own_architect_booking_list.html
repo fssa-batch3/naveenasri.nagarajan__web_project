@@ -33,29 +33,29 @@
 
     <!-- maincontainer is started -->
     <div class="container">
-        <div class="list">
-            <input type="text" placeholder="Search.." name="search" class="text-search" />
-            <div>
-                <p>Naveen kumar</p>
-            </div>
-        </div>
         <div class="list-of-customer">
             <div class="a-form">
                 <form>
                     <label>First name :</label>
-                    <input type="text" placeholder="Naveen" style="margin-left: 55px" />
+                    <input id="firstname" type="text" placeholder="enter your name" />
                     <br /><br />
                     <label>Last name :</label>
-                    <input type="text" placeholder="kumar" style="margin-left: 57px" />
+                    <input id="lastname" type="text" placeholder="enter your name" />
                     <br /><br />
-                    <label>Email :</label>
-                    <input type="email" placeholder="naveen32@gmail.com" style="margin-left: 105px" />
+                    <label>User Email :</label>
+                    <input id="email" type="email" placeholder="abc@gmail.com" />
                     <br /><br />
                     <label>phone number :</label>
-                    <input type="tel" placeholder="9218457240" style="margin-left: 10px" />
+                    <input id="phonenumber" type="tel" placeholder="phone number" />
                     <br /><br />
-                    <label for="textarea">Your message :</label>
-                    <textarea id="textarea" name="textarea" rows="2" cols="40" style="margin-left: 19px">
+                    <label>Design name :</label>
+                    <input id="designname" type="text" placeholder="design name" />
+                    <br /><br />
+                    <label>Design url :</label>
+                    <input id="designurl" type="text" placeholder="url" />
+                    <br /><br />
+                    <label for="textarea">Message :</label>
+                    <textarea id="textarea" name="textarea" rows="2" cols="40">
                     </textarea>
                     <br />
                     <div class="both-btn">
@@ -64,72 +64,27 @@
                     </div>
                 </form>
             </div>
-            <div class="a-form">
-                <form>
-                    <label>First name :</label>
-                    <input type="text" placeholder="Naveen" style="margin-left: 55px" />
-                    <br /><br />
-                    <label>Last name :</label>
-                    <input type="text" placeholder="kumar" style="margin-left: 57px" />
-                    <br /><br />
-                    <label>Email :</label>
-                    <input type="email" placeholder="naveen32@gmail.com" style="margin-left: 105px" />
-                    <br /><br />
-                    <label>phone number :</label>
-                    <input type="tel" placeholder="9218457240" style="margin-left: 10px" />
-                    <br /><br />
-                    <label for="textarea">Your message :</label>
-                    <textarea id="textarea" name="textarea" rows="2" cols="40" style="margin-left: 19px">
-                    </textarea>
-                    <br />
-                    <div class="both-btn">
-                        <a href="#"><button>Accept</button></a>
-                        <a href="#"><button>Not Accept</button></a>
-                    </div>
-                </form>
-            </div>
+
+
         </div>
     </div>
 
-    <!-- main contanier is ended -->
+
+    <script>
+        // const bookinglist = JSON.parse(localStorage.getItem("userbooking"));
+
+        // // let singleArchitect =
+
+        // const bookfirstname = document.getElementById("firstname").value;
+        // const booklastname = document.getElementById("lastname").value;
+        // const bookemail = document.getElementById("email").value;
+        // const bookphonenumber = document.getElementById("phonenumber").value;
+        // const bookdesignname = document.getElementById("designname").value;
+        // const bookdesignurl = document.getElementById("designurl").value;
+        // const bookmessage = document.getElementById("messagetextarea").value;
 
 
-    <!-- footer -->
-    <footer>
-        <div class="footer">
-            <div class="footdiv1">
-                <h3>About us</h3>
-                <p>
-                    Interior design is a fast-growing enterprise rendering cutting edge
-                    solutions across the domains of architecture, interior design and
-                    continuum. The range of services provided include planning,
-                    designing, interior design, engineering and construction of
-                    commercial and residential spaces.
-                </p>
-            </div>
-            <div class="social-media">
-                <img class="icons" src="../assets/image/common/instagram.png" alt="instagram" />
-                <img class="icons" src="../assets/image/common/youtube.png" alt="youtube" />
-                <img class="icons" src="../assets/image/common/twitter.png" alt="twitter" />
-                <img class="icons" src="../assets/image/common/facebook.png" alt="facebook" />
-                <img class="icons" src="../assets/image/common/gmail.png" alt="gmail" />
-            </div>
-            <div class="footdiv3">
-                <h3>CONTACT US</h3>
-                <h4>Head office</h4>
-                <p>
-                    Vijay Shanthi Block-B, Global Infocity, 40, MGR Main Rd, Perungudi,
-                    Chennai, Tamil Nadu 600096.
-                </p>
-                <h4>Phone Number</h4>
-                <p>9678453665</p>
-                <h4>Email us</h4>
-                <p>interiordesign@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-
-
+    </script>
 
 </body>
 

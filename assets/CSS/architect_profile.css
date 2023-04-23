@@ -1,6 +1,7 @@
 .personal_info {
   margin-left: 170px;
   display: flex;
+  flex-wrap: wrap;
   width: 1000px;
   justify-content: space-around;
   align-items: center;
