@@ -6,7 +6,9 @@
   width: 200px;
 }
 /* }header is ended */
-
+section div {
+  padding: 20px 0px;
+}
 .para {
   width: 800px;
 }

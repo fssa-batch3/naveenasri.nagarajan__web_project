@@ -48,25 +48,26 @@
                     <label>phone number :</label>
                     <input id="phonenumber" type="tel" placeholder="phone number" />
                     <br /><br />
+                    <label>Design url :</label>
+                    <input id="designurl" type="text" placeholder="url" />
+                    <br /><br />
                     <label>Design name :</label>
                     <input id="designname" type="text" placeholder="design name" />
                     <br /><br />
-                    <label>Expected amount:</label>
+                    <label>Expected Amount:</label>
                     <input id="amount" type="number" />
                     <br /><br />
-                    <label>Expected time period:</label>
+                    <label>Time period:</label>
                     <input id="time" type="number" />
                     <br /><br />
                     <label for="textarea">Message :</label>
                     <textarea id="textarea" name="textarea" rows="2" cols="40">
                     </textarea>
                     <br />
-                    <label>Design url :</label>
-                    <input id="designurl" type="text" placeholder="url" />
-                    <br /><br />
+
                     <div class="both-btn">
-                        <a href="#"><button>Accept</button></a>
-                        <a href="#"><button>Not Accept</button></a>
+                        <a class="verifybtn" href="#">Accept</a>
+                        <a class="verifybtn" href="#">Not Accept </a>
                     </div>
                 </form>
             </div>
@@ -89,7 +90,142 @@
         });
         console.log(arcmatch);
 
+        for (let i = 0; i = booked.length; i++) {
 
+            const form = document.createElement("form");
+            form.setAttribute("class", "a-form");
+
+            const firstNameLabel = document.createElement("label");
+            firstNameLabel.textContent = "First name :";
+            form.appendChild(firstNameLabel);
+
+            const firstNameInput = document.createElement("input");
+            firstNameInput.setAttribute("id", "firstname");
+            firstNameInput.setAttribute("type", "text");
+            // firstNameInput.setAttribute("placeholder", "enter your name");
+            form.appendChild(firstNameInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const lastNameLabel = document.createElement("label");
+            lastNameLabel.textContent = "Last name :";
+            form.appendChild(lastNameLabel);
+
+            const lastNameInput = document.createElement("input");
+            lastNameInput.setAttribute("id", "lastname");
+            lastNameInput.setAttribute("type", "text");
+            // lastNameInput.setAttribute("placeholder", "enter your name");
+            form.appendChild(lastNameInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const emailLabel = document.createElement("label");
+            emailLabel.textContent = "User Email :";
+            form.appendChild(emailLabel);
+
+            const emailInput = document.createElement("input");
+            emailInput.setAttribute("id", "email");
+            emailInput.setAttribute("type", "email");
+            // emailInput.setAttribute("placeholder", "abc@gmail.com");
+            form.appendChild(emailInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const phoneLabel = document.createElement("label");
+            phoneLabel.textContent = "phone number :";
+            form.appendChild(phoneLabel);
+
+            const phoneInput = document.createElement("input");
+            phoneInput.setAttribute("id", "phonenumber");
+            phoneInput.setAttribute("type", "tel");
+            // phoneInput.setAttribute("placeholder", "phone number");
+            form.appendChild(phoneInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const designUrlLabel = document.createElement("label");
+            designUrlLabel.textContent = "Design url :";
+            form.appendChild(designUrlLabel);
+
+            const designUrlInput = document.createElement("input");
+            designUrlInput.setAttribute("id", "designurl");
+            designUrlInput.setAttribute("type", "text");
+            // designUrlInput.setAttribute("placeholder", "url");
+            form.appendChild(designUrlInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const designNameLabel = document.createElement("label");
+            designNameLabel.textContent = "Design name :";
+            form.appendChild(designNameLabel);
+
+            const designNameInput = document.createElement("input");
+            designNameInput.setAttribute("id", "designname");
+            designNameInput.setAttribute("type", "text");
+            // designNameInput.setAttribute("placeholder", "design name");
+            form.appendChild(designNameInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const expectedAmountLabel = document.createElement("label");
+            expectedAmountLabel.textContent = "Expected Amount:";
+            form.appendChild(expectedAmountLabel);
+
+            const expectedAmountInput = document.createElement("input");
+            expectedAmountInput.setAttribute("id", "amount");
+            expectedAmountInput.setAttribute("type", "number");
+            form.appendChild(expectedAmountInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const timePeriodLabel = document.createElement("label");
+            timePeriodLabel.textContent = "Time period:";
+            form.appendChild(timePeriodLabel);
+
+            const timePeriodInput = document.createElement("input");
+            timePeriodInput.setAttribute("id", "time");
+            timePeriodInput.setAttribute("type", "number");
+            form.appendChild(timePeriodInput);
+
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            const messageLabel = document.createElement("label");
+            messageLabel.setAttribute("for", "textarea");
+            messageLabel.textContent = "Message :";
+            form.appendChild(messageLabel);
+
+            const messageTextarea = document.createElement("textarea");
+            messageTextarea.setAttribute("id", "textarea");
+            messageTextarea.setAttribute("name", "textarea");
+            messageTextarea.setAttribute("rows", "2");
+            messageTextarea.setAttribute("cols", "40");
+            form.appendChild(messageTextarea);
+
+            form.appendChild(document.createElement("br"));
+
+            const bothBtn = document.createElement("div");
+            bothBtn.classList.add("both-btn");
+
+            const acceptBtn = document.createElement("a");
+            acceptBtn.classList.add("verifybtn");
+            acceptBtn.href = "#";
+            acceptBtn.textContent = "Accept";
+            bothBtn.appendChild(acceptBtn);
+
+            const notAcceptBtn = document.createElement("a");
+            notAcceptBtn.classList.add("verifybtn");
+            notAcceptBtn.href = "#";
+            notAcceptBtn.textContent = "Not Accept";
+            bothBtn.appendChild(notAcceptBtn);
+        }
 
     </script>
 

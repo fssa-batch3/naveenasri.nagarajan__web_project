@@ -1,23 +1,26 @@
 #firstname {
-  margin-left: 55px;
+  margin-left: 65px;
 }
 #lastname {
-  margin-left: 57px;
+  margin-left: 67px;
 }
 #email {
-  margin-left: 52px;
+  margin-left: 67px;
 }
 #phonenumber {
-  margin-left: 9px;
+  margin-left: 23px;
 }
 #designname {
-  margin-left: 25px;
+  margin-left: 43px;
 }
 #designurl {
-  margin-left: 55px;
+  margin-left: 70px;
+}
+#time {
+  margin-left: 59px;
 }
 #textarea {
-  margin-left: 70px;
+  margin-left: 84px;
 }
 .bookingpage {
   margin-top: 100px;
@@ -33,6 +36,7 @@ a {
     rgba(178, 197, 255, 1) 60%,
     rgb(202, 215, 254) 100%
   );
+  width: 570px;
   font-size: 23px;
   padding: 50px;
   border-radius: 13px;
@@ -57,7 +61,7 @@ textarea {
 .text-search {
   width: 300px;
 }
-button {
+.verifybtn {
   float: right;
   margin-top: 20px;
   margin-left: 20px;
