@@ -130,7 +130,9 @@ h3 {
   transition: 0.4s;
 }
 .border:hover {
-  border: 2px solid #28467f;
+  -webkit-box-shadow: 10px 9px 36px 0px rgba(157, 164, 176, 0.81);
+  -moz-box-shadow: 10px 9px 36px 0px rgba(157, 164, 176, 0.81);
+  box-shadow: 10px 9px 36px 0px rgba(157, 164, 176, 0.81);
 }
 
 .reviewer {

@@ -17,23 +17,18 @@
         <div class="list-of-customer">
             <div class="a-form bookingpage">
                 <form id="bookingform">
-                    <label>First name :</label>
-                    <input id="firstname" type="text" placeholder="enter your name" />
-                    <br /><br />
-                    <label>Last name :</label>
-                    <input id="lastname" type="text" placeholder="enter your name" />
-                    <br /><br />
-                    <label>User Email :</label>
-                    <input id="email" type="email" placeholder="abc@gmail.com" />
-                    <br /><br />
-                    <label>phone number :</label>
-                    <input id="phonenumber" type="tel" placeholder="phone number" />
-                    <br /><br />
+
                     <label>Design name :</label>
                     <input id="designname" type="text" placeholder="design name" />
                     <br /><br />
                     <label>Design url :</label>
                     <input id="designurl" type="text" placeholder="url" />
+                    <br /><br />
+                    <label>Expected amount:</label>
+                    <input id="amount" type="number" />
+                    <br /><br />
+                    <label>Expected time period:</label>
+                    <input id="time" type="number" />
                     <br /><br />
                     <label for="textarea">Message :</label>
                     <textarea id="messagetextarea" name="textarea" rows="2" cols="40">
@@ -53,43 +48,74 @@
 
 
     <script>
+
         const bookingform = document.getElementById("bookingform");
         bookingform.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            let userbooking = [];
-            console.log(userbooking);
+            const allarc = JSON.parse(localStorage.getItem("personArchitect"));
+            console.log(allarc)
 
-            if (localStorage.getItem("userbooking") != null) {
-                userbooking = JSON.parse(localStorage.getItem("userbooking"))
-            }
+            let urlSearch = window.location.search;
+            console.log(urlSearch);
+            let url_params = new URLSearchParams(urlSearch);
+            console.log(url_params);
+            // console.log(URLSearchParams)
+            let get_id = url_params.get("id");
+            console.log(get_id);
 
-            const bookfirstname = document.getElementById("firstname").value.trim();
-            const booklastname = document.getElementById("lastname").value.trim();
-            const bookemail = document.getElementById("email").value.trim();
-            const bookphonenumber = document.getElementById("phonenumber").value.trim();
+            let oneArc = allarc.find(function (event) {
+                let arcId = event["arcId"];
+                if (get_id == arcId) {
+                    return true;
+                }
+            });
+            console.log(oneArc);
+
+
+            const thisuser = JSON.parse(localStorage.getItem("this_user"));
+            const alluser = JSON.parse(localStorage.getItem("register"));
+
+
+            let ownuser = alluser.find(function (event) {
+                let userEmail = event["userEmail"];
+                if (thisuser == userEmail) {
+                    return true;
+                }
+            });
+            console.log(ownuser);
+
+
             const bookdesignname = document.getElementById("designname").value.trim();
             const bookdesignurl = document.getElementById("designurl").value.trim();
+            const bookamount = document.getElementById("amount").value.trim();
+            const booktime = document.getElementById("time").value.trim();
             const bookmessage = document.getElementById("messagetextarea").value.trim();
             const bookid = Date.now();
 
-            let bookingData = {
+
+            let bookuserdetail = {
+                userId: ownuser.userId,
+                userName: ownuser.userName,
+                userEmail: ownuser.userEmail,
+                userNumber: ownuser.userNumber,
                 bookid: bookid,
-                bookfirstname: bookfirstname,
-                booklastname: booklastname,
-                bookemail: bookemail,
-                bookphonenumber: bookphonenumber,
                 bookdesignname: bookdesignname,
                 bookdesignurl: bookdesignurl,
+                bookamount: bookamount,
+                booktime: booktime,
                 bookmessage: bookmessage,
             }
 
-            console.log(bookingData);
-
-            userbooking.push(bookingData);
-            const str = JSON.stringify(userbooking);
+            oneArc.booked.push(bookuserdetail)
+            console.log(bookuserdetail);
+            let onearcindex = allarc.indexOf(oneArc);
+            console.log(onearcindex);
+            allarc[onearcindex] = oneArc;
+            console.log(oneArc)
+            const str = JSON.stringify(allarc);
             confirm("Make sure the given details should be correct we give this details to the Architect whom you select");
-            window.localStorage.setItem("userbooking", str);
+            window.localStorage.setItem("personArchitect", str);
 
         })
 

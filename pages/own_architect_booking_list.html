@@ -51,13 +51,19 @@
                     <label>Design name :</label>
                     <input id="designname" type="text" placeholder="design name" />
                     <br /><br />
-                    <label>Design url :</label>
-                    <input id="designurl" type="text" placeholder="url" />
+                    <label>Expected amount:</label>
+                    <input id="amount" type="number" />
+                    <br /><br />
+                    <label>Expected time period:</label>
+                    <input id="time" type="number" />
                     <br /><br />
                     <label for="textarea">Message :</label>
                     <textarea id="textarea" name="textarea" rows="2" cols="40">
                     </textarea>
                     <br />
+                    <label>Design url :</label>
+                    <input id="designurl" type="text" placeholder="url" />
+                    <br /><br />
                     <div class="both-btn">
                         <a href="#"><button>Accept</button></a>
                         <a href="#"><button>Not Accept</button></a>
@@ -71,17 +77,18 @@
 
 
     <script>
-        // const bookinglist = JSON.parse(localStorage.getItem("userbooking"));
 
-        // // let singleArchitect =
+        const Architectlist = JSON.parse(localStorage.getItem("personArchitect"));
+        const singleArc = JSON.parse(localStorage.getItem("Single_Data"));
 
-        // const bookfirstname = document.getElementById("firstname").value;
-        // const booklastname = document.getElementById("lastname").value;
-        // const bookemail = document.getElementById("email").value;
-        // const bookphonenumber = document.getElementById("phonenumber").value;
-        // const bookdesignname = document.getElementById("designname").value;
-        // const bookdesignurl = document.getElementById("designurl").value;
-        // const bookmessage = document.getElementById("messagetextarea").value;
+        let arcmatch = Architectlist.find(function (event) {
+            let arcEmail = event["arcEmail"];
+            if (singleArc == arcEmail) {
+                return true;
+            }
+        });
+        console.log(arcmatch);
+
 
 
     </script>

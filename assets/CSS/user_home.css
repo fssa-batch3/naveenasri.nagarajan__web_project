@@ -6,6 +6,10 @@
   width: 270px;
 }
 /* }header is ended */
+
+section div {
+  padding: 20px 0px;
+}
 .section2,
 .section3 {
   padding: 40px 0;
@@ -48,9 +52,66 @@ section.section4 div.sec_4 {
   text-align: center;
   font-size: 19px;
 }
+
+/* question and answer */
+
+.faq-section {
+  width: 750px;
+  background-color: #ffff;
+  font-family: "Lato", sans-serif;
+  padding: 20px 315px;
+  margin-bottom: 20px;
+}
+
+header > p {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 52px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+span {
+  cursor: pointer;
+  margin-top: 4px;
+  color: #28467f;
+}
+
+summary {
+  font-size: 20px;
+  color: #28467f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+summary::marker {
+  display: none;
+  content: "";
+}
+
+details > p {
+  max-width: 650px;
+  color: #000000;
+  font-size: 18px;
+  line-height: 155%;
+  letter-spacing: 0.1px;
+  margin-bottom: 40px;
+  padding-left: 10px;
+}
+/* question and answer */
 @media screen and (max-width: 600px) {
   .home-img1 {
     width: 300px;
     height: 200px;
+  }
+
+  .faq-section {
+    width: 530px;
+    padding: 20px 0px;
   }
 }
