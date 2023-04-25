@@ -34,7 +34,7 @@
     <!-- maincontainer is started -->
     <div class="container">
         <div class="list-of-customer">
-            <div class="a-form">
+            <!-- <div class="a-form">
                 <form>
                     <label>First name :</label>
                     <input id="firstname" type="text" placeholder="enter your name" />
@@ -70,7 +70,7 @@
                         <a class="verifybtn" href="#">Not Accept </a>
                     </div>
                 </form>
-            </div>
+            </div> -->
 
 
         </div>
@@ -90,33 +90,34 @@
         });
         console.log(arcmatch);
 
-        for (let i = 0; i = booked.length; i++) {
+        for (let i = 0; i < arcmatch.booked.length; i++) {
 
             const form = document.createElement("form");
             form.setAttribute("class", "a-form");
 
-            const firstNameLabel = document.createElement("label");
-            firstNameLabel.textContent = "First name :";
-            form.appendChild(firstNameLabel);
+            const designUrlLabel = document.createElement("label");
+            // designUrlLabel.textContent = "Design url :";
+            form.appendChild(designUrlLabel);
 
-            const firstNameInput = document.createElement("input");
-            firstNameInput.setAttribute("id", "firstname");
-            firstNameInput.setAttribute("type", "text");
-            // firstNameInput.setAttribute("placeholder", "enter your name");
-            form.appendChild(firstNameInput);
+            const designUrlInput = document.createElement("img");
+            designUrlInput.setAttribute("id", "designurl");
+            designUrlInput.setAttribute("class", "designurl");
+            designUrlInput.setAttribute("type", "text");
+            designUrlInput.setAttribute("src", arcmatch["booked"][i]["bookdesignurl"]);
+            form.appendChild(designUrlInput);
 
             form.appendChild(document.createElement("br"));
             form.appendChild(document.createElement("br"));
 
-            const lastNameLabel = document.createElement("label");
-            lastNameLabel.textContent = "Last name :";
-            form.appendChild(lastNameLabel);
+            const nameLabel = document.createElement("label");
+            nameLabel.textContent = "First name :";
+            form.appendChild(nameLabel);
 
-            const lastNameInput = document.createElement("input");
-            lastNameInput.setAttribute("id", "lastname");
-            lastNameInput.setAttribute("type", "text");
-            // lastNameInput.setAttribute("placeholder", "enter your name");
-            form.appendChild(lastNameInput);
+            const nameInput = document.createElement("input");
+            nameInput.setAttribute("id", "firstname");
+            nameInput.setAttribute("type", "text");
+            nameInput.value = arcmatch["booked"][i]["userName"];
+            form.appendChild(nameInput);
 
             form.appendChild(document.createElement("br"));
             form.appendChild(document.createElement("br"));
@@ -128,7 +129,7 @@
             const emailInput = document.createElement("input");
             emailInput.setAttribute("id", "email");
             emailInput.setAttribute("type", "email");
-            // emailInput.setAttribute("placeholder", "abc@gmail.com");
+            emailInput.value = arcmatch["booked"][i]["userEmail"];
             form.appendChild(emailInput);
 
             form.appendChild(document.createElement("br"));
@@ -141,24 +142,12 @@
             const phoneInput = document.createElement("input");
             phoneInput.setAttribute("id", "phonenumber");
             phoneInput.setAttribute("type", "tel");
-            // phoneInput.setAttribute("placeholder", "phone number");
+            phoneInput.value = arcmatch["booked"][i]["userNumber"];
             form.appendChild(phoneInput);
 
             form.appendChild(document.createElement("br"));
             form.appendChild(document.createElement("br"));
 
-            const designUrlLabel = document.createElement("label");
-            designUrlLabel.textContent = "Design url :";
-            form.appendChild(designUrlLabel);
-
-            const designUrlInput = document.createElement("input");
-            designUrlInput.setAttribute("id", "designurl");
-            designUrlInput.setAttribute("type", "text");
-            // designUrlInput.setAttribute("placeholder", "url");
-            form.appendChild(designUrlInput);
-
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
 
             const designNameLabel = document.createElement("label");
             designNameLabel.textContent = "Design name :";
@@ -167,7 +156,7 @@
             const designNameInput = document.createElement("input");
             designNameInput.setAttribute("id", "designname");
             designNameInput.setAttribute("type", "text");
-            // designNameInput.setAttribute("placeholder", "design name");
+            designNameInput.value = arcmatch["booked"][i]["bookdesignname"];
             form.appendChild(designNameInput);
 
             form.appendChild(document.createElement("br"));
@@ -180,6 +169,7 @@
             const expectedAmountInput = document.createElement("input");
             expectedAmountInput.setAttribute("id", "amount");
             expectedAmountInput.setAttribute("type", "number");
+            expectedAmountInput.value = arcmatch["booked"][i]["bookamount"];
             form.appendChild(expectedAmountInput);
 
             form.appendChild(document.createElement("br"));
@@ -192,6 +182,7 @@
             const timePeriodInput = document.createElement("input");
             timePeriodInput.setAttribute("id", "time");
             timePeriodInput.setAttribute("type", "number");
+            timePeriodInput.value = arcmatch["booked"][i]["booktime"];
             form.appendChild(timePeriodInput);
 
             form.appendChild(document.createElement("br"));
@@ -207,12 +198,15 @@
             messageTextarea.setAttribute("name", "textarea");
             messageTextarea.setAttribute("rows", "2");
             messageTextarea.setAttribute("cols", "40");
+            messageTextarea.value = arcmatch["booked"][i]["bookmessage"];
+
             form.appendChild(messageTextarea);
 
             form.appendChild(document.createElement("br"));
 
             const bothBtn = document.createElement("div");
             bothBtn.classList.add("both-btn");
+            form.appendChild(bothBtn);
 
             const acceptBtn = document.createElement("a");
             acceptBtn.classList.add("verifybtn");
@@ -220,11 +214,13 @@
             acceptBtn.textContent = "Accept";
             bothBtn.appendChild(acceptBtn);
 
+
             const notAcceptBtn = document.createElement("a");
             notAcceptBtn.classList.add("verifybtn");
             notAcceptBtn.href = "#";
             notAcceptBtn.textContent = "Not Accept";
             bothBtn.appendChild(notAcceptBtn);
+            document.querySelector(".list-of-customer").append(form)
         }
 
     </script>
