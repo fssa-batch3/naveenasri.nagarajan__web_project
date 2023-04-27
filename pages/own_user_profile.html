@@ -16,6 +16,13 @@
         </div>
         <br />
         <div class="form-group">
+            <label for="name" class="all_label">Name:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="name" disabled />
+        </div>
+        <br />
+        <div class="form-group">
             <label for="name" class="all_label">username:</label>
             <br />
             <br />
@@ -61,6 +68,7 @@
             }
         });
 
+        const norname = document.getElementById("name").value = singleUser["userNorName"];
         const email = document.getElementById("email").value = singleUser["userEmail"];
         const proname = document.getElementById("userName").value = singleUser["userName"];
         const number = document.getElementById("phoneNumber").value = singleUser["userNumber"];
