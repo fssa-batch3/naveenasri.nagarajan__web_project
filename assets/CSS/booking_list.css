@@ -11,16 +11,16 @@
   margin-left: 23px;
 }
 #designname {
-  margin-left: 43px;
+  margin-left: 40px;
 }
 #designurl {
   margin-left: 70px;
 }
 #time {
-  margin-left: 59px;
+  margin-left: 0px;
 }
-#textarea {
-  margin-left: 84px;
+#messagetextarea {
+  margin-left: 77px;
 }
 .bookingpage {
   margin-top: 100px;
@@ -68,7 +68,8 @@ textarea {
 .text-search {
   width: 300px;
 }
-.verifybtn {
+/* .verifybtn, */
+.dessubmit {
   float: right;
   margin-top: 20px;
   margin-left: 20px;

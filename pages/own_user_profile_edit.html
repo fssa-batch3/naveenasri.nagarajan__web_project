@@ -41,8 +41,8 @@
             <label for="number" class="all_label">Phone Number:</label>
             <br />
             <br />
-            <input type="number" required pattern="[789]{1}[0-9]{9}"
-                title="Phone number with 7-9 and remaing 9 digit with 0-9" class="form-control" id="phoneNumber" />
+            <input type="number" required pattern="[6789]{1}[0-9]{9,15}"
+                title="Phone number with 6-9 and remaing 9 digit with 0-9" class="form-control" id="phoneNumber" />
         </div>
         <br>
         <br>
@@ -96,7 +96,7 @@
             let index = newData.indexOf(oldData);
             newData[index] = change;
             localStorage.setItem("register", JSON.stringify(newData));
-            window.location.href = "./own_user_profile.html";
+            window.location.href = "./user_home.html";
 
         })
 

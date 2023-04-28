@@ -28,13 +28,20 @@
                     <br />
 
                     <label>Gender:</label>
-                    <input type="text" required id="gender" placeholder="Male/Female" />
+                    <input list="Gender" type="text" required id="gender" placeholder="Male/Female" />
+                    <datalist id="Gender">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Trans gender">
+                        <option value="Others">
+
+                    </datalist>
                     <br />
                     <br />
 
                     <label>Phone number:</label>
                     <input type="tel" required pattern="[6789]{1}[0-9]{9,15}"
-                        title="Phone number with 7-9 and remaing 9 digit with 0-9" id="phonenumber"
+                        title="Phone number with 6-9 and remaing 9 digit with 0-9" id="phonenumber"
                         placeholder="9218457240" />
                     <br />
                     <br />
@@ -68,7 +75,7 @@
                     <br />
                     <br />
                     <label>Experience:</label>
-                    <input type="text" required id="experience" placeholder="2 years" />
+                    <input type="number" required id="experience" placeholder="2 years" />
                     <br />
                     <br />
                     <label for="image">Degree certificate:</label>
@@ -79,10 +86,6 @@
                     <input type="url" required id="natacertificate" name="image" placeholder="nata certificate" />
                     <br />
                     <br />
-                    <!-- <label for="image">model design:</label>
-                    <input type="url" required id="modeldesign" name="image" placeholder="Profileimage" /><br /><br />
-                    <br /> -->
-
                     <button type="submit">Apply now / sign up
 
                     </button>
@@ -90,7 +93,7 @@
             </div>
 
             <a class="logbtn" href="./architect_login.html">
-                Sign up
+                Log in
             </a>
 
         </form>
@@ -143,7 +146,6 @@
                 arcPassword: getPassword,
                 booked: [],
                 arcDocument: getDocument,
-                // arcModelDesign: getModelDesign,
                 arcNataCertificate: getNataCertificate,
             }
 
