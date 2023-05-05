@@ -8,10 +8,10 @@
 /* }header is ended */
 
 .form {
-  width: 290px;
+  width: 310px;
   background-color: #96aaec;
   font-size: 25px;
-  height: 480px;
+  height: 510px;
   padding: 50px;
   border-radius: 13px;
   position: relative;
@@ -26,6 +26,7 @@ textarea {
   padding: 5px;
   border-radius: 7px;
   border: none;
+  width: 300px;
 }
 button {
   float: right;
