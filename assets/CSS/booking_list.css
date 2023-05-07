@@ -1,42 +1,18 @@
-#firstname {
-  margin-left: 65px;
+pre {
+  max-width: 570px;
+  overflow-x: auto;
 }
-#lastname {
-  margin-left: 67px;
-}
-#email {
-  margin-left: 67px;
-}
-#phonenumber {
-  margin-left: 23px;
-}
-#designname {
-  margin-left: 40px;
-}
-#designurl {
-  margin-left: 70px;
-}
-#time {
-  margin-left: 0px;
-}
-#messagetextarea {
-  margin-left: 77px;
-}
-.bookingpage {
-  margin-top: 100px;
-}
-
 .designurl {
   width: 400px;
   height: 300px;
-  padding-left: 5px;
+  padding-left: 85px;
   border-radius: 12px;
 }
 a {
   text-decoration: none;
   color: #28467f;
 }
-.a-form {
+#a-form {
   background: linear-gradient(
     214deg,
     rgb(147, 174, 249) 10%,
@@ -44,6 +20,7 @@ a {
     rgb(202, 215, 254) 100%
   );
   width: 570px;
+  height: auto;
   font-size: 23px;
   padding: 50px;
   border-radius: 13px;
@@ -57,8 +34,8 @@ a {
   align-items: center;
 }
 
-input,
-textarea {
+textarea,
+input {
   font-size: 18px;
   padding: 5px;
   border-radius: 7px;
@@ -68,7 +45,7 @@ textarea {
 .text-search {
   width: 300px;
 }
-/* .verifybtn, */
+.verifybtn,
 .dessubmit {
   float: right;
   margin-top: 20px;

@@ -34,44 +34,22 @@
     <!-- maincontainer is started -->
     <div class="container">
         <div class="list-of-customer">
-            <!-- <div class="a-form">
-                <form>
-                    <label>First name :</label>
-                    <input id="firstname" type="text" placeholder="enter your name" />
-                    <br /><br />
-                    <label>Last name :</label>
-                    <input id="lastname" type="text" placeholder="enter your name" />
-                    <br /><br />
-                    <label>User Email :</label>
-                    <input id="email" type="email" placeholder="abc@gmail.com" />
-                    <br /><br />
-                    <label>phone number :</label>
-                    <input id="phonenumber" type="tel" placeholder="phone number" />
-                    <br /><br />
-                    <label>Design url :</label>
-                    <input id="designurl" type="text" placeholder="url" />
-                    <br /><br />
-                    <label>Design name :</label>
-                    <input id="designname" type="text" placeholder="design name" />
-                    <br /><br />
-                    <label>Expected Amount:</label>
-                    <input id="amount" type="number" />
-                    <br /><br />
-                    <label>Time period:</label>
-                    <input id="time" type="number" />
-                    <br /><br />
-                    <label for="textarea">Message :</label>
-                    <textarea id="textarea" name="textarea" rows="2" cols="40">
-                    </textarea>
-                    <br />
 
-                    <div class="both-btn">
-                        <a class="verifybtn" href="#">Accept</a>
-                        <a class="verifybtn" href="#">Not Accept </a>
-                    </div>
-                </form>
+            <!-- <div id="a-form">
+                <pre>Design url       : <span id="designUrl"></span></pre>
+                <pre>Name             : <span id="name"></span></pre>
+                <pre>Email            : <span id="mail"></span></pre>
+                <pre>Phone number     : <span id="phonenumber"></span></pre>
+                <pre>Design name      : <span id="designName"></span></pre>
+                <pre>Expected Amount  : <span id="amount"></span></pre>
+                <pre>Time period      : <span id="time"></span></pre>
+                <pre>Message          : <textarea id="message"></textarea></pre>
+
+                <div class="both-btn">
+                    <a class="verifybtn" href="#">Accept</a>
+                    <a class="verifybtn" href="#">Not Accept </a>
+                </div>
             </div> -->
-
 
         </div>
     </div>
@@ -92,135 +70,118 @@
 
         for (let i = 0; i < arcmatch.booked.length; i++) {
 
-            const form = document.createElement("form");
-            form.setAttribute("class", "a-form");
+            // Create a new div element
+            const formDiv = document.createElement("div");
+            formDiv.setAttribute("id", "a-form");
 
-            const designUrlLabel = document.createElement("label");
-            // designUrlLabel.textContent = "Design url :";
-            form.appendChild(designUrlLabel);
+            // Create a new pre element for design URL
+            const designUrlImg = document.createElement("img");
+            designUrlImg.id = "designUrl";
+            designUrlImg.setAttribute("class", "designurl");
+            designUrlImg.setAttribute("src", arcmatch["booked"][i]["bookdesignurl"]);
+            // console.log(designUrlImg);
 
-            const designUrlInput = document.createElement("img");
-            designUrlInput.setAttribute("id", "designurl");
-            designUrlInput.setAttribute("class", "designurl");
-            designUrlInput.setAttribute("type", "text");
-            designUrlInput.setAttribute("src", arcmatch["booked"][i]["bookdesignurl"]);
-            form.appendChild(designUrlInput);
+            // Create a new div element for name
+            const nameDiv = document.createElement("div");
+            const namePre = document.createElement("pre");
+            namePre.textContent = "Name             : ";
+            const nameSpan = document.createElement("span");
+            nameSpan.setAttribute("id", "name");
+            nameSpan.innerText = arcmatch["booked"][i]["userName"];
+            namePre.appendChild(nameSpan);
+            nameDiv.appendChild(namePre);
 
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
+            // Create a new div element for email
+            const emailDiv = document.createElement("div");
+            const emailPre = document.createElement("pre");
+            emailPre.textContent = "Email            : ";
+            const emailSpan = document.createElement("span");
+            emailSpan.id = "mail";
+            emailSpan.innerText = arcmatch["booked"][i]["userEmail"];
+            emailPre.appendChild(emailSpan);
+            emailDiv.appendChild(emailPre);
 
-            const nameLabel = document.createElement("label");
-            nameLabel.textContent = "Name :";
-            form.appendChild(nameLabel);
+            // Create a new div element for phone number
+            const phoneNumberDiv = document.createElement("div");
+            const phoneNumberPre = document.createElement("pre");
+            phoneNumberPre.textContent = "Phone number     : ";
+            const phoneNumberSpan = document.createElement("span");
+            phoneNumberSpan.id = "phoneNumber";
+            phoneNumberSpan.innerText = arcmatch["booked"][i]["userNumber"];
+            phoneNumberPre.appendChild(phoneNumberSpan);
+            phoneNumberDiv.appendChild(phoneNumberPre);
 
-            const nameInput = document.createElement("input");
-            nameInput.setAttribute("id", "firstname");
-            nameInput.setAttribute("type", "text");
-            nameInput.value = arcmatch["booked"][i]["userName"];
-            form.appendChild(nameInput);
+            // Create a new div element for design name
+            const designNameDiv = document.createElement("div");
+            const designNamePre = document.createElement("pre");
+            designNamePre.textContent = "Design name      : ";
+            const designNameSpan = document.createElement("span");
+            designNameSpan.id = "designName";
+            designNameSpan.innerText = arcmatch["booked"][i]["bookdesignname"];
+            designNamePre.appendChild(designNameSpan);
+            designNameDiv.appendChild(designNamePre);
 
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
+            // Create a new div element for expected amount
+            const amountDiv = document.createElement("div");
+            const amountPre = document.createElement("pre");
+            amountPre.textContent = "Expected Amount  : ";
+            const amountSpan = document.createElement("span");
+            amountSpan.id = "amount";
+            amountSpan.innerText = arcmatch["booked"][i]["bookamount"];
+            amountPre.appendChild(amountSpan);
+            amountDiv.appendChild(amountPre);
 
-            const emailLabel = document.createElement("label");
-            emailLabel.textContent = "User Email :";
-            form.appendChild(emailLabel);
+            // Create a new div element for time period
+            const timeDiv = document.createElement("div");
+            const timePre = document.createElement("pre");
+            timePre.textContent = "Time period      : ";
+            const timeSpan = document.createElement("span");
+            timeSpan.id = "time";
+            timeSpan.innerText = arcmatch["booked"][i]["booktime"];
+            timePre.appendChild(timeSpan);
+            timeDiv.appendChild(timePre);
 
-            const emailInput = document.createElement("input");
-            emailInput.setAttribute("id", "email");
-            emailInput.setAttribute("type", "email");
-            emailInput.value = arcmatch["booked"][i]["userEmail"];
-            form.appendChild(emailInput);
+            // Create a new div element for message
+            const messageDiv = document.createElement("div");
+            const messagePre = document.createElement("pre");
+            messagePre.textContent = "Message          : ";
+            const messageSpan = document.createElement("span");
+            messageSpan.id = "message";
+            messageSpan.innerText = arcmatch["booked"][i]["bookmessage"];
+            messagePre.appendChild(messageSpan);
+            messageDiv.appendChild(messagePre);
 
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
+            // Create a new div element for both buttons
+            const bothBtnDiv = document.createElement("div");
+            bothBtnDiv.classList.add("both-btn");
 
-            const phoneLabel = document.createElement("label");
-            phoneLabel.textContent = "phone number :";
-            form.appendChild(phoneLabel);
-
-            const phoneInput = document.createElement("input");
-            phoneInput.setAttribute("id", "phonenumber");
-            phoneInput.setAttribute("type", "tel");
-            phoneInput.value = arcmatch["booked"][i]["userNumber"];
-            form.appendChild(phoneInput);
-
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
-
-
-            const designNameLabel = document.createElement("label");
-            designNameLabel.textContent = "Design name :";
-            form.appendChild(designNameLabel);
-
-            const designNameInput = document.createElement("input");
-            designNameInput.setAttribute("id", "designname");
-            designNameInput.setAttribute("type", "text");
-            designNameInput.value = arcmatch["booked"][i]["bookdesignname"];
-            form.appendChild(designNameInput);
-
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
-
-            const expectedAmountLabel = document.createElement("label");
-            expectedAmountLabel.textContent = "Expected Amount:";
-            form.appendChild(expectedAmountLabel);
-
-            const expectedAmountInput = document.createElement("input");
-            expectedAmountInput.setAttribute("id", "amount");
-            expectedAmountInput.setAttribute("type", "number");
-            expectedAmountInput.value = arcmatch["booked"][i]["bookamount"];
-            form.appendChild(expectedAmountInput);
-
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
-
-            const timePeriodLabel = document.createElement("label");
-            timePeriodLabel.textContent = "Time period:";
-            form.appendChild(timePeriodLabel);
-
-            const timePeriodInput = document.createElement("input");
-            timePeriodInput.setAttribute("id", "time");
-            timePeriodInput.setAttribute("type", "number");
-            timePeriodInput.value = arcmatch["booked"][i]["booktime"];
-            form.appendChild(timePeriodInput);
-
-            form.appendChild(document.createElement("br"));
-            form.appendChild(document.createElement("br"));
-
-            const messageLabel = document.createElement("label");
-            messageLabel.setAttribute("for", "textarea");
-            messageLabel.textContent = "Message :";
-            form.appendChild(messageLabel);
-
-            const messageTextarea = document.createElement("textarea");
-            messageTextarea.setAttribute("id", "textarea");
-            messageTextarea.setAttribute("name", "textarea");
-            messageTextarea.setAttribute("rows", "2");
-            messageTextarea.setAttribute("cols", "40");
-            messageTextarea.value = arcmatch["booked"][i]["bookmessage"];
-
-            form.appendChild(messageTextarea);
-
-            form.appendChild(document.createElement("br"));
-
-            const bothBtn = document.createElement("div");
-            bothBtn.classList.add("both-btn");
-            form.appendChild(bothBtn);
-
+            // Create a new accept button
             const acceptBtn = document.createElement("a");
             acceptBtn.classList.add("verifybtn");
             acceptBtn.href = "#";
             acceptBtn.textContent = "Accept";
-            bothBtn.appendChild(acceptBtn);
 
-
+            // Create a new not accept button
             const notAcceptBtn = document.createElement("a");
             notAcceptBtn.classList.add("verifybtn");
             notAcceptBtn.href = "#";
             notAcceptBtn.textContent = "Not Accept";
-            bothBtn.appendChild(notAcceptBtn);
-            document.querySelector(".list-of-customer").append(form)
+
+            // Append all the elements to the form div
+            formDiv.appendChild(designUrlImg);
+            formDiv.appendChild(nameDiv);
+            formDiv.appendChild(emailDiv);
+            formDiv.appendChild(phoneNumberDiv);
+            formDiv.appendChild(designNameDiv);
+            formDiv.appendChild(amountDiv);
+            formDiv.appendChild(timeDiv);
+            formDiv.appendChild(messageDiv);
+            formDiv.appendChild(bothBtnDiv);
+            bothBtnDiv.appendChild(acceptBtn);
+            bothBtnDiv.appendChild(notAcceptBtn);
+
+            document.querySelector(".list-of-customer").append(formDiv)
+
         }
 
     </script>

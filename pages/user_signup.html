@@ -40,8 +40,7 @@
                     <label>Number:</label>
                     <input type="tel" required autocomplete="number" id="number" pattern="[6789]{1}[0-9]{9,15}"
                         title="Phone number with 6-9 and remaing more then 9 and less than 15 digit with in  0-9"
-                        placeholder="
-                        enter your Phone Number" required />
+                        placeholder="enter your Phone Number" required />
                     <br /><br />
                     <label>password:</label>
                     <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
@@ -77,77 +76,80 @@
 </body>
 
 <!-- java  -->
-<script>
+<script src="../assets/JS/user_register.js">
 
-    let checker = false;
-    const signupfrom = document.getElementById("form2");
-    console.log(signupfrom);
-    signupfrom.addEventListener("submit", function (event) {
-        event.preventDefault();
+    // let checker = false;
+    // const signupfrom = document.getElementById("form2");
+    // console.log(signupfrom);
+    // signupfrom.addEventListener("submit", function (event) {
+    //     event.preventDefault();
 
-        let userNew = [];
-        console.log(userNew);
+    //     let userNew = [];
+    //     console.log(userNew);
 
-        if (localStorage.getItem("register") != null) {
-            userNew = JSON.parse(localStorage.getItem("register"));
-        }
+    //     if (localStorage.getItem("register") != null) {
+    //         userNew = JSON.parse(localStorage.getItem("register"));
+    //     }
 
-        const getNorName = document.getElementById("norname").value.trim();
-        const getName = document.getElementById("name").value.trim();
-        const getEmail = document.getElementById("email").value.trim();
-        const getNumber = document.getElementById("number").value.trim();
-        const getPassword = document.getElementById("password").value.trim();
-        const getConfirmPassword = document
-            .getElementById("confirm_password")
-            .value.trim();
-        const userId = Date.now();
+    //     const getNorName = document.getElementById("norname").value.trim();
+    //     const getName = document.getElementById("name").value.trim();
+    //     const getEmail = document.getElementById("email").value.trim();
+    //     const getNumber = document.getElementById("number").value.trim();
+    //     const getPassword = document.getElementById("password").value.trim();
+    //     const getConfirmPassword = document
+    //         .getElementById("confirm_password")
+    //         .value.trim();
+    //     const userId = Date.now();
 
-        let userData = {
-            userId: userId,
-            userNorName: getNorName,
-            userName: getName,
-            userEmail: getEmail,
-            userNumber: getNumber,
-            userPassword: getPassword,
-            userconPassword: getConfirmPassword,
-        };
+    //     let userData = {
+    //         userId: userId,
+    //         userNorName: getNorName,
+    //         userName: getName,
+    //         userEmail: getEmail,
+    //         userNumber: getNumber,
+    //         userPassword: getPassword,
+    //         userconPassword: getConfirmPassword,
+    //     };
 
-        console.log(userData);
+    //     console.log(userData);
 
 
-        for (let i = 0; i < userNew.length; i++) {
-            if (userNew[i]["userNorName"] === getNorName) {
-                checker = true;
-                alert("User name already exit");
-                break;
-            } else {
-                checker = false;
-            }
-        }
-        for (let i = 0; i < userNew.length; i++) {
-            if (userNew[i]["userEmail"] === getEmail) {
-                checker = true;
-                alert("same email is already exit");
-                break;
-            } else {
-                checker = false;
-            }
-        }
-        if (checker === false) {
-            if (getPassword === getConfirmPassword) {
-                userNew.push(userData);
-                const str = JSON.stringify(userNew);
-                alert("Sucess");
-                window.localStorage.setItem("register", str);
-                window.location.href = "./user_login.html";
-            } else {
-                alert("Password and confirmpassword should be same");
-            }
-        }
-    });
+    //     for (let i = 0; i < userNew.length; i++) {
+    //         if (userNew[i]["userNorName"] === getNorName) {
+    //             checker = true;
+    //             alert("User name already exit");
+    //             break;
+    //         } else {
+    //             checker = false;
+    //         }
+    //     }
+    //     for (let i = 0; i < userNew.length; i++) {
+    //         if (userNew[i]["userEmail"] === getEmail) {
+    //             checker = true;
+    //             alert("same email is already exit");
+    //             break;
+    //         } else {
+    //             checker = false;
+    //         }
+    //     }
+    //     if (checker === false) {
+    //         if (getPassword === getConfirmPassword) {
+    //             userNew.push(userData);
+    //             const str = JSON.stringify(userNew);
+    //             alert("Sucess");
+    //             window.localStorage.setItem("register", str);
+    //             window.location.href = "./user_login.html";
+    //         } else {
+    //             alert("Password and confirmpassword should be same");
+    //         }
+    //     }
+    // });
 
 </script>
 
+<script>
+    userSignUp();
+</script>
 
 <script type="module">
     // Import the functions you need from the SDKs you need

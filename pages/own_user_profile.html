@@ -42,7 +42,7 @@
             <br />
             <br />
             <input type="number" class="form-control" pattern="[6789]{1}[0-9]{9,15}"
-                title="Phone number with 6-9 and remaing 9 digit with 0-9" id="phoneNumber" disabled />
+                title="Phone number with 6-9 and remaing 9-15 digit with 0-9" id="phoneNumber" disabled />
         </div>
         <br>
         <br>
@@ -56,38 +56,40 @@
     </form>
 
 
+    <script src="../assets/JS/user_register.js">
+        // //get data from local storage
+        // const thisUser = JSON.parse(localStorage.getItem("this_user"));
+        // const userinfo = JSON.parse(localStorage.getItem("register"));
+        // //get object from local storage used by email
+        // let singleUser = userinfo.find(function (event) {
+        //     let useremail = event["userEmail"];
+        //     if (thisUser == useremail) {
+        //         return true;
+        //     }
+        // });
+
+        // const norname = document.getElementById("name").value = singleUser["userNorName"];
+        // const email = document.getElementById("email").value = singleUser["userEmail"];
+        // const proname = document.getElementById("userName").value = singleUser["userName"];
+        // const number = document.getElementById("phoneNumber").value = singleUser["userNumber"];
+
+        // let delete_user = document.getElementById("delete_btn");
+        // delete_user.addEventListener("click", function (event) {
+        //     event.preventDefault();
+        //     let index = userinfo.indexOf(singleUser);
+        //     let msg = confirm("Are you sure you want to delete this account");
+        //     if (msg !== true) {
+        //         return;
+        //     } else {
+        //         userinfo.splice(index, 1);
+        //         localStorage.setItem("register", JSON.stringify(userinfo));
+        //         window.location.href = "../index.html";
+        //     }
+        // });
+    </script>
+
     <script>
-        //get data from local storage
-        const thisUser = JSON.parse(localStorage.getItem("this_user"));
-        const userinfo = JSON.parse(localStorage.getItem("register"));
-        //get object from local storage used by email
-        let singleUser = userinfo.find(function (event) {
-            let useremail = event["userEmail"];
-            if (thisUser == useremail) {
-                return true;
-            }
-        });
-
-        const norname = document.getElementById("name").value = singleUser["userNorName"];
-        const email = document.getElementById("email").value = singleUser["userEmail"];
-        const proname = document.getElementById("userName").value = singleUser["userName"];
-        const number = document.getElementById("phoneNumber").value = singleUser["userNumber"];
-
-        let delete_user = document.getElementById("delete_btn");
-        delete_user.addEventListener("click", function (event) {
-            event.preventDefault();
-            let index = userinfo.indexOf(singleUser);
-            let msg = confirm("Are you sure you want to delete this account");
-            if (msg !== true) {
-                return;
-            } else {
-                userinfo.splice(index, 1);
-                localStorage.setItem("register", JSON.stringify(userinfo));
-                window.location.href = "../index.html";
-            }
-        });
-
-
+        userProfile();
     </script>
 </body>
 
