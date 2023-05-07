@@ -71,23 +71,26 @@
                 <p>interiordesign@gmail.com</p>
             </div>
             <div>
-                <form class="form">
-                    <label>First name</label>
-                    <input type="text" placeholder="Naveen" />
-                    <br />
-                    <label>Last name</label>
-                    <input type="text" placeholder="kumar" />
+                <form id="emailForm" class="form">
+                    <label>Name</label>
+                    <input type="text" id="name" required placeholder="enter your name " />
                     <br />
                     <label>Email</label>
-                    <input type="email" placeholder="naveen32@gmail.com" />
+                    <input type="email" id="email" required placeholder="enter your email" />
                     <br />
                     <label>Phone number</label>
-                    <input type="tel" placeholder="9218457240" />
+                    <input type="tel" id="phoneno" required pattern="[6789]{1}[0-9]{9,15}"
+                        placeholder="enter your phone number"
+                        title="Phone number with 6-9 and remaing more then 9 and less than 15 digit with in  0-9" />
                     <br />
+                    <label for="textarea">Subject</label>
+                    <textarea id="subject" required name="textarea" rows="2" cols="21"></textarea><br />
+
                     <label for="textarea">Your message</label>
-                    <textarea id="textarea" name="textarea" rows="6" cols="21"></textarea><br />
-                    <button>
-                        <a href="../pages/successfully completed.html">Submit</a>
+                    <textarea id="message" required name="textarea" rows="6" cols="21"></textarea><br />
+                    <button type="submit" id="send" onclick="sende()">
+                        <!-- <a href="../pages/successfully completed.html">Submit</a> -->
+                        Send
                     </button>
                 </form>
             </div>
@@ -128,6 +131,12 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="../assets/JS/contactUs.js"></script>
+    <script>
+        contactUs();
+    </script>
 </body>
 
 </html>
