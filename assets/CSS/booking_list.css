@@ -2,6 +2,35 @@ pre {
   max-width: 570px;
   overflow-x: auto;
 }
+
+#firstname {
+  margin-left: 65px;
+}
+#lastname {
+  margin-left: 67px;
+}
+#email {
+  margin-left: 67px;
+}
+#phonenumber {
+  margin-left: 23px;
+}
+#designname {
+  margin-left: 40px;
+}
+#designurl {
+  margin-left: 70px;
+}
+#time {
+  margin-left: 0px;
+}
+#messagetextarea {
+  margin-left: 77px;
+}
+.bookingpage {
+  margin-top: 100px;
+}
+
 .designurl {
   width: 400px;
   height: 300px;
@@ -12,7 +41,7 @@ a {
   text-decoration: none;
   color: #28467f;
 }
-#a-form {
+.a-form {
   background: linear-gradient(
     214deg,
     rgb(147, 174, 249) 10%,
@@ -20,7 +49,6 @@ a {
     rgb(202, 215, 254) 100%
   );
   width: 570px;
-  height: auto;
   font-size: 23px;
   padding: 50px;
   border-radius: 13px;
@@ -34,8 +62,8 @@ a {
   align-items: center;
 }
 
-textarea,
-input {
+input,
+textarea {
   font-size: 18px;
   padding: 5px;
   border-radius: 7px;
@@ -45,8 +73,9 @@ input {
 .text-search {
   width: 300px;
 }
+
 .verifybtn,
-.dessubmit {
+#dessubmit {
   float: right;
   margin-top: 20px;
   margin-left: 20px;
