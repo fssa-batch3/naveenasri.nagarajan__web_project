@@ -73,10 +73,7 @@
     const acceptForm = document.getElementById("bookingform");
     console.log(acceptForm);
 
-    acceptForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        accept();
-    });
+
 
     function accept(e) {
         const arcEmail = JSON.parse(localStorage.getItem("Single_Data"));
@@ -107,7 +104,43 @@
         }).then((message) => alert("Are you sure to accept this user?"));
 
 
-    }
+    };
+
+    acceptForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        accept();
+    });
+
+    // function accept(e) {
+    //     const arcEmail = JSON.parse(localStorage.getItem("Single_Data"));
+    //     const name = document.getElementById("architectName").value;
+    //     const toEmail = document.getElementById("architectEmail").value;
+    //     const date = document.getElementById("architectDate").value;
+    //     const time = document.getElementById("architectTime").value;
+    //     const message = document.getElementById("architectMessage").value;
+    //     const body = "Name : " +
+    //         name +
+    //         "<br /> Email : " +
+    //         arcEmail +
+    //         "<br /> Appoinment Date : " +
+    //         date +
+    //         "<br /> Appoinment Time : " +
+    //         time +
+    //         "<br /> Message : " +
+    //         message;
+
+    //     Email.send({
+    //         SecureToken: "a2966854-5e18-4407-9558-e78c9a387d10",
+    //         Host: "smtp.elasticemail.com",
+    //         Username: "naveenasri.nagarajan@fssa.freshworks.com",
+    //         Password: "405505710EBF34977AC00F2892093D034825",
+    //         To: toEmail,
+    //         From: arcEmail,
+    //         Body: body,
+    //     }).then((message) => alert("Are you sure to accept this user?"));
+
+
+    // };
 
 
 

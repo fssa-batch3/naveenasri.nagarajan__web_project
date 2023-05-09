@@ -121,31 +121,21 @@ function arcProfileEdit() {
 
   console.log(oneArchitect);
 
-  const url = (document.getElementById("userImage").value =
-    oneArchitect["arcUrl"]);
-  const name = (document.getElementById("userName").value =
-    oneArchitect["arcName"]);
-  const gender = (document.getElementById("userGender").value =
-    oneArchitect["arcGender"]);
-  const phoneNumber = (document.getElementById("userPhoneNumber").value =
-    oneArchitect["arcPhoneNumber"]);
-  const address = (document.getElementById("userAddress").value =
-    oneArchitect["arcAddress"]);
-  const coverPhoto = (document.getElementById("userCoverPhoto").value =
-    oneArchitect["arcCoverPhoto"]);
-  const education = (document.getElementById("userEducation").value =
-    oneArchitect["arcEducation"]);
-  const experience = (document.getElementById("userExperience").value =
-    oneArchitect["arcExperience"]);
-  const email = (document.getElementById("userEmail").value =
-    oneArchitect["arcEmail"]);
-  // const password = document.getElementById("userPassword").value = oneArchitect["arcPassword"];
-  const graduatedocument = (document.getElementById("userDocument").value =
-    oneArchitect["arcDocument"]);
-  const natacertificate = (document.getElementById(
-    "userNataCertificate"
-  ).value = oneArchitect["arcNataCertificate"]);
-  // const modelDesign = document.getElementById("userModelDesign").value = oneArchitect["arcModelDesign"];
+  document.getElementById("userImage").value = oneArchitect["arcUrl"];
+  document.getElementById("userName").value = oneArchitect["arcName"];
+  document.getElementById("userGender").value = oneArchitect["arcGender"];
+  document.getElementById("userPhoneNumber").value =
+    oneArchitect["arcPhoneNumber"];
+  document.getElementById("userAddress").value = oneArchitect["arcAddress"];
+  document.getElementById("userCoverPhoto").value =
+    oneArchitect["arcCoverPhoto"];
+  document.getElementById("userEducation").value = oneArchitect["arcEducation"];
+  document.getElementById("userExperience").value =
+    oneArchitect["arcExperience"];
+  document.getElementById("userEmail").value = oneArchitect["arcEmail"];
+  document.getElementById("userDocument").value = oneArchitect["arcDocument"];
+  document.getElementById("userNataCertificate").value =
+    oneArchitect["arcNataCertificate"];
 
   // edit page function
   let complete = document.getElementById("architectForm3");
@@ -164,12 +154,10 @@ function arcProfileEdit() {
     let arcEducation = document.getElementById("userEducation").value;
     let arcExperience = document.getElementById("userExperience").value;
     let arcEmail = document.getElementById("userEmail").value;
-    // let arcPassword = document.getElementById("userPassword").value;
     let arcDocument = document.getElementById("userDocument").value;
     let arcNataCertificate = document.getElementById(
       "userNataCertificate"
     ).value;
-    // let arcModelDesign = document.getElementById("userModelDesign").value;
 
     let architectUser_data = {
       arcUrl,
@@ -181,10 +169,8 @@ function arcProfileEdit() {
       arcEducation,
       arcExperience,
       arcEmail,
-      // arcPassword,
       arcDocument,
       arcNataCertificate,
-      // arcModelDesign,
     };
 
     let architectData = JSON.parse(localStorage.getItem("personArchitect"));

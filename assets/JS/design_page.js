@@ -5,12 +5,12 @@ function designList() {
 
   console.log(deslist);
 
-  for (i = 0; i < deslist.length; i++) {
+  for (let i = 0; i < deslist.length; i++) {
     select_design_list.push(deslist[i]);
     console.log(select_design_list);
   }
 
-  for (i = 0; i < select_design_list.length; i++) {
+  for (let i = 0; i < select_design_list.length; i++) {
     let card;
     let img;
     let info_div;
@@ -79,29 +79,20 @@ function designDetail() {
   });
   console.log(designObj);
 
-  const url = document
-    .getElementById("mainimage")
-    .setAttribute("src", designObj.designimg);
-  const dname = (document.getElementById("dname").innerHTML =
-    designObj["designdname"]);
-  const pdesign = (document.getElementById("pdesign").innerHTML =
-    designObj["designpdesign"]);
-  const squarefeet = (document.getElementById("squarefeet").innerHTML =
-    designObj["designsquarefeet"]);
-  const ppsquarefeet = (document.getElementById("ppsquarefeet").innerHTML =
-    designObj["designppsquarefeet"]);
-  const dates = (document.getElementById("dates").innerHTML =
-    designObj["designdates"]);
-  const bathroom = (document.getElementById("bathroom").innerHTML =
-    designObj["designbathroom"]);
-  const bedroom = (document.getElementById("bedroom").innerHTML =
-    designObj["designbedroom"]);
-  const balcony = (document.getElementById("balcony").innerHTML =
-    designObj["designbalcony"]);
-  const para = (document.getElementById("para").innerHTML =
-    designObj["designpara"]);
-  const brief_para = (document.getElementById("brief_para").innerHTML =
-    designObj["designbriefpara"]);
+  document.getElementById("mainimage").setAttribute("src", designObj.designimg);
+  document.getElementById("dname").innerHTML = designObj["designdname"];
+  document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
+  document.getElementById("squarefeet").innerHTML =
+    designObj["designsquarefeet"];
+  document.getElementById("ppsquarefeet").innerHTML =
+    designObj["designppsquarefeet"];
+  document.getElementById("dates").innerHTML = designObj["designdates"];
+  document.getElementById("bathroom").innerHTML = designObj["designbathroom"];
+  document.getElementById("bedroom").innerHTML = designObj["designbedroom"];
+  document.getElementById("balcony").innerHTML = designObj["designbalcony"];
+  document.getElementById("para").innerHTML = designObj["designpara"];
+  document.getElementById("brief_para").innerHTML =
+    designObj["designbriefpara"];
 
   // card java script
 

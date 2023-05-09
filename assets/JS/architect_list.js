@@ -2,7 +2,6 @@ const select_architect_list = [];
 
 let arclist = JSON.parse(localStorage.getItem("personArchitect"));
 
-// const Architectlist = JSON.parse(localStorage.getItem("personArchitect"));
 const singleArc = JSON.parse(localStorage.getItem("Single_Data"));
 
 let arcmatch = arclist.find(function (event) {
@@ -15,7 +14,7 @@ console.log(arcmatch);
 
 console.log(arclist);
 
-for (i = 0; i < arclist.length; i++) {
+for (let i = 0; i < arclist.length; i++) {
   select_architect_list.push(arclist[i]);
   console.log(select_architect_list);
 }
@@ -95,6 +94,6 @@ function architectLoop() {
     bookbtn.innerText = "Book now";
     card.append(bookbtn);
   }
-};
+}
 
 architectLoop();

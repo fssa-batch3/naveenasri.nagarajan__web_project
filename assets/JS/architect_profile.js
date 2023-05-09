@@ -38,7 +38,6 @@ const experience = (document.getElementById("userExperience").innerHTML =
 const email = (document.getElementById("userEmail").innerHTML =
   oneArchitect["arcEmail"]);
 
-// const password = document.getElementById("userPassword").innerHTML = oneArchitect["arcPassword"];
 const graduatedocument = document
   .getElementById("userDocument")
   .setAttribute("src", oneArchitect["arcDocument"]);
@@ -46,8 +45,6 @@ const graduatedocument = document
 const natacertificate = document
   .getElementById("userNataCertificate")
   .setAttribute("src", oneArchitect["arcNataCertificate"]);
-
-// const modelDesign = document.getElementById("userModelDesign").setAttribute("src", oneArchitect["arcModelDesign"]);
 
 let deleteUser = document.getElementById("deletebtn");
 deleteUser.addEventListener("click", function (event) {

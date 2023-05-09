@@ -19,7 +19,6 @@ for (let i = 0; i < arcmatch.booked.length; i++) {
   designUrlImg.id = "designUrl";
   designUrlImg.setAttribute("class", "designurl");
   designUrlImg.setAttribute("src", arcmatch["booked"][i]["bookdesignurl"]);
-  // console.log(designUrlImg);
 
   // Create a new div element for name
   const nameDiv = document.createElement("div");
@@ -136,7 +135,4 @@ for (let i = 0; i < arcmatch.booked.length; i++) {
   bothBtnDiv.appendChild(notAcceptBtn);
 
   document.querySelector(".list-of-customer").append(formDiv);
-  function accept() {
-    console.log(document.getElementById("message").innerText);
-  }
 }
