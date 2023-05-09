@@ -6,8 +6,14 @@ pre {
 #firstname {
   margin-left: 65px;
 }
+#architectName {
+  margin-left: 119px;
+}
 #lastname {
   margin-left: 67px;
+}
+#architectEmail {
+  margin-left: 98px;
 }
 #email {
   margin-left: 67px;
@@ -27,6 +33,9 @@ pre {
 #messagetextarea {
   margin-left: 77px;
 }
+#architectMessage {
+  margin-left: 92px;
+}
 .bookingpage {
   margin-top: 100px;
 }
@@ -41,7 +50,8 @@ a {
   text-decoration: none;
   color: #28467f;
 }
-.a-form {
+.a-form,
+#a-form {
   background: linear-gradient(
     214deg,
     rgb(147, 174, 249) 10%,

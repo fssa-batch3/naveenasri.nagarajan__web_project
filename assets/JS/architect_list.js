@@ -23,7 +23,7 @@ for (i = 0; i < arclist.length; i++) {
 function architectLoop() {
   for (i = 0; i < select_architect_list.length; i++) {
     if (select_architect_list[i]["arcId"] == arcmatch["arcId"]) {
-      return;
+      continue;
     }
 
     let card;

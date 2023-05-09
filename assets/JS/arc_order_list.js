@@ -81,6 +81,16 @@ for (let i = 0; i < arcmatch.booked.length; i++) {
   timePre.appendChild(timeSpan);
   timeDiv.appendChild(timePre);
 
+  // Create a new div element for id
+  const bookIdDiv = document.createElement("div");
+  const bookIdPre = document.createElement("pre");
+  bookIdPre.textContent = "Book ID          : ";
+  const bookIdSpan = document.createElement("span");
+  bookIdSpan.id = "message";
+  bookIdSpan.innerText = arcmatch["booked"][i]["bookid"];
+  bookIdPre.appendChild(bookIdSpan);
+  bookIdDiv.appendChild(bookIdPre);
+
   // Create a new div element for message
   const messageDiv = document.createElement("div");
   const messagePre = document.createElement("pre");
@@ -98,7 +108,11 @@ for (let i = 0; i < arcmatch.booked.length; i++) {
   // Create a new accept button
   const acceptBtn = document.createElement("a");
   acceptBtn.classList.add("verifybtn");
-  acceptBtn.href = "#";
+  acceptBtn.setAttribute(
+    "href",
+    "./architect_accept_form.html?id=" + arcmatch["booked"][i]["bookid"]
+  );
+  acceptBtn.setAttribute("onclick", "accept()");
   acceptBtn.textContent = "Accept";
 
   // Create a new not accept button
@@ -115,10 +129,14 @@ for (let i = 0; i < arcmatch.booked.length; i++) {
   formDiv.appendChild(designNameDiv);
   formDiv.appendChild(amountDiv);
   formDiv.appendChild(timeDiv);
+  formDiv.appendChild(bookIdDiv);
   formDiv.appendChild(messageDiv);
   formDiv.appendChild(bothBtnDiv);
   bothBtnDiv.appendChild(acceptBtn);
   bothBtnDiv.appendChild(notAcceptBtn);
 
   document.querySelector(".list-of-customer").append(formDiv);
+  function accept() {
+    console.log(document.getElementById("message").innerText);
+  }
 }

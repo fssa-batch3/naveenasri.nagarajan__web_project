@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/universe.css">
+    <link rel="stylesheet" href="../assets/CSS/booking_list.css">
+    <title>architect accept form</title>
+</head>
+
+<body>
+    <!-- header is started -->
+    <!-- <header class="header">
+        <div>
+            <a href="./architect_architect_list.html">
+                <img src="../assets/image/common/logo.png" alt="logo" class="logo" alt="architect accept form" />
+            </a>
+        </div>
+        <nav>
+            <a class="a" href="./architect_architect_list.html">Architects</a>
+            <a class="a" href="./architect_design_list.html">Designs</a>
+            <a class="a" href="./own_architect_booking_list.html">Ordered list</a>
+            <a class="a" href="./architect_about_us.html">About us</a>
+            <a class="a" href="./architect_contact_us.html">Contact us</a>
+            <a class="a" href="./own_architect_profile.html">
+                <img src="../assets/image/common/profile.png" alt="profile" class="profileofuser">
+            </a>
+        </nav>
+    </header> -->
+    <!-- header is ended -->
+
+    <!-- maincontainer is started -->
+    <div class="container">
+        <div class="list-of-customer">
+            <div class="a-form bookingpage">
+                <form id="bookingform">
+                    <label>Name :</label>
+                    <input id="architectName" required type="text" placeholder="enter your name" />
+                    <br /><br />
+                    <label>To Email :</label>
+                    <input id="architectEmail" required type="text" placeholder="enter your email" />
+                    <br /><br />
+                    <label>Appoinment Date :</label>
+                    <input id="architectDate" type="date" required />
+                    <br /><br />
+                    <label>Appoinment Time :</label>
+                    <input id="architectTime" required type="time" />
+                    <br /><br />
+                    <label for="textarea">Message :</label>
+                    <textarea id="architectMessage" required name="textarea" rows="2" cols="40">
+                    </textarea>
+                    <br />
+
+                    <div class="both-btn">
+                        <button id="dessubmit" type="submit">send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+
+    const arcEmail = JSON.parse(localStorage.getItem("Single_Data"));
+    console.log(arcEmail);
+
+    const acceptForm = document.getElementById("bookingform");
+    console.log(acceptForm);
+
+    acceptForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        accept();
+    });
+
+    function accept(e) {
+        const arcEmail = JSON.parse(localStorage.getItem("Single_Data"));
+        const name = document.getElementById("architectName").value;
+        const toEmail = document.getElementById("architectEmail").value;
+        const date = document.getElementById("architectDate").value;
+        const time = document.getElementById("architectTime").value;
+        const message = document.getElementById("architectMessage").value;
+        const body = "Name : " +
+            name +
+            "<br /> Email : " +
+            arcEmail +
+            "<br /> Appoinment Date : " +
+            date +
+            "<br /> Appoinment Time : " +
+            time +
+            "<br /> Message : " +
+            message;
+
+        Email.send({
+            SecureToken: "a2966854-5e18-4407-9558-e78c9a387d10",
+            Host: "smtp.elasticemail.com",
+            Username: "naveenasri.nagarajan@fssa.freshworks.com",
+            Password: "405505710EBF34977AC00F2892093D034825",
+            To: toEmail,
+            From: arcEmail,
+            Body: body,
+        }).then((message) => alert("Are you sure to accept this user?"));
+
+
+    }
+
+
+
+</script>
+
+</html>

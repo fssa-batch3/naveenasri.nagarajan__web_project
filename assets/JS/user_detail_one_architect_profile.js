@@ -158,6 +158,9 @@ function bookNow() {
       bookamount: bookamount,
       booktime: booktime,
       bookmessage: bookmessage,
+      // func: function getbookId() {
+      //   return this.bookid;
+      // },
     };
 
     oneArc.booked.push(bookuserdetail);
