@@ -14,7 +14,6 @@
     <section>
         <div class="designs">
             <img id="userModelDesign" class="free-img" alt="interior design">
-
         </div>
     </section>
 
@@ -25,11 +24,9 @@
         const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
 
         let urlSearch = window.location.search;
-        // console.log(urlSearch);
         let url_params = new URLSearchParams(urlSearch);
-        // console.log(url_params);
         let get_id = url_params.get("id");
-        // console.log(get_id);
+
 
         let urlarc = arcInfo.find(function (select_architect) {
             let id = select_architect["arcId"];
@@ -42,9 +39,6 @@
             }
         });
 
-
-
-        // const singleData = JSON.parse(localStorage.getItem("Single_Data"));
         let oneArchitectdesign = [];
 
 

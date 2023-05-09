@@ -116,14 +116,10 @@ function userProfile() {
     }
   });
 
-  const norname = (document.getElementById("name").value =
-    singleUser["userNorName"]);
-  const email = (document.getElementById("email").value =
-    singleUser["userEmail"]);
-  const proname = (document.getElementById("userName").value =
-    singleUser["userName"]);
-  const number = (document.getElementById("phoneNumber").value =
-    singleUser["userNumber"]);
+  document.getElementById("name").value = singleUser["userNorName"];
+  document.getElementById("email").value = singleUser["userEmail"];
+  document.getElementById("userName").value = singleUser["userName"];
+  document.getElementById("phoneNumber").value = singleUser["userNumber"];
 
   let delete_user = document.getElementById("delete_btn");
   delete_user.addEventListener("click", function (event) {
@@ -152,14 +148,10 @@ function userProfileEdit() {
     }
   });
 
-  const norname = (document.getElementById("name").value =
-    singleUser["userNorName"]);
-  const email = (document.getElementById("email").value =
-    singleUser["userEmail"]);
-  const proname = (document.getElementById("userName").value =
-    singleUser["userName"]);
-  const number = (document.getElementById("phoneNumber").value =
-    singleUser["userNumber"]);
+  document.getElementById("name").value = singleUser["userNorName"];
+  document.getElementById("email").value = singleUser["userEmail"];
+  document.getElementById("userName").value = singleUser["userName"];
+  document.getElementById("phoneNumber").value = singleUser["userNumber"];
 
   // edit page function
   let submit = document.getElementById("form_E");
