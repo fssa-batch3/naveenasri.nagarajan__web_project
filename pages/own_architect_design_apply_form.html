@@ -88,69 +88,6 @@
     <script>
         arcDesignCreate();
     </script>
-
-
-    <!-- <script>
-        let check = false;
-        const designapplyFrom = document.getElementById("designForm1");
-        console.log(designapplyFrom);
-
-        designapplyFrom.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let designNew = [];
-            console.log(designNew)
-
-            if (localStorage.getItem("personDesign") != null) {
-                designNew = JSON.parse(localStorage.getItem("personDesign"))
-            }
-
-            const detailimg = document.getElementById("designimage").value.trim();
-            const detaildname = document.getElementById("designname").value.trim();
-            const detailemail = document.getElementById("email").value.trim();
-            const detailpdesign = document.getElementById("pricedesign").value.trim();
-            const detailsquarefeet = document.getElementById("squarefeet").value.trim();
-            const detailppsquarefeet = document.getElementById("pricepersquarefeet").value.trim();
-            const detailtype = document.getElementById("browser").value.trim();
-            const detaildates = document.getElementById("dates").value.trim();
-            const detailbathroom = document.getElementById("bathrooms").value.trim();
-            const detailbedroom = document.getElementById("bedroom").value.trim();
-            const detailbalcony = document.getElementById("balcony").value.trim();
-            const detailpara = document.getElementById("paragraph").value.trim();
-            const detailbriefpara = document.getElementById("brief_paragraph").value.trim();
-            const detailid = Date.now();
-
-            let designData = {
-                designid: detailid,
-                designimg: detailimg,
-                designdname: detaildname,
-                designemail: detailemail,
-                designpdesign: detailpdesign,
-                designsquarefeet: detailsquarefeet,
-                designppsquarefeet: detailppsquarefeet,
-                designtype: detailtype,
-                designdates: detaildates,
-                designbathroom: detailbathroom,
-                designbedroom: detailbedroom,
-                designbalcony: detailbalcony,
-                designpara: detailpara,
-                designbriefpara: detailbriefpara,
-            }
-
-
-            console.log(designData)
-
-
-            if (check === false) {
-                designNew.push(designData);
-                const data = JSON.stringify(designNew)
-                alert("sucessfully completed")
-                localStorage.setItem("personDesign", data)
-                window.location.href = "./own_architect_profile.html"
-            }
-        });
-    </script> -->
-
 </body>
 
 </html>

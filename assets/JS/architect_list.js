@@ -95,5 +95,6 @@ function architectLoop() {
     bookbtn.innerText = "Book now";
     card.append(bookbtn);
   }
-}
+};
+
 architectLoop();

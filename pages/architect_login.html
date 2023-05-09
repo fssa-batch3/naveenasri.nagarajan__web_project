@@ -51,53 +51,17 @@
             </div>
         </div>
     </div>
+
+
+    <!-- java  -->
+    <script src="../assets/JS/architect_register.js">
+
+    </script>
+    <script>
+        arcLogin();
+    </script>
 </body>
-<!-- java  -->
 
-<script src="../assets/JS/architect_register.js">
-
-</script>
-<script>
-    arcLogin();
-</script>
-<!-- <script>
-
-    let arcLogin = document.getElementById("architectForm2");
-
-    arcLogin.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        let wholeData = JSON.parse(localStorage.getItem("personArchitect"));
-        console.log(wholeData);
-
-        const getEmail = document.getElementById("email").value;
-        const getPassword = document.getElementById("password").value;
-
-        let match = false;
-
-        for (let i = 0; i < wholeData.length; i++) {
-            if (getEmail == wholeData[i].arcEmail &&
-                getPassword == wholeData[i].arcPassword) {
-                match = true;
-                break;
-            } else {
-                match = false;
-            }
-        }
-
-        if (match === true) {
-            alert("successfully completed");
-            const matchData = wholeData.find((o) => o["arcEmail"] == getEmail)
-            const singleData = JSON.stringify(matchData.arcEmail);
-            localStorage.setItem("Single_Data", singleData);
-            window.location.href = "./architect_architect_list.html";
-        } else {
-            alert("Failed")
-        }
-    });
-
-
-</script> -->
 
 
 
