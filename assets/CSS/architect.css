@@ -37,7 +37,7 @@
   /* background: url("../image/login as architect/sample design/sample 3.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: initial;
+  /* background-attachment: initial; */
   height: 180px;
   border-radius: 5px 5px 0 0;
 }
@@ -72,6 +72,7 @@
   border-radius: 3px;
   border: 1px solid #28467f;
   font-weight: bold;
+
   /* font-family: Montserrat; */
   cursor: pointer;
   color: #fff;
@@ -88,4 +89,10 @@
 .btn:hover {
   background: #28467f;
   color: #020202;
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    padding: 11px 16px;
+  }
 }

@@ -51,6 +51,7 @@
             <a href="./own_user_profile_edit.html" class="edit_btn">Edit</a>
 
             <button type="submit" class="submit_btn" id="delete_btn">Delete</button>
+            <button onclick="logout()" class="submit_btn" id="logout">Log out</button>
         </div>
 
     </form>
@@ -61,6 +62,19 @@
 
     <script>
         userProfile();
+    </script>
+    <script>
+        let logout = document.getElementById("logout");
+        logout.addEventListener("click", function (event) {
+            event.preventDefault();
+            let msg = confirm("Are you sure you want to logout this account");
+            if (msg !== true) {
+                return;
+            } else {
+                localStorage.setItem("this_user", JSON.stringify(null));
+                window.location.href = "../index.html";
+            }
+        });
     </script>
 </body>
 

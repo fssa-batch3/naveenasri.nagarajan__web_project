@@ -225,7 +225,7 @@ details > p {
     display: block;
   }
   .faq-section {
-    width: 530px;
-    padding: 20px 0px;
+    width: auto;
+    padding: 24px;
   }
 }

@@ -88,6 +88,7 @@
         <div class="submit">
             <a href="./own_architect_profile_edit.html" class="edit_btn">Edit</a>
             <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
+            <button onclick="logout()" class="submit_btn" id="logout">Log out</button>
         </div>
     </section>
 
@@ -95,6 +96,19 @@
     <script src="../assets/JS/architect_profile.js">
     </script>
 
+    <script>
+        let logout = document.getElementById("logout");
+        logout.addEventListener("click", function (event) {
+            event.preventDefault();
+            let msg = confirm("Are you sure you want to logout this account");
+            if (msg !== true) {
+                return;
+            } else {
+                localStorage.setItem("Single_Data", JSON.stringify(null));
+                window.location.href = "../index.html";
+            }
+        });
+    </script>
 </body>
 
 </html>

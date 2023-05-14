@@ -24,38 +24,37 @@
                 <form id="form2" class="form">
                     <label>Name:</label>
                     <input type="text" required autocomplete="norname" id="norname" placeholder="enter your name"
-                        required />
+                        required value="Maha" />
                     <br /><br />
                     <label>User
                         name:</label>
-                    <input type="text" required pattern="[A-Za-z0-9]+"
-                        title="Make sure that name should not contain space" autocomplete="name" id="name"
-                        placeholder="enter your name" required />
+                    <input type="text" pattern="[A-Za-z0-9]+" title="Make sure that name should not contain space"
+                        autocomplete="name" id="name" placeholder="enter your name" required value="Maha007" />
                     <br /><br />
                     <label>Email:</label>
                     <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                        title="Make sure email should be in the correct pattern" required autocomplete="email"
-                        placeholder="abc@gmail.com" required id="email" />
+                        title="Make sure email should be in the correct pattern" autocomplete="email"
+                        placeholder="abc@gmail.com" required id="email" value="maha@gmail.com" />
                     <br /><br />
                     <label>Number:</label>
-                    <input type="tel" required autocomplete="number" id="number" pattern="[6789]{1}[0-9]{9,15}"
+                    <input type="tel" pattern="[6789]{1}[0-9]{9,15}"
                         title="Phone number with 6-9 and remaing more then 9 and less than 15 digit with in  0-9"
-                        placeholder="enter your Phone Number" required />
+                        placeholder="enter your Phone Number" id="number" required value="987654321234" />
                     <br /><br />
                     <label>password:</label>
                     <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
                         title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space "
-                        required autocomplete="current-password" class="password" id="password"
-                        placeholder="password" />
+                        required autocomplete="current-password" class="password" id="password" placeholder="password"
+                        value="Maha@123" />
                     <br /><br />
                     <label>Confirm Password:</label>
                     <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
                         title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space"
                         required id="confirm_password" class="copassword" autocomplete="current-password"
-                        placeholder="Confirm password" />
+                        placeholder="Confirm password" value="Maha@123" />
                     <br /><br />
                     <div>
-                        <button type="submit">
+                        <button class="signup" type="submit">
                             Sign up
                         </button>
                     </div>

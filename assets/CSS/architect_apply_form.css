@@ -1,8 +1,11 @@
 .full_form {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-
+#architectForm1 {
+  margin-top: 90px;
+}
 .form {
   background-color: #96aaec;
   font-size: 25px;
@@ -16,6 +19,7 @@ input {
   padding: 5px;
   border-radius: 7px;
   border: none;
+  float: right;
 }
 label {
   color: #28467f;
@@ -35,6 +39,6 @@ button,
 
 .logbtn {
   margin-top: 40px;
-  margin-right: 210px;
+  margin-right: 200px;
   padding: 7px 75px;
 }

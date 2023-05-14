@@ -27,7 +27,7 @@
   position: relative;
   width: 400px;
   height: 270px;
-  aspect-ratio: 9/14;
+  /* aspect-ratio: 9/14; */
   overflow: hidden;
   border-radius: 8px;
   display: flex;

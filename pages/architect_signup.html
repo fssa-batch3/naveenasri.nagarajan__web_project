@@ -21,9 +21,7 @@
                     <input type="url" id="image" required name="image" placeholder="Profileimage" /><br /><br />
 
                     <label>Name:</label>
-                    <input type="text" required pattern="[A-Za-z0-9]+"
-                        title="Make sure that name should not contain space" required id="name"
-                        placeholder="enter your name" />
+                    <input type="text" required required id="name" placeholder="enter your name" />
                     <br />
                     <br />
 
@@ -40,7 +38,7 @@
                     <br />
 
                     <label>Phone number:</label>
-                    <input type="tel" required pattern="[6789]{1}[0-9]{9,15}"
+                    <input type="number" required pattern="[6789]{1}[0-9]{9,15}"
                         title="Phone number with 6-9 and remaing 9 digit with 0-9" id="phonenumber"
                         placeholder="9218457240" />
                     <br />
@@ -71,7 +69,11 @@
                     <br />
                     <br />
                     <label>Education:</label>
-                    <input type="text" required id="education" placeholder="Bachelor of architects" />
+                    <input list="Education" required id="education" placeholder="Bachelor of architects" />
+                    <datalist id="Education">
+                        <option value="B.arch">
+                        <option value="M.arch">
+                    </datalist>
                     <br />
                     <br />
                     <label>Experience:</label>

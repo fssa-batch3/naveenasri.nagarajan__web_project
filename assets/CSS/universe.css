@@ -39,6 +39,9 @@ nav {
   display: none;
 }
 /* header is ended */
+input::before {
+  border: 2px solid green;
+}
 
 input:valid {
   border: 2px solid green;
@@ -204,7 +207,6 @@ footer h3 {
 
   nav {
     display: block;
-
     align-items: center;
     justify-content: space-between;
     font-size: 20px;

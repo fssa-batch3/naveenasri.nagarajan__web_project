@@ -79,6 +79,7 @@ textarea {
   border-radius: 7px;
   border: none;
   width: 350px;
+  float: right;
 }
 .text-search {
   width: 300px;

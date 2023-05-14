@@ -59,7 +59,7 @@ section.section4 div.sec_4 {
   width: 750px;
   background-color: #ffff;
   font-family: "Lato", sans-serif;
-  padding: 20px 315px;
+  padding: 20px 325px;
   margin-bottom: 20px;
 }
 
@@ -111,7 +111,7 @@ details > p {
   }
 
   .faq-section {
-    width: 530px;
-    padding: 20px 0px;
+    width: auto;
+    padding: 20px;
   }
 }

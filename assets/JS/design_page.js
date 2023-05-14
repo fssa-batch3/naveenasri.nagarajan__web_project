@@ -269,7 +269,8 @@ function arcDesignEdit() {
   document.getElementById("bedroom").value = currentdesign.designbedroom;
   document.getElementById("balcony").value = currentdesign.designbalcony;
   document.getElementById("paragraph").value = currentdesign.designpara;
-  document.getElementById("brief_paragraph").value = currentdesign.designpara;
+  document.getElementById("brief_paragraph").value =
+    currentdesign.designbriefpara;
 
   let designForm1 = document.getElementById("designForm1");
   designForm1.addEventListener("submit", (e) => {
@@ -309,7 +310,7 @@ function arcDesignEdit() {
     currentdesign.designbedroom = detailbedroom;
     currentdesign.designbalcony = detailbalcony;
     currentdesign.designpara = detailpara;
-    currentdesign.designpara = detailbriefpara;
+    currentdesign.designbriefpara = detailbriefpara;
 
     localStorage.setItem("personDesign", JSON.stringify(designData));
     window.location.href = "./own_architect_profile.html";

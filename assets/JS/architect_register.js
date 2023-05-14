@@ -159,6 +159,14 @@ function arcProfileEdit() {
       "userNataCertificate"
     ).value;
 
+    var regex = /^[6789]{1}[0-9]{9,15}$/;
+    if (regex.test(arcPhoneNumber)) {
+      console.log("Valid phone number!");
+    } else {
+      alert("Phone number is invalid kindly change your number");
+      return;
+    }
+
     let architectUser_data = {
       arcUrl,
       arcName,

@@ -1,9 +1,15 @@
+/* architect login page */
+/* user login page */
+/* user sign up page */
 .all {
   display: grid;
   place-items: center;
   margin-top: 50px;
 }
 
+.signup {
+  margin-left: 40px;
+}
 .signupbtn {
   margin-top: 20px;
   color: #cee1ff;
@@ -31,10 +37,10 @@ button {
 }
 
 .form {
-  width: 460px;
+  width: auto;
   background-color: #96aaec;
   font-size: 25px;
-  height: 470px;
+  height: auto;
   padding: 40px;
   border-radius: 13px;
   position: relative;
@@ -57,6 +63,7 @@ input {
   font-size: 18px;
   padding: 5px;
   border-radius: 7px;
+  float: right;
 }
 
 .holder {
@@ -72,22 +79,22 @@ input {
   margin-top: 70px;
 }
 
-#norname {
+/* #norname {
   margin-left: 130px;
 }
 #name {
   margin-left: 80px;
 }
 
-#email {
+ #email {
   margin-left: 140px;
-}
+} 
 #number {
   margin-left: 109px;
 }
-.password {
+ .password {
   margin-left: 96px;
-}
+} 
 .copassword {
   margin-left: 3px;
-}
+} */

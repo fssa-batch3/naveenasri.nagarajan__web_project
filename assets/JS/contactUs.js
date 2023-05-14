@@ -4,7 +4,7 @@ form.addEventListener("click", function (event) {
   event.preventDefault();
 });
 
-function sende(e) {
+function sende() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const phoneno = document.getElementById("phoneno").value;
@@ -31,5 +31,5 @@ function sende(e) {
     From: "naveenanaga18@gmail.com",
     Subject: subject,
     Body: body,
-  }).then((message) => alert("Message sent successfully!"));
+  }).then(alert("Message sent successfully!"));
 }
