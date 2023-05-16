@@ -158,9 +158,75 @@ function bookNow() {
       bookamount: bookamount,
       booktime: booktime,
       bookmessage: bookmessage,
-      // func: function getbookId() {
-      //   return this.bookid;
-      // },
+    };
+
+    oneArc.booked.push(bookuserdetail);
+    console.log(bookuserdetail);
+    let onearcindex = allarc.indexOf(oneArc);
+    console.log(onearcindex);
+    allarc[onearcindex] = oneArc;
+    console.log(oneArc);
+    const str = JSON.stringify(allarc);
+    confirm(
+      "Make sure the given details should be correct we give this details to the Architect whom you select"
+    );
+    window.localStorage.setItem("personArchitect", str);
+  });
+}
+
+function architectBookNow() {
+  const bookingform = document.getElementById("bookingform");
+  bookingform.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const allarc = JSON.parse(localStorage.getItem("personArchitect"));
+    console.log(allarc);
+
+    let urlSearch = window.location.search;
+    console.log(urlSearch);
+    let url_params = new URLSearchParams(urlSearch);
+    console.log(url_params);
+    // console.log(URLSearchParams)
+    let get_id = url_params.get("id");
+    console.log(get_id);
+
+    let oneArc = allarc.find(function (event) {
+      let arcId = event["arcId"];
+      if (get_id == arcId) {
+        return true;
+      }
+    });
+    console.log(oneArc);
+
+    const thisarc = JSON.parse(localStorage.getItem("Single_Data"));
+    const personarc = JSON.parse(localStorage.getItem("personArchitect"));
+
+    let ownuser = personarc.find(function (event) {
+      let arcEmail = event["arcEmail"];
+      if (thisarc == arcEmail) {
+        return true;
+      }
+    });
+    console.log(ownuser);
+
+    const bookdesignname = document.getElementById("designname").value.trim();
+    const bookdesignurl = document.getElementById("designurl").value.trim();
+    const bookamount = document.getElementById("amount").value.trim();
+    const booktime = document.getElementById("time").value.trim();
+    const bookmessage = document.getElementById("messagetextarea").value.trim();
+    const bookid = Date.now();
+
+    let bookuserdetail = {
+      userId: ownuser.arcId,
+      userName: ownuser.arcName,
+      userEmail: ownuser.arcEmail,
+      userNumber: ownuser.arcPhoneNumber,
+      bookid: bookid,
+      bookdesignname: bookdesignname,
+      bookdesignurl: bookdesignurl,
+      bookamount: bookamount,
+      booktime: booktime,
+      bookmessage: bookmessage,
     };
 
     oneArc.booked.push(bookuserdetail);

@@ -21,6 +21,10 @@ for (let i = 0; i < arclist.length; i++) {
 
 function architectLoop() {
   for (let i = 0; i < select_architect_list.length; i++) {
+    if (select_architect_list[i]["arcId"] == arcmatch["arcId"]) {
+      continue;
+    }
+
     let card;
     let design_img_div;
     let design_img;
@@ -84,7 +88,7 @@ function architectLoop() {
     bookbtn.setAttribute("class", "btn");
     bookbtn.setAttribute(
       "href",
-      "./user_book_now_form.html?id=" + arclist[i].arcId
+      "./architect_book_now_form.html?id=" + arclist[i].arcId
     );
     bookbtn.setAttribute("id", "bookbtn");
     bookbtn.innerText = "Book now";

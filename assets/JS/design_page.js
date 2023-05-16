@@ -56,6 +56,64 @@ function designList() {
   }
 }
 
+function arcDesignList() {
+  const select_design_list = [];
+
+  let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+  console.log(deslist);
+
+  for (let i = 0; i < deslist.length; i++) {
+    select_design_list.push(deslist[i]);
+    console.log(select_design_list);
+  }
+
+  for (let i = 0; i < select_design_list.length; i++) {
+    let card;
+    let img;
+    let info_div;
+    let design_name;
+    let square_feet;
+    let para;
+    let details;
+
+    card = document.createElement("div");
+    card.setAttribute("class", "card");
+    document.querySelector("div.designs").append(card);
+    console.log(card);
+
+    img = document.createElement("img");
+    img.setAttribute("alt", "inteior design");
+    img.setAttribute("src", select_design_list[i]["designimg"]);
+    card.append(img);
+
+    info_div = document.createElement("div");
+    info_div.setAttribute("class", "info");
+    card.append(info_div);
+
+    design_name = document.createElement("h3");
+    design_name.innerText = select_design_list[i]["designdname"];
+    info_div.append(design_name);
+
+    square_feet = document.createElement("p");
+    square_feet.innerText = select_design_list[i]["designsquarefeet"];
+    info_div.append(square_feet);
+
+    para = document.createElement("p");
+    para.innerText = select_design_list[i]["designpara"];
+    info_div.append(para);
+
+    details = document.createElement("a");
+    details.setAttribute("class", "btn");
+    details.innerText = " More details";
+    details.setAttribute(
+      "href",
+      "./architect_design_detail.html?id=" + deslist[i].designid
+    );
+    info_div.append(details);
+  }
+}
+
 function designDetail() {
   const desInfo = JSON.parse(localStorage.getItem("personDesign"));
   console.log(desInfo);
@@ -174,6 +232,130 @@ function designDetail() {
   bookbtn.setAttribute(
     "href",
     "./user_book_now_form.html?id=" + design_owner.arcId
+  );
+  bookbtn.setAttribute("id", "bookbtn");
+  bookbtn.innerText = "Book now";
+  card.append(bookbtn);
+}
+
+function arcDesignDetail() {
+  const desInfo = JSON.parse(localStorage.getItem("personDesign"));
+  console.log(desInfo);
+
+  let urlSearch = window.location.search;
+  console.log(urlSearch);
+  let url_params = new URLSearchParams(urlSearch);
+  console.log(url_params);
+  let get_id = url_params.get("id");
+  console.log(get_id);
+
+  let designObj = desInfo.find(function (select_design) {
+    let id = select_design["designid"];
+    console.log(id);
+
+    if (get_id == id) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(designObj);
+
+  document.getElementById("mainimage").setAttribute("src", designObj.designimg);
+  document.getElementById("dname").innerHTML = designObj["designdname"];
+  document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
+  document.getElementById("squarefeet").innerHTML =
+    designObj["designsquarefeet"];
+  document.getElementById("ppsquarefeet").innerHTML =
+    designObj["designppsquarefeet"];
+  document.getElementById("dates").innerHTML = designObj["designdates"];
+  document.getElementById("bathroom").innerHTML = designObj["designbathroom"];
+  document.getElementById("bedroom").innerHTML = designObj["designbedroom"];
+  document.getElementById("balcony").innerHTML = designObj["designbalcony"];
+  document.getElementById("para").innerHTML = designObj["designpara"];
+  document.getElementById("brief_para").innerHTML =
+    designObj["designbriefpara"];
+
+  // card java script
+
+  const arclist = JSON.parse(localStorage.getItem("personArchitect"));
+
+  let designEmail = designObj["designemail"];
+
+  let design_owner = arclist.find(function (select_owner) {
+    let arcEmail = select_owner["arcEmail"];
+
+    if (designEmail == arcEmail) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  let card;
+  let design_img_div;
+  let design_img;
+  let arcname;
+  let exp_div;
+  let preExp;
+  let arcexperience;
+  let detailsbtn;
+  let bookbtn;
+
+  card = document.createElement("div");
+  card.setAttribute("class", "card");
+  document.querySelector("div.AboutArchitect").append(card);
+  // console.log(card);
+
+  design_img_div = document.createElement("div");
+  design_img_div.setAttribute("class", "cover-photo");
+  design_img_div.setAttribute(
+    "style",
+    "background: url(" +
+      design_owner["arcCoverPhoto"] +
+      ") no-repeat center center / contain;"
+  );
+  card.append(design_img_div);
+
+  design_img = document.createElement("img");
+  design_img.setAttribute("src", design_owner["arcUrl"]);
+  design_img.setAttribute("class", "profile");
+  design_img.setAttribute("alt", "architect-profile");
+  design_img_div.append(design_img);
+
+  arcname = document.createElement("h3");
+  arcname.setAttribute("class", "profile-name");
+  arcname.innerText = design_owner["arcName"];
+  card.append(arcname);
+
+  exp_div = document.createElement("div");
+  exp_div.setAttribute("class", "exp_div");
+  card.append(exp_div);
+
+  preExp = document.createElement("pre");
+  preExp.innerText = "Experience : ";
+  exp_div.append(preExp);
+
+  arcexperience = document.createElement("p");
+  arcexperience.setAttribute("class", "about");
+  arcexperience.innerText = design_owner["arcExperience"];
+  exp_div.append(arcexperience);
+
+  detailsbtn = document.createElement("a");
+  detailsbtn.setAttribute("class", "btn");
+  detailsbtn.setAttribute(
+    "href",
+    "./user_detail_one_architect_profile.html?id=" + design_owner.arcId
+  );
+  detailsbtn.setAttribute("id", "detailsbtn");
+  detailsbtn.innerText = " More Details";
+  card.append(detailsbtn);
+
+  bookbtn = document.createElement("a");
+  bookbtn.setAttribute("class", "btn");
+  bookbtn.setAttribute(
+    "href",
+    "./architect_book_now_form.html?id=" + design_owner.arcId
   );
   bookbtn.setAttribute("id", "bookbtn");
   bookbtn.innerText = "Book now";
