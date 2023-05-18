@@ -87,8 +87,6 @@ function userLogin() {
       ) {
         match = true;
         break;
-      } else {
-        match = false;
       }
     }
 

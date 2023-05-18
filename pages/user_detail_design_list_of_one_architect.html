@@ -26,7 +26,6 @@
         let urlSearch = window.location.search;
         let url_params = new URLSearchParams(urlSearch);
         let get_id = url_params.get("id");
-        // console.log(get_id);
 
         let urlarc = arcInfo.find(function (select_architect) {
             let id = select_architect["arcId"];
@@ -34,14 +33,9 @@
 
             if (get_id == id) {
                 return true;
-            } else {
-                return false;
             }
         });
 
-
-
-        // const singleData = JSON.parse(localStorage.getItem("Single_Data"));
         let oneArchitectdesign = [];
 
 

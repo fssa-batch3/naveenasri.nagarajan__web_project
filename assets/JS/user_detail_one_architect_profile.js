@@ -10,8 +10,6 @@ function moreDetail() {
 
     if (get_id == id) {
       return true;
-    } else {
-      return false;
     }
   });
   document.getElementById("userImage").setAttribute("src", urlObj["arcUrl"]);

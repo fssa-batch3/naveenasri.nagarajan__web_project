@@ -131,8 +131,6 @@ function designDetail() {
 
     if (get_id == id) {
       return true;
-    } else {
-      return false;
     }
   });
   console.log(designObj);
@@ -163,8 +161,6 @@ function designDetail() {
 
     if (designEmail == arcEmail) {
       return true;
-    } else {
-      return false;
     }
   });
 
@@ -254,8 +250,6 @@ function arcDesignDetail() {
 
     if (get_id == id) {
       return true;
-    } else {
-      return false;
     }
   });
   console.log(designObj);
@@ -286,8 +280,6 @@ function arcDesignDetail() {
 
     if (designEmail == arcEmail) {
       return true;
-    } else {
-      return false;
     }
   });
 
