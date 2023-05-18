@@ -89,8 +89,6 @@ function arcLogin() {
       ) {
         match = true;
         break;
-      } else {
-        match = false;
       }
     }
 
