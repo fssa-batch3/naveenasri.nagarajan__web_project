@@ -1,12 +1,8 @@
 function moreDetail() {
   const arcInfo = JSON.parse(localStorage.getItem("personArchitect"));
-  // console.log(arcInfo);
   let urlSearch = window.location.search;
-  // console.log(urlSearch);
   let url_params = new URLSearchParams(urlSearch);
-  // console.log(url_params);
   let get_id = url_params.get("id");
-  // console.log(get_id);
 
   let urlObj = arcInfo.find(function (select_architect) {
     let id = select_architect["arcId"];
@@ -18,36 +14,24 @@ function moreDetail() {
       return false;
     }
   });
-  // console.log(urlObj);
-
-  const url = document
-    .getElementById("userImage")
-    .setAttribute("src", urlObj["arcUrl"]);
-  const name = (document.getElementById("userName").innerHTML =
-    urlObj["arcName"]);
-  const gender = (document.getElementById("userGender").innerHTML =
-    urlObj["arcGender"]);
-  const phoneNumber = (document.getElementById("userPhoneNumber").innerHTML =
-    urlObj["arcPhoneNumber"]);
-  const address = (document.getElementById("userAddress").innerHTML =
-    urlObj["arcAddress"]);
-  const coverphoto = document
+  document.getElementById("userImage").setAttribute("src", urlObj["arcUrl"]);
+  document.getElementById("userName").innerHTML = urlObj["arcName"];
+  document.getElementById("userGender").innerHTML = urlObj["arcGender"];
+  document.getElementById("userPhoneNumber").innerHTML =
+    urlObj["arcPhoneNumber"];
+  document.getElementById("userAddress").innerHTML = urlObj["arcAddress"];
+  document
     .getElementById("userCoverPhoto")
     .setAttribute("src", urlObj["arcCoverPhoto"]);
-  const education = (document.getElementById("userEducation").innerHTML =
-    urlObj["arcEducation"]);
-  const experience = (document.getElementById("userExperience").innerHTML =
-    urlObj["arcExperience"]);
-  const email = (document.getElementById("userEmail").innerHTML =
-    urlObj["arcEmail"]);
-  // const password = document.getElementById("userPassword").innerHTML = urlObj["arcPassword"];
-  const graduatedocument = document
+  document.getElementById("userEducation").innerHTML = urlObj["arcEducation"];
+  document.getElementById("userExperience").innerHTML = urlObj["arcExperience"];
+  document.getElementById("userEmail").innerHTML = urlObj["arcEmail"];
+  document
     .getElementById("userDocument")
     .setAttribute("src", urlObj["arcDocument"]);
-  const natacertificate = document
+  document
     .getElementById("userNataCertificate")
     .setAttribute("src", urlObj["arcNataCertificate"]);
-  // const modelDesign = document.getElementById("userModelDesign").setAttribute("src", urlObj["arcModelDesign"]);
 
   let oneArchitectdesign = [];
 
@@ -117,7 +101,6 @@ function bookNow() {
     console.log(urlSearch);
     let url_params = new URLSearchParams(urlSearch);
     console.log(url_params);
-    // console.log(URLSearchParams)
     let get_id = url_params.get("id");
     console.log(get_id);
 
@@ -171,6 +154,7 @@ function bookNow() {
       "Make sure the given details should be correct we give this details to the Architect whom you select"
     );
     window.localStorage.setItem("personArchitect", str);
+    window.location.href = "./user_architect.html";
   });
 }
 

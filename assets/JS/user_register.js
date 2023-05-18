@@ -163,7 +163,7 @@ function userProfileEdit() {
     let userEmail = document.getElementById("email").value;
     let userNumber = document.getElementById("phoneNumber").value;
 
-    var regex = /^[6789]{1}[0-9]{9,15}$/;
+    let regex = /^[6789]\d{8,14}$/;
     if (regex.test(userNumber)) {
       console.log("Valid phone number!");
     } else {

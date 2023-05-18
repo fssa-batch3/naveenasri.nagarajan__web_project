@@ -11,52 +11,40 @@
 </head>
 
 <body>
-    <!-- header is started -->
-    <!-- <header class="header">
-        <div>
-            <a href="./architect_architect_list.html">
-                <img src="../assets/image/common/logo.png" alt="logo" class="logo" alt="architect accept form" />
-            </a>
-        </div>
-        <nav>
-            <a class="a" href="./architect_architect_list.html">Architects</a>
-            <a class="a" href="./architect_design_list.html">Designs</a>
-            <a class="a" href="./own_architect_booking_list.html">Ordered list</a>
-            <a class="a" href="./architect_about_us.html">About us</a>
-            <a class="a" href="./architect_contact_us.html">Contact us</a>
-            <a class="a" href="./own_architect_profile.html">
-                <img src="../assets/image/common/profile.png" alt="profile" class="profileofuser">
-            </a>
-        </nav>
-    </header> -->
-    <!-- header is ended -->
-
     <!-- maincontainer is started -->
     <div class="container">
         <div class="list-of-customer">
             <div class="a-form bookingpage">
                 <form id="bookingform">
                     <label>Name :</label>
-                    <input id="architectName" required type="text" placeholder="enter your name"
-                        value="saravanan Architect" />
+                    <input required type="text" placeholder="enter your name" value="saravanan Architect"
+                        id="architectName" />
                     <br /><br />
                     <label>Phone Number :</label>
-                    <input id="architectPhone" required type="number" placeholder="enter your Number"
-                        value="9876543234" />
+                    <input required type="number" placeholder="enter your Number" value="9876543234"
+                        id="architectPhone" />
                     <br /><br />
-                    <label>Appoinment Date :</label>
-                    <input id="architectDate" type="date" required />
+                    <label>Email :</label>
+                    <input required type="email" placeholder="enter your email" value="saravanan@gmail.com"
+                        id="architectEmail" />
+                    <br /><br />
+                    <label>User Email :</label>
+                    <input required type="email" placeholder="enter your email"
+                        value="naveenasri.nagarajan@fssa.freshworks.com" id="userEmail" />
+                    <br /><br />
+                    <!-- <label>Appoinment Date :</label>
+                    <input type="date" required id="architectDate" />
                     <br /><br />
                     <label>Appoinment Time :</label>
-                    <input id="architectTime" required type="time" />
-                    <br /><br />
-                    <label for="textarea">Message :</label>
-                    <textarea id="architectMessage" required rows="2" cols="40">
+                    <input required type="time" id="architectTime" />
+                    <br /><br /> -->
+                    <label>Message :</label>
+                    <textarea required rows="2" cols="40" id="architectMessage">
                     </textarea>
                     <br />
 
                     <div class="both-btn">
-                        <button id="dessubmit" type="submit" onclick="accept()">send</button>
+                        <button id="dessubmit" type="submit" id="send" onclick="accept()">send</button>
                     </div>
                 </form>
             </div>
@@ -71,8 +59,8 @@
 </script>
 
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
+<script src="https://smtpjs.com/v3/smtp.js" async></script>
+<!-- <script>
     let urlSearch = window.location.search;
     let url_params = new URLSearchParams(urlSearch);
     let get_id = url_params.get("id");
@@ -80,12 +68,12 @@
 
     const arcInfo = JSON.parse(localStorage.getItem("personArchitect"));
 
-    // const acceptForm = document.getElementById("bookingform");
+    const acceptForm = document.getElementById("bookingform");
 
 
-    // acceptForm.addEventListener("sumbit", function (event) {
-    //     event.preventDefault();
-    // });
+     acceptForm.addEventListener("sumbit", function (event) {
+         event.preventDefault();
+     });
 
 
     function email() {
@@ -99,43 +87,40 @@
             }
         }
     }
+</script> -->
 
-    const toEmail = email();
 
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
     function accept() {
-        const arcEmail = JSON.parse(localStorage.getItem("Single_Data"));
+        const toemail = document.getElementById("userEmail").value;
         const name = document.getElementById("architectName").value;
         const Phone = document.getElementById("architectPhone").value;
-        const date = document.getElementById("architectDate").value;
-        const time = document.getElementById("architectTime").value;
+        const email = document.getElementById("architectEmail").value;
         const message = document.getElementById("architectMessage").value;
-        const body = "Name : " +
+        const body =
+            "Name : " +
             name +
-            "<br /> Email : " +
-            arcEmail +
             "<br /> Phone number : " +
             Phone +
-            "<br /> Appoinment Date : " +
-            date +
-            "<br /> Appoinment Time : " +
-            time +
+            "<br /> Email : " +
+            email +
             "<br /> Message : " +
             message;
-
         Email.send({
-            SecureToken: "921d1e0d-a8db-4bb1-868c-10b6bb473a5f",
             Host: "smtp.elasticemail.com",
             Username: "interiordynamicdesign@gmail.com",
-            Password: "BB78951B9B8DFF23E7732AD00A4E3DA20685",
-            To: email(),
+            Password: "E898A468088482628479BF196314179EBCFD",
+            To: 'naveenasri.nagarajan@fssa.freshworks.com',
             From: "interiordynamicdesign@gmail.com",
-            Body: body,
-        }).then((message) => alert("Are you sure to accept this user?"));
-
-
-    };
-
-
+            Subject: "This is the subject",
+            Body: body
+        }).then(
+            message => alert(message)
+        );
+    }
 </script>
 
 </html>

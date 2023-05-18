@@ -181,7 +181,6 @@ function designDetail() {
   card = document.createElement("div");
   card.setAttribute("class", "card");
   document.querySelector("div.AboutArchitect").append(card);
-  // console.log(card);
 
   design_img_div = document.createElement("div");
   design_img_div.setAttribute("class", "cover-photo");

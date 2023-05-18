@@ -159,7 +159,7 @@ function arcProfileEdit() {
       "userNataCertificate"
     ).value;
 
-    var regex = /^[6789]{1}[0-9]{9,15}$/;
+    let regex = /^[6789]\d{8,14}$/;
     if (regex.test(arcPhoneNumber)) {
       console.log("Valid phone number!");
     } else {
