@@ -136,6 +136,33 @@ function designDetail() {
   console.log(designObj);
 
   document.getElementById("mainimage").setAttribute("src", designObj.designimg);
+  document
+    .getElementById("mainimage2")
+    .setAttribute("src", designObj.designimg2);
+  document
+    .getElementById("mainimage3")
+    .setAttribute("src", designObj.designimg3);
+  document
+    .getElementById("mainimage4")
+    .setAttribute("src", designObj.designimg4);
+  document
+    .getElementById("mainimage5")
+    .setAttribute("src", designObj.designimg5);
+  document
+    .getElementById("mainimage6")
+    .setAttribute("src", designObj.designimg6);
+  document
+    .getElementById("mainimage7")
+    .setAttribute("src", designObj.designimg7);
+  document
+    .getElementById("mainimage8")
+    .setAttribute("src", designObj.designimg8);
+  document
+    .getElementById("mainimage9")
+    .setAttribute("src", designObj.designimg9);
+  document
+    .getElementById("mainimage10")
+    .setAttribute("src", designObj.designimg10);
   document.getElementById("dname").innerHTML = designObj["designdname"];
   document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
   document.getElementById("squarefeet").innerHTML =
@@ -255,6 +282,33 @@ function arcDesignDetail() {
   console.log(designObj);
 
   document.getElementById("mainimage").setAttribute("src", designObj.designimg);
+  document
+    .getElementById("mainimage2")
+    .setAttribute("src", designObj.designimg2);
+  document
+    .getElementById("mainimage3")
+    .setAttribute("src", designObj.designimg3);
+  document
+    .getElementById("mainimage4")
+    .setAttribute("src", designObj.designimg4);
+  document
+    .getElementById("mainimage5")
+    .setAttribute("src", designObj.designimg5);
+  document
+    .getElementById("mainimage6")
+    .setAttribute("src", designObj.designimg6);
+  document
+    .getElementById("mainimage7")
+    .setAttribute("src", designObj.designimg7);
+  document
+    .getElementById("mainimage8")
+    .setAttribute("src", designObj.designimg8);
+  document
+    .getElementById("mainimage9")
+    .setAttribute("src", designObj.designimg9);
+  document
+    .getElementById("mainimage10")
+    .setAttribute("src", designObj.designimg10);
   document.getElementById("dname").innerHTML = designObj["designdname"];
   document.getElementById("pdesign").innerHTML = designObj["designpdesign"];
   document.getElementById("squarefeet").innerHTML =
@@ -369,6 +423,15 @@ function arcDesignCreate() {
     }
 
     const detailimg = document.getElementById("designimage").value.trim();
+    const detailimg2 = document.getElementById("designimage2").value.trim();
+    const detailimg3 = document.getElementById("designimage3").value.trim();
+    const detailimg4 = document.getElementById("designimage4").value.trim();
+    const detailimg5 = document.getElementById("designimage5").value.trim();
+    const detailimg6 = document.getElementById("designimage6").value.trim();
+    const detailimg7 = document.getElementById("designimage7").value.trim();
+    const detailimg8 = document.getElementById("designimage8").value.trim();
+    const detailimg9 = document.getElementById("designimage9").value.trim();
+    const detailimg10 = document.getElementById("designimage10").value.trim();
     const detaildname = document.getElementById("designname").value.trim();
     const detailemail = document.getElementById("email").value.trim();
     const detailpdesign = document.getElementById("pricedesign").value.trim();
@@ -390,6 +453,15 @@ function arcDesignCreate() {
     let designData = {
       designid: detailid,
       designimg: detailimg,
+      designimg2: detailimg2,
+      designimg3: detailimg3,
+      designimg4: detailimg4,
+      designimg5: detailimg5,
+      designimg6: detailimg6,
+      designimg7: detailimg7,
+      designimg8: detailimg8,
+      designimg9: detailimg9,
+      designimg10: detailimg10,
       designdname: detaildname,
       designemail: detailemail,
       designpdesign: detailpdesign,
@@ -431,6 +503,15 @@ function arcDesignEdit() {
   console.log(currentdesign);
 
   document.getElementById("designimage").value = currentdesign.designimg;
+  document.getElementById("designimage2").value = currentdesign.designimg2;
+  document.getElementById("designimage3").value = currentdesign.designimg3;
+  document.getElementById("designimage4").value = currentdesign.designimg4;
+  document.getElementById("designimage5").value = currentdesign.designimg5;
+  document.getElementById("designimage6").value = currentdesign.designimg6;
+  document.getElementById("designimage7").value = currentdesign.designimg7;
+  document.getElementById("designimage8").value = currentdesign.designimg8;
+  document.getElementById("designimage9").value = currentdesign.designimg9;
+  document.getElementById("designimage10").value = currentdesign.designimg10;
   document.getElementById("designname").value = currentdesign.designdname;
   document.getElementById("pricedesign").value = currentdesign.designpdesign;
   document.getElementById("squarefeet").value = currentdesign.designsquarefeet;
@@ -456,6 +537,15 @@ function arcDesignEdit() {
     });
 
     const detailimg = document.getElementById("designimage").value.trim();
+    const detailimg2 = document.getElementById("designimage2").value.trim();
+    const detailimg3 = document.getElementById("designimage3").value.trim();
+    const detailimg4 = document.getElementById("designimage4").value.trim();
+    const detailimg5 = document.getElementById("designimage5").value.trim();
+    const detailimg6 = document.getElementById("designimage6").value.trim();
+    const detailimg7 = document.getElementById("designimage7").value.trim();
+    const detailimg8 = document.getElementById("designimage8").value.trim();
+    const detailimg9 = document.getElementById("designimage9").value.trim();
+    const detailimg10 = document.getElementById("designimage10").value.trim();
     const detaildname = document.getElementById("designname").value.trim();
     const detailpdesign = document.getElementById("pricedesign").value.trim();
     const detailsquarefeet = document.getElementById("squarefeet").value.trim();
@@ -473,6 +563,15 @@ function arcDesignEdit() {
       .value.trim();
 
     currentdesign.designimg = detailimg;
+    currentdesign.designimg2 = detailimg2;
+    currentdesign.designimg3 = detailimg3;
+    currentdesign.designimg4 = detailimg4;
+    currentdesign.designimg5 = detailimg5;
+    currentdesign.designimg6 = detailimg6;
+    currentdesign.designimg7 = detailimg7;
+    currentdesign.designimg8 = detailimg8;
+    currentdesign.designimg9 = detailimg9;
+    currentdesign.designimg10 = detailimg10;
     currentdesign.designdname = detaildname;
     currentdesign.designpdesign = detailpdesign;
     currentdesign.designsquarefeet = detailsquarefeet;
