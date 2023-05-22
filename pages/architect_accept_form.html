@@ -44,7 +44,7 @@
                     <br />
 
                     <div class="both-btn">
-                        <button id="dessubmit" type="submit" id="send" onclick="accept()">send</button>
+                        <button id="dessubmit" type="submit" id="send" onclick="accept(event)">send</button>
                     </div>
                 </form>
             </div>
@@ -57,7 +57,8 @@
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <script>
-    function accept() {
+    function accept(event) {
+        event.preventDefault();
         const toemail = document.getElementById("userEmail").value;
         const name = document.getElementById("architectName").value;
         const Phone = document.getElementById("architectPhone").value;
