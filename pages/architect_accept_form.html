@@ -17,7 +17,7 @@
             <div class="a-form bookingpage">
                 <form id="bookingform">
                     <label>Name :</label>
-                    <input required type="text" placeholder="enter your name" value="saravanan Architect"
+                    <input required type="text" placeholder="enter your name" value="mani Architect"
                         id="architectName" />
                     <br /><br />
                     <label>Phone Number :</label>
@@ -25,7 +25,7 @@
                         id="architectPhone" />
                     <br /><br />
                     <label>Email :</label>
-                    <input required type="email" placeholder="enter your email" value="saravanan@gmail.com"
+                    <input required type="email" placeholder="enter your email" value="mani@gmail.com"
                         id="architectEmail" />
                     <br /><br />
                     <label>User Email :</label>
@@ -39,7 +39,7 @@
                     <input required type="time" id="architectTime" />
                     <br /><br />
                     <label>Message :</label>
-                    <textarea required rows="2" cols="40" id="architectMessage">
+                    <textarea required rows="2" cols="40" id="architectMessage">I will meet you on this time , we discuss about it 
                     </textarea>
                     <br />
 
@@ -59,10 +59,11 @@
 <script>
     function accept(event) {
         event.preventDefault();
-        const toemail = document.getElementById("userEmail").value;
+
         const name = document.getElementById("architectName").value;
         const Phone = document.getElementById("architectPhone").value;
         const email = document.getElementById("architectEmail").value;
+        const toemail = document.getElementById("userEmail").value;
         const date = document.getElementById("architectDate").value;
         const time = document.getElementById("architectTime").value;
         const message = document.getElementById("architectMessage").value;
