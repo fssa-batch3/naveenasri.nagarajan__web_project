@@ -34,8 +34,8 @@ function userSignUp() {
 
     console.log(userData);
 
-    for (let i = 0; i < userNew.length; i++) {
-      if (userNew[i]["userNorName"] === getNorName) {
+    for (let newarr of userNew) {
+      if (newarr["userNorName"] === getNorName) {
         checker = true;
         alert("User name already exit");
         break;
@@ -43,8 +43,8 @@ function userSignUp() {
         checker = false;
       }
     }
-    for (let i = 0; i < userNew.length; i++) {
-      if (userNew[i]["userEmail"] === getEmail) {
+    for (let newarr of userNew) {
+      if (newarr["userEmail"] === getEmail) {
         checker = true;
         alert("same email is already exit");
         break;
@@ -80,10 +80,10 @@ function userLogin() {
 
     let match = false;
 
-    for (let i = 0; i < defult.length; i++) {
+    for (let checker of defult) {
       if (
-        getEmail == defult[i].userEmail &&
-        getPassword == defult[i].userPassword
+        getEmail == checker.userEmail &&
+        getPassword == checker.userPassword
       ) {
         match = true;
         break;

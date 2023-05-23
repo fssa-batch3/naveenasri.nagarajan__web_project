@@ -14,8 +14,8 @@ console.log(arcmatch);
 
 console.log(arclist);
 
-for (let i = 0; i < arclist.length; i++) {
-  select_architect_list.push(arclist[i]);
+for (let allarc of arclist) {
+  select_architect_list.push(allarc);
   console.log(select_architect_list);
 }
 

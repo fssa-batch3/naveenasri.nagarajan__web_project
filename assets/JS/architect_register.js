@@ -48,8 +48,8 @@ function arcSignUp() {
 
     console.log(architectData);
 
-    for (let i = 0; i < architectNew.length; i++) {
-      if (architectNew[i]["arcEmail"] === getEmail) {
+    for (let checkemail of architectNew) {
+      if (checkemail["arcEmail"] === getEmail) {
         check = true;
         alert("user already exit");
         break;
@@ -82,11 +82,8 @@ function arcLogin() {
 
     let match = false;
 
-    for (let i = 0; i < wholeData.length; i++) {
-      if (
-        getEmail == wholeData[i].arcEmail &&
-        getPassword == wholeData[i].arcPassword
-      ) {
+    for (let verify of wholeData) {
+      if (getEmail == verify.arcEmail && getPassword == verify.arcPassword) {
         match = true;
         break;
       }

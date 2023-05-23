@@ -5,8 +5,8 @@ function designList() {
 
   console.log(deslist);
 
-  for (let i = 0; i < deslist.length; i++) {
-    select_design_list.push(deslist[i]);
+  for (let fulldesign of deslist) {
+    select_design_list.push(fulldesign);
     console.log(select_design_list);
   }
 
@@ -63,8 +63,8 @@ function arcDesignList() {
 
   console.log(deslist);
 
-  for (let i = 0; i < deslist.length; i++) {
-    select_design_list.push(deslist[i]);
+  for (let designlist of deslist) {
+    select_design_list.push(designlist);
     console.log(select_design_list);
   }
 
@@ -350,7 +350,6 @@ function arcDesignDetail() {
   card = document.createElement("div");
   card.setAttribute("class", "card");
   document.querySelector("div.AboutArchitect").append(card);
-  // console.log(card);
 
   design_img_div = document.createElement("div");
   design_img_div.setAttribute("class", "cover-photo");

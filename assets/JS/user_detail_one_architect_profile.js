@@ -35,13 +35,13 @@ function moreDetail() {
 
   let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
-  for (let i = 0; i < deslist.length; i++) {
-    if (urlObj["arcEmail"] == deslist[i]["designemail"]) {
-      oneArchitectdesign.push(deslist[i]);
+  for (let alldesign of deslist) {
+    if (urlObj["arcEmail"] == alldesign["designemail"]) {
+      oneArchitectdesign.push(alldesign);
     }
   }
 
-  for (let i = 0; i < oneArchitectdesign.length; i++) {
+  for (let onearcdes of oneArchitectdesign) {
     let card;
     let img;
     let info_div;
@@ -57,7 +57,7 @@ function moreDetail() {
 
     img = document.createElement("img");
     img.setAttribute("alt", "inteior design");
-    img.setAttribute("src", oneArchitectdesign[i]["designimg"]);
+    img.setAttribute("src", onearcdes["designimg"]);
     card.append(img);
 
     info_div = document.createElement("div");
@@ -65,15 +65,15 @@ function moreDetail() {
     card.append(info_div);
 
     design_name = document.createElement("h3");
-    design_name.innerText = oneArchitectdesign[i]["designdname"];
+    design_name.innerText = onearcdes["designdname"];
     info_div.append(design_name);
 
     square_feet = document.createElement("p");
-    square_feet.innerText = oneArchitectdesign[i]["designsquarefeet"];
+    square_feet.innerText = onearcdes["designsquarefeet"];
     info_div.append(square_feet);
 
     para = document.createElement("p");
-    para.innerText = oneArchitectdesign[i]["designpara"];
+    para.innerText = onearcdes["designpara"];
     info_div.append(para);
 
     details = document.createElement("a");
@@ -81,7 +81,7 @@ function moreDetail() {
     details.innerText = " More details";
     details.setAttribute(
       "href",
-      "./user_design_detail.html?id=" + oneArchitectdesign[i].designid
+      "./user_design_detail.html?id=" + onearcdes.designid
     );
     info_div.append(details);
   }

@@ -66,13 +66,13 @@ let oneArchitectdesign = [];
 
 let deslist = JSON.parse(localStorage.getItem("personDesign"));
 
-for (let i = 0; i < deslist.length; i++) {
-  if (singleData === deslist[i]["designemail"]) {
-    oneArchitectdesign.push(deslist[i]);
+for (let alldesign of deslist) {
+  if (singleData === alldesign["designemail"]) {
+    oneArchitectdesign.push(alldesign);
   }
 }
 
-for (let i = 0; i < oneArchitectdesign.length; i++) {
+for (let oneArcDesign of oneArchitectdesign) {
   let card;
   let img;
   let info_div;
@@ -90,7 +90,7 @@ for (let i = 0; i < oneArchitectdesign.length; i++) {
 
   img = document.createElement("img");
   img.setAttribute("alt", "inteior design");
-  img.setAttribute("src", oneArchitectdesign[i]["designimg"]);
+  img.setAttribute("src", oneArcDesign["designimg"]);
   card.append(img);
 
   info_div = document.createElement("div");
@@ -98,15 +98,15 @@ for (let i = 0; i < oneArchitectdesign.length; i++) {
   card.append(info_div);
 
   design_name = document.createElement("h3");
-  design_name.innerText = oneArchitectdesign[i]["designdname"];
+  design_name.innerText = oneArcDesign["designdname"];
   info_div.append(design_name);
 
   square_feet = document.createElement("p");
-  square_feet.innerText = oneArchitectdesign[i]["designsquarefeet"];
+  square_feet.innerText = oneArcDesign["designsquarefeet"];
   info_div.append(square_feet);
 
   para = document.createElement("p");
-  para.innerText = oneArchitectdesign[i]["designpara"];
+  para.innerText = oneArcDesign["designpara"];
   info_div.append(para);
 
   details = document.createElement("a");
@@ -114,13 +114,13 @@ for (let i = 0; i < oneArchitectdesign.length; i++) {
   details.innerText = " More details";
   details.setAttribute(
     "href",
-    "./user_design_detail.html?id=" + oneArchitectdesign[i].designid
+    "./user_design_detail.html?id=" + oneArcDesign.designid
   );
   info_div.append(details);
 
   editdes = document.createElement("a");
   editdes.setAttribute("class", "editdes");
-  editdes.setAttribute("id", oneArchitectdesign[i].designid);
+  editdes.setAttribute("id", oneArcDesign.designid);
   editdes.innerText = "Edit";
   info_div.append(editdes);
 
@@ -129,7 +129,7 @@ for (let i = 0; i < oneArchitectdesign.length; i++) {
   deletedes.setAttribute("id", "deletedes");
   deletedes.setAttribute(
     "onclick",
-    "deletedesign(" + oneArchitectdesign[i].designid + ")"
+    "deletedesign(" + oneArcDesign.designid + ")"
   );
   deletedes.innerText = "Delete";
   info_div.append(deletedes);
