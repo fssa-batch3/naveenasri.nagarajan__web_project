@@ -51,6 +51,22 @@
         </div>
     </section>
 
+    <div class="unique">
+        <div>
+            <input type="text" id="search" name="search" placeholder="search">
+        </div>
+        <!-- <div class="filter">
+            <select class="selectColor" id="selectColor">
+                <option value="all">All</option>
+                <option value="livingroom">Livingroom</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="bedroom">Bedroom</option>
+                <option value="bathroom" selected>Bathroom</option>
+            </select>
+        </div> -->
+
+    </div>
+
 
     <section>
         <div class="designs">
@@ -95,10 +111,164 @@
         </div>
     </footer>
 
-    <script src="../assets/JS/design_page.js">
+    <!-- <script src="../assets/JS/design_page.js">
     </script>
     <script>
         designList()
+    </script> -->
+
+    <script>
+
+
+        const select_design_list = [];
+
+        let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+        console.log(deslist);
+
+        for (let fulldesign of deslist) {
+            select_design_list.push(fulldesign);
+            console.log(select_design_list);
+        }
+
+        function designList(select_design_list) {
+
+            for (let i = 0; i < select_design_list.length; i++) {
+                let card;
+                let img;
+                let info_div;
+                let design_name;
+                let square_feet;
+                let para;
+                let details;
+
+                card = document.createElement("div");
+                card.setAttribute("class", "card");
+                document.querySelector("div.designs").append(card);
+                console.log(card);
+
+                img = document.createElement("img");
+                img.setAttribute("alt", "inteior design");
+                img.setAttribute("src", select_design_list[i]["designimg"]);
+                card.append(img);
+
+                info_div = document.createElement("div");
+                info_div.setAttribute("class", "info");
+                card.append(info_div);
+
+                design_name = document.createElement("h3");
+                design_name.innerText = select_design_list[i]["designdname"];
+                info_div.append(design_name);
+
+                square_feet = document.createElement("p");
+                square_feet.innerText = select_design_list[i]["designsquarefeet"];
+                info_div.append(square_feet);
+
+                para = document.createElement("p");
+                para.innerText = select_design_list[i]["designpara"];
+                info_div.append(para);
+
+                details = document.createElement("a");
+                details.setAttribute("class", "btn");
+                details.innerText = " More details";
+                details.setAttribute(
+                    "href",
+                    "./user_design_detail.html?id=" + deslist[i].designid
+                );
+                info_div.append(details);
+            }
+        }
+
+        designList(select_design_list)
+
+        let search = [];
+
+        document.getElementById("search").addEventListener("keyup", function () {
+
+            document.querySelector(".designs").innerText = "";
+
+            let text = document.getElementById("search").value;
+
+            search = select_design_list.filter(function (a) {
+                if (a.designdname.toLowerCase().includes(text.toLowerCase())) {
+                    return a.designdname;
+                }
+            });
+
+            console.log(search)
+            if (this.value == "") {
+                designList(select_design_list)
+
+            } else {
+                if (search == "") {
+                    document.querySelector(".designs").innerHTML = "";
+                } else {
+                    designList(search)
+                }
+            }
+        })
+    </script>
+
+
+    <!-- <script>
+        let select = document.getElementById("selectColor");
+        let selOption;
+        for (let i = 0; i < select.options.length; i++) {
+            selOption = select.options[i]
+        }
+        console.log(selOption)
+    </script> -->
+
+
+    <script>
+
+        for (i = 0; i < select_design_list.length; i++) {
+            let fulldes = select_design_list[i]["designtype"];
+            console.log(fulldes);
+
+            // let bathroom = []
+            // let select = document.getElementById('selectColor');
+            // if (select.hasAttribute("selected")) {
+            //     // for (let i = 0; i < select_design_list; i++) {
+            //     bathroom = select_design_list.filter(function (a) {
+            //         if (a.designtype == "Bedroom") {
+            //             return a.designtype;
+            //         }
+            //     })
+
+            //     // }
+            //     designList(bathroom)
+
+            // }
+            // console.log(select);
+            // let list = select_design_list[i];
+            // console.log(list);
+
+            // if (fulldes === select) {
+            //     list.style.display = 'block';
+            // } else {
+            //     list.style.display = 'none';
+            // }
+
+
+        }
+
+
+        // let select = document.getElementById('selectColor').value;
+        // console.log(select);
+        // let list = document.querySelector('.designs');
+
+        // select.addEventListener('change', () => {
+        //     const category = select.value;
+        //     const items = list.querySelectorAll('div');
+        //     items.forEach(item => {
+        //         if (category === 'all' || item.select_design_list.designtype === category) {
+        //             item.style.display = 'block';
+        //         } else {
+        //             item.style.display = 'none';
+        //         }
+        //     });
+        // });
     </script>
 
 </body>

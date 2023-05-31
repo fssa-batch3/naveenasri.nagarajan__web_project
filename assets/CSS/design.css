@@ -20,7 +20,7 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 28px;
 }
 .card {
@@ -104,4 +104,36 @@
 
 .card:hover img {
   transform: scale(1.15);
+}
+
+.unique {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search {
+  width: 300px;
+  height: 40px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.filter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectColor {
+  font-size: 20px;
+  position: relative;
+  padding: 10px;
+  border: none;
+  border-right: 10px solid #fff;
+  outline: none;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
