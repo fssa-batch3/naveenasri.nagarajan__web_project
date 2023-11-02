@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/architect_apply_form.css" />
+    <title>design edit form</title>
+</head>
+
+<body>
+    <section class="all-form" style="padding-top: 150px;">
+        <form id="designForm1">
+            <div class="full_form">
+                <div class="form">
+                    <label for="image">Design 1:</label>
+                    <input type="url" id="designimage" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 2:</label>
+                    <input type="url" id="designimage2" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 3:</label>
+                    <input type="url" id="designimage3" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 4:</label>
+                    <input type="url" id="designimage4" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 5:</label>
+                    <input type="url" id="designimage5" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 6:</label>
+                    <input type="url" id="designimage6" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 7:</label>
+                    <input type="url" id="designimage7" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image">Design 8:</label>
+                    <input type="url" id="designimage8" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image"> Design 9:</label>
+                    <input type="url" id="designimage9" name="image" placeholder="Designimage" /><br />
+                    <br />
+                    <label for="image"> Design 10:</label>
+                    <input type="url" id="designimage10" name="image" placeholder="Designimage" /><br />
+                    <br />
+                </div>
+                <div class="form">
+                    <label>design Name:</label>
+                    <input type="text" id="designname" placeholder="modern bed room" />
+                    <br />
+                    <br />
+                    <label>Price of design(₹):</label>
+                    <input type="number" id="pricedesign" placeholder="22,000" />
+                    <br />
+                    <br />
+                    <label>sq/ft:</label>
+                    <input type="number" id="squarefeet" placeholder="1213sq/ft" />
+                    <br />
+                    <br />
+                    <label>Price per sq/ft:</label>
+                    <input type="number" id="pricepersquarefeet" />
+                    <br />
+                    <br />
+                    <label for="browser">type of room:</label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="Bedroom">
+                        <option value="livingroom">
+                        <option value="kitchen">
+                        <option value="Bathroom">
+                    </datalist>
+                    <br />
+                    <br />
+                    <label>Required dates:</label>
+                    <input type="number" id="dates" placeholder="3 months" />
+                    <br />
+                    <br />
+                    <label>no.of.Bathrooms:</label>
+                    <input type="number" id="bathrooms" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>no.of.Bedroom:</label>
+                    <input type="number" id="bedroom" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>no.of.Balcony:</label>
+                    <input type="number" id="balcony" placeholder="2" />
+                    <br />
+                    <br />
+                    <label>Bio about the design:</label>
+                    <textarea type="text" id="paragraph"></textarea>
+                    <br />
+                    <br />
+                    <label>Brief about the design:</label>
+                    <textarea type="text" id="brief_paragraph"></textarea>
+                    <br />
+                    <br />
+
+                    <button type="submit">submit
+
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </section>
+
+
+
+    <script src="../assets/JS/design_page.js"></script>
+    <script>
+        arcDesignEdit();
+    </script>
+
+</body>
+
+</html>

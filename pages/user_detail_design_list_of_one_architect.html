@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/design.css">
+    <title>user detail design list of one architect</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="designs">
+
+        </div>
+    </section>
+
+
+    <script>
+        let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+        const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+
+        let urlSearch = window.location.search;
+        let url_params = new URLSearchParams(urlSearch);
+        let get_id = url_params.get("id");
+
+        let urlarc = arcInfo.find(function (select_architect) {
+            let id = select_architect["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            }
+        });
+
+        let oneArchitectdesign = [];
+
+
+
+        for (let des of deslist) {
+            if (urlarc["arcEmail"] === des["designemail"]) {
+                oneArchitectdesign.push(des);
+            }
+
+
+        }
+
+        for (let listdes of oneArchitectdesign) {
+
+            let card;
+            let img;
+            let info_div;
+            let design_name;
+            let square_feet;
+            let para;
+            let details;
+
+            card = document.createElement("div");
+            card.setAttribute("class", "card");
+            document.querySelector("div.designs").append(card);
+            console.log(card);
+
+            img = document.createElement("img");
+            img.setAttribute("alt", "inteior design");
+            img.setAttribute("src", listdes["designimg"]);
+            card.append(img);
+
+            info_div = document.createElement("div");
+            info_div.setAttribute("class", "info");
+            card.append(info_div);
+
+            design_name = document.createElement("h3");
+            design_name.innerText = listdes["designdname"];
+            info_div.append(design_name);
+
+            square_feet = document.createElement("p");
+            square_feet.innerText = listdes["designsquarefeet"]
+            info_div.append(square_feet);
+
+            para = document.createElement("p");
+            para.innerText = listdes["designpara"]
+            info_div.append(para);
+
+            details = document.createElement("a");
+            details.setAttribute("class", "btn");
+            details.innerText = " More details";
+            details.setAttribute("href", "./user_design_detail.html?id=" + listdes.designid);
+            info_div.append(details);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

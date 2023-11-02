@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/architect_profile.css">
+    <link rel="stylesheet" href="../assets/CSS/design.css">
+    <title>begin profile</title>
+</head>
+
+<body>
+    <!-- header is started -->
+    <header class="header">
+        <div>
+            <a href="./architect_architect_list.html">
+                <img src="../assets/image/common/logo.png" alt="logo" class="logo" />
+            </a>
+        </div>
+        <nav>
+            <a class="a" href="./architect_architect_list.html">Architects</a>
+            <a class="a" href="./architect_design_list.html">Designs</a>
+            <a class="a" href="./own_architect_booking_list.html">Ordered list</a>
+            <a class="a" href="./architect_about_us.html">About us</a>
+            <a class="a" href="./architect_contact_us.html">Contact us</a>
+            <a class="a" href="./own_architect_profile.html">
+                <img src="../assets/image/common/profile.png" alt="profile" class="profileofuser">
+            </a>
+        </nav>
+    </header>
+    <!-- header is ended -->
+    <section>
+        <div class="main">
+            <div class="personal_info">
+                <div>
+                    <img id="userImage" class="information" alt="Architect image" />
+                </div>
+                <div class="basic-information">
+                    <div>
+                        <h2>personal information</h2>
+                    </div>
+                    <div class="brief-info">
+                        <pre>Name         : <span id="userName"><span></pre>
+                        <pre>Gender       : <span id="userGender"></span></pre>
+                        <pre>Phone number : <span id="userPhoneNumber"></span></pre>
+                        <pre>Address      : <span id="userAddress"></span></pre>
+                        <pre>Education    : <span id="userEducation"></span></pre>
+                        <pre>Experience   : <span id="userExperience"></span></pre>
+                        <pre>Email        : <span id="userEmail"></span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="documentImage">
+            <div>
+                <h2>Cover photo</h2>
+                <div>
+                    <img id="userCoverPhoto" class="free-img" alt="coverPhoto">
+                </div>
+            </div>
+            <div>
+                <h2>Degree Certificate</h2>
+                <div>
+                    <img id="userDocument" class="free-img" alt="interior design">
+                </div>
+            </div>
+            <div>
+                <h2>Nata Certificate</h2>
+                <div>
+                    <img id="userNataCertificate" class="free-img" alt="interior design">
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h2>Sample Design</h2>
+            <div id="model-designs" class="modelDesign">
+                <a href="./own_architect_design_apply_form.html">
+                    <img src="../assets/image/common/add.png" alt="add image">
+                </a>
+            </div>
+        </div>
+
+        <div class="submit">
+            <a href="./own_architect_profile_edit.html" class="edit_btn">Edit</a>
+            <button type="submit" class="submit_btn" id="deletebtn">Delete</button>
+            <button onclick="logout()" class="submit_btn" id="logout">Log out</button>
+        </div>
+    </section>
+
+
+    <script src="../assets/JS/architect_profile.js">
+    </script>
+
+    <script>
+        let logout = document.getElementById("logout");
+        logout.addEventListener("click", function (event) {
+            event.preventDefault();
+            let msg = confirm("Are you sure you want to logout this account");
+            if (msg !== true) {
+                return;
+            } else {
+                localStorage.setItem("Single_Data", JSON.stringify(null));
+                window.location.href = "../index.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

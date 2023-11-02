@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/design.css">
+    <title>own design list detail page</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="designs">
+            <img id="userModelDesign" class="free-img" alt="interior design">
+        </div>
+    </section>
+
+
+    <script>
+        let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+        const arcInfo = JSON.parse(localStorage.getItem("personArchitect"))
+
+        let urlSearch = window.location.search;
+        let url_params = new URLSearchParams(urlSearch);
+        let get_id = url_params.get("id");
+
+
+        let urlarc = arcInfo.find(function (select_architect) {
+            let id = select_architect["arcId"];
+            console.log(id)
+
+            if (get_id == id) {
+                return true;
+            }
+        });
+
+        let oneArchitectdesign = [];
+
+
+
+        for (let onearcdes of deslist) {
+            if (urlarc["arcEmail"] === onearcdes["designemail"]) {
+                oneArchitectdesign.push(onearcdes);
+            }
+
+
+        }
+
+        for (let oneArcdesign of oneArchitectdesign) {
+
+            let card;
+            let img;
+            let info_div;
+            let design_name;
+            let square_feet;
+            let para;
+            let details;
+            let editdes;
+            let deletedes;
+
+            card = document.createElement("div");
+            card.setAttribute("class", "card");
+            document.querySelector("div.designs").append(card);
+            console.log(card);
+
+            img = document.createElement("img");
+            img.setAttribute("alt", "inteior design");
+            img.setAttribute("src", oneArcdesign["designimg"]);
+            card.append(img);
+
+            info_div = document.createElement("div");
+            info_div.setAttribute("class", "info");
+            card.append(info_div);
+
+            design_name = document.createElement("h3");
+            design_name.innerText = oneArcdesign["designdname"];
+            info_div.append(design_name);
+
+            square_feet = document.createElement("p");
+            square_feet.innerText = oneArcdesign["designsquarefeet"]
+            info_div.append(square_feet);
+
+            para = document.createElement("p");
+            para.innerText = oneArcdesign["designpara"]
+            info_div.append(para);
+
+            details = document.createElement("a");
+            details.setAttribute("class", "btn");
+            details.innerText = " More details";
+            details.setAttribute("href", "./user_design_detail.html?id=" + oneArcdesign.designid);
+            info_div.append(details);
+
+            editdes = document.createElement("a");
+            editdes.setAttribute("class", "editdes");
+            editdes.setAttribute("id", oneArcdesign.designid)
+            editdes.innerText = "Edit";
+            info_div.append(editdes);
+
+            deletedes = document.createElement("a");
+            deletedes.setAttribute("class", "deletedes");
+            deletedes.setAttribute("id", "deletedes")
+            deletedes.innerText = "Delete";
+            info_div.append(deletedes);
+        }
+
+        let editdes = document.querySelectorAll("a.editdes");
+        editdes.forEach(function (findId) {
+            findId.addEventListener("click", function () {
+                let designCard = this.closest(".card")
+                const Id = designCard.querySelector(".editdes").getAttribute("id")
+                console.log(Id);
+                localStorage.setItem("designID", JSON.stringify(Id));
+                window.location.href = "./own_architect_design_edit_form.html";
+            })
+        })
+
+
+
+        let deletedesign = document.querySelectorAll("a.deletedes");
+        deletedesign.forEach(function (button) {
+            button.addEventListener("click", function () {
+                if (confirm("Are you sure to delete this design")) {
+                    let dData = JSON.parse(window.localStorage.getItem("personDesign"));
+                    let card = this.closest(".card");
+                    let indexOf = dData.indexOf(card);
+                    console.log(indexOf);
+                    console.log("its working");
+                    dData.splice(indexOf, 1);
+                    // Save updated data to local storage
+                    window.localStorage.setItem("personDesign", JSON.stringify(dData));
+                    // Redirect to Doctorslist page
+                    alert("successfully deleted")
+                    window.location.href = "./own_architect_profile.html";
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

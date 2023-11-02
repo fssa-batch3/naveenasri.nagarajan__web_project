@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/universe.css">
+    <link rel="stylesheet" href="../assets/CSS/booking_list.css">
+    <title>architect accept form</title>
+</head>
+
+<body>
+    <!-- maincontainer is started -->
+    <div class="container">
+        <div class="list-of-customer">
+            <div class="a-form bookingpage">
+                <form id="bookingform">
+                    <label>Name :</label>
+                    <input required type="text" placeholder="enter your name" value="mani Architect"
+                        id="architectName" />
+                    <br /><br />
+                    <label>Phone Number :</label>
+                    <input required type="number" placeholder="enter your Number" value="9876543234"
+                        id="architectPhone" />
+                    <br /><br />
+                    <label>Email :</label>
+                    <input required type="email" placeholder="enter your email" value="mani@gmail.com"
+                        id="architectEmail" />
+                    <br /><br />
+                    <label>User Email :</label>
+                    <input required type="email" placeholder="enter your email"
+                        value="naveenasri.nagarajan@fssa.freshworks.com" id="userEmail" />
+                    <br /><br />
+                    <label>Appoinment Date :</label>
+                    <input type="date" required id="architectDate" />
+                    <br /><br />
+                    <label>Appoinment Time :</label>
+                    <input required type="time" id="architectTime" />
+                    <br /><br />
+                    <label>Message :</label>
+                    <textarea required rows="2" cols="40" id="architectMessage">I will meet you on this time , we discuss about it 
+                    </textarea>
+                    <br />
+
+                    <div class="both-btn">
+                        <button id="dessubmit" type="submit" id="send" onclick="accept(event)">send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+    function accept(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("architectName").value;
+        const Phone = document.getElementById("architectPhone").value;
+        const email = document.getElementById("architectEmail").value;
+        const toemail = document.getElementById("userEmail").value;
+        const date = document.getElementById("architectDate").value;
+        const time = document.getElementById("architectTime").value;
+        const message = document.getElementById("architectMessage").value;
+        const body =
+            "Name : " +
+            name +
+            "<br /> Phone number : " +
+            Phone +
+            "<br /> Appoinment Date : " +
+            date +
+            "<br /> Appoinment Time : " +
+            time +
+            "<br /> Email : " +
+            email +
+            "<br /> Message : " +
+            message;
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "interiordynamicdesign@gmail.com",
+            Password: "E898A468088482628479BF196314179EBCFD",
+            To: toemail,
+            From: "interiordynamicdesign@gmail.com",
+            Subject: "This is the subject",
+            Body: body
+        }).then(
+            message => alert("Are you sure you accept this user?")
+        );
+    }
+</script>
+
+</html>

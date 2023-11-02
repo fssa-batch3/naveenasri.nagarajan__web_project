@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/user_profile.css">
+    <title>user edit profile</title>
+</head>
+
+<body>
+    <form class="profile_form" id="form_E">
+        <div class="head_div">
+            <h2 class="head">User Profile</h2>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">Name:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="name" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">username:</label>
+            <br />
+            <br />
+            <input type="text" pattern="[A-Za-z0-9]+" title="Make sure that name should not contain space" required
+                class="form-control" id="userName" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="email" class="all_label">Email:</label>
+            <br />
+            <br />
+            <input type="email" required class="form-control" id="email" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="number" class="all_label">Phone Number:</label>
+            <br />
+            <br />
+            <input type="number" pattern="[6789]{1}[0-9]{9,15}"
+                title="Phone number with 6-9 and remaing more then 9 and less than 15 digit with in  0-9"
+                class="form-control" required id="phoneNumber" />
+        </div>
+        <br>
+        <br>
+        <div class="submit">
+            <button type="submit" class="submit_btn">Submit</button>
+
+        </div>
+
+    </form>
+
+    <!-- java script -->
+    <script src="../assets/JS/user_register.js">
+    </script>
+    <script>
+        userProfileEdit();
+    </script>
+</body>
+
+</html>

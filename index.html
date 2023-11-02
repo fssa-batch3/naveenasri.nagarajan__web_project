@@ -1,53 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/CSS/universe.css" />
-    <title>login</title>
-    <style>
-      body {
-        background-color: #cee1ff;
-      }
-      .all {
-        display: grid;
-        place-items: center;
-        margin-top: 250px;
-      }
-      button {
-        margin-top: 20px;
-        color: #cee1ff;
-        background-color: #28467f;
-        font-size: 30px;
-        padding: 10px;
-        border: none;
-        width: 200px;
-        border-radius: 12px;
-        font-weight: bolder;
-        cursor: pointer;
-      }
 
-      @media screen and (max-width: 700px) {
-        .all {
-          margin-top: 450px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="all">
-      <div>
-        <img
-          src="./assets/image/common/logo.png"
-          alt="logo"
-          height="250px"
-          width="600px"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/CSS/universe.css" />
+  <link rel="stylesheet" href="./assets/CSS/index.css" />
+  <title>Index</title>
+</head>
+
+<body>
+  <!-- header is started -->
+  <header class="header">
+    <div>
+      <a href="#">
+        <img src="./assets/image/common/logo.png" alt="logo" class="logo" />
+      </a>
+    </div>
+    <nav class="nav">
+
+      <div class="dropdown">
+        <button class="dropbtn">login</button>
+        <div class="dropdown-content">
+          <a href="./pages/user_login.html">login as customer</a>
+          <a href="./pages/architect_required_qualification.html">login as architect</a>
+        </div>
       </div>
-      <div>
-        <a href="./pages/login 2.html"><button>Login</button></a>
+
+    </nav>
+
+  </header>
+  <!-- header is ended -->
+
+  <!-- theme image of our web is started -->
+  <div id="section1">
+    <div class="section1">
+      <div class="hold">
+        <div class="img2">Interior</div>
+        <div class="img3">design</div>
+      </div>
+      <div class="holder">
+        <div class="img2">
+          <img src="./assets/image/login as customer/home/image 2.jpg" alt="interior design" class="holder_img"
+            width="250px" height="170px" />
+        </div>
+        <div class="img3">
+          <img src="./assets/image/login as customer/home/image 3.jpg" alt="interior design" class="holder_img"
+            width="250px" height="170px" />
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- theme image of our web is ended -->
+
+  <!-- our services is started -->
+  <section>
+    <div class="border">
+      <h2>Services</h2>
+      <div class="services">
+        <div>
+          <img src="./assets/image/common/best architect.gif" alt="Interior design" height="200px" width="300px" />
+          <p>Best Architect</p>
+        </div>
+        <div>
+          <img src="./assets/image/login as customer/home/2nd.gif" alt="Interior design" height="200px" width="300px" />
+          <p>Interior Design</p>
+        </div>
+        <div>
+          <img src="./assets/image/login as architect/required qualification/education .gif" alt="Interior design"
+            height="200px" width="300px" />
+          <p>Career for Architect</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- our services is ended -->
+
+  <!-- history of web is started -->
+  <section>
+    <div class="history border">
+      <div>
+        <img class="free-img" src="./assets/image/login as customer/design gallery/black and white/image 2.jpg"
+          height="300px" width="500px" alt="Interior design" />
+      </div>
+      <div>
+        <h2>History of our creation</h2>
+        <p>
+          Since our humble beginnings in 2006, We has significantly expanded
+          its collection of exclusive lamps. Today we are proud to present you
+          our best lighting design solutions. Our collection is updated every
+          day with beautiful solutions and we are glad that you, our
+          customers, support us on way! Our collection is updated every day
+          with beautiful solutions<br /><br />
+          The practice of interior design harkens back to the Ancient
+          Egyptians, who decorated their naive mud homes with basic
+          furnishings enhanced by animal skins, simple textiles, graphic
+          biographical and spiritual murals, sculptures, and painted urns.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- history of web is ended -->
+
+  <!--our works is started  -->
+  <section>
+    <div class="Our-works border">
+      <div class="works">
+        <h2>Works done</h2>
+        <div>
+          <img src="./assets/image/login as customer/home/image 6.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 7.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 8.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 9.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 10.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 11.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 12.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 13.jpg" alt="interior design" class="free_img" />
+          <img src="./assets/image/login as customer/home/image 14.jpg" alt="interior design" class="free_img" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--our works is ended  -->
+
+  <!-- 6 steps for interior design is started -->
+  <section>
+    <div class="steps border">
+      <div class="stepsimgdiv">
+        <h2>6 steps for our Interior design</h2>
+        <img class="stepimg" src="./assets/image/common/ClientMeeting.jpg" alt="Client Meeting">
+        <img class="stepimg" src="./assets/image/common/Innovative Design.jpg" alt="Innovative Design">
+        <img class="stepimg" src="./assets/image/common/Creative Visualization.jpg" alt="Creative Visualization">
+        <img class="stepimg" src="./assets/image/common/Perfect Execution.png" alt="Perfect Execution">
+        <img class="stepimg" src="./assets/image/common/On-Site Supervision.jpg" alt="On-Site Supervision">
+        <img class="stepimg" src="./assets/image/common/Quality.jpg" alt="Quality">
+      </div>
+      <div class="six-steps">
+        <div class="plan">
+          <p class="number">01</p>
+          <h3>Client Meeting</h3>
+          <p>
+            Scheduling a client meeting is a vital part of the initial
+            collaboration in finding out what clients truly expect based on
+            their needs, taste, and style. This helps in understanding the
+            client's vision and aspirations.
+          </p>
+        </div>
+        <div class="plan">
+          <p class="number">02</p>
+          <h3>Innovative Design</h3>
+          <p>
+            Design is all about creativity. Interior design's expertise
+            enables creating designs that meet a client's vision - within the
+            budget
+          </p>
+        </div>
+        <div class="plan">
+          <p class="number">03</p>
+          <h3>Creative Visualization</h3>
+          <p>
+            Interior design utilizes 3D rendering software to visualize a
+            project enabling clients to understand how it will look. This
+            further helps in making modifications besides expediting the
+            decision-making process saving a lot of time in project
+            completion.
+          </p>
+        </div>
+
+        <div class="plan">
+          <p class="number">04</p>
+          <h3>Perfect Execution</h3>
+          <p>
+            With careful attention to space, style and function Interior
+            design crafts interiors that are unique and reflective of the
+            client's aspirations besides striving to explore creative
+            opportunities within each project undertaken.
+          </p>
+        </div>
+        <div class="plan">
+          <p class="number">05</p>
+          <h3>On-Site Supervision</h3>
+          <p>
+            Interior design offers professional on-site supervision to ensure
+            that the project is executed with a high level of quality and
+            matches all agreed plans, drawings and designs. Also clients are
+            updated with the progress on a regular basis.
+          </p>
+        </div>
+        <div class="plan">
+          <p class="number">06</p>
+          <h3>Quality</h3>
+          <p>
+            Selecting the right materials is accorded priority and care is
+            taken to select quality materials used. The emphasis is on meeting
+            a wide range of strict quality regulations and standard besides
+            focussing on excellence in outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6 steps for interior design is ended -->
+
+  <!-- our team work is started -->
+  <section class="border">
+    <div class="history">
+      <div>
+        <h2>Our team work</h2>
+        <img class="team-work-img" src="./assets/image/common/best architect.gif" alt="Interior design" height="340px"
+          width="500px" />
+      </div>
+      <p>
+        A wonderful serenity has taken possession of my entire soul, like
+        these sweet mornings of spring which I enjoy with my whole heart. I am
+        alone, and feel the charm of existence in this spot, which was created
+        for the bliss of souls like mine. I am so happy, my dear friend, so
+        absorbed in the exquisite sense of mere tranquil existence, that I
+        neglect my talents. I should be incapable of drawing a single stroke
+        at the present moment; and yet I feel that I never was a greater.
+      </p>
+    </div>
+
+  </section>
+  <!-- our team work is ended -->
+
+  <!-- effort of us is started -->
+  <section>
+    <div style="border: 3px solid#28467f; margin: 35px 40px 0px 40px" class="services">
+      <div>
+        <p>456</p>
+        <p>HAPPY CLIENTS</p>
+      </div>
+      <div>
+        <p>982</p>
+        <p>AMAZING WORKS</p>
+      </div>
+      <div>
+        <p>30 +</p>
+        <p>AWARDS WINNING</p>
+      </div>
+      <div>
+        <p>20</p>
+        <p>OPERATED YEARS</p>
+      </div>
+    </div>
+  </section>
+  <!-- effort of us is ended -->
+
+  <!-- Testimonial is started -->
+  <section>
+    <div>
+
+      <div class="Testimonial border">
+        <div class="review">
+          <div>
+            <img src="./assets/image/common/person.png" alt="interior design" class="reviewer" />
+          </div>
+          <div>
+            <h3>Saran Kumar</h3>
+            <p>
+              Our experience with interior design was pleasurable because of
+              the project managers. The work got done before 45 days just the
+              way we wanted it to be.
+            </p>
+          </div>
+        </div>
+        <div class="review">
+          <div>
+            <img src="./assets/image/common/person.png" alt="interior design" class="reviewer" />
+          </div>
+          <div>
+            <h3>Aravindth</h3>
+            <p>
+              I am really happy with the materials that were used and the
+              timeline for the project. The reaction we got from our friends
+              when they first saw our place was priceless
+            </p>
+          </div>
+        </div>
+        <div class="review">
+          <div>
+            <img src="./assets/image/common/person.png" alt="interior design" class="reviewer" />
+          </div>
+          <div>
+            <h3>Rohit Prasad</h3>
+            <p>
+              A place where I can find peace. A home. That's exactly what
+              interior design has helped me with. I'm very happy with the
+              outcome.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial is ended -->
+
+
+
+
+  <section>
+    <div class="faq-section border">
+      <header>
+        <h2>FAQs</h2>
+        <p>Answers to the most frequently asked questions.</p>
+      </header>
+
+      <details>
+        <summary>
+          <h4> Why do I need an interior designer?</h4>
+          <span>expand_more</span>
+        </summary>
+        <p>An interior designer can help you create a functional and aesthetically pleasing living space by
+          combining design expertise, creativity, and industry knowledge. They can save you time, money, and
+          stress by helping you make informed decisions, maximizing your budget, and ensuring that your design
+          vision is executed seamlessly.</p>
+      </details>
+
+      <hr>
+
+      <details>
+        <summary>
+          <h4>What services are included under home interior design?</h4>
+          <span>expand_more</span>
+        </summary>
+        <p>Dynamic Design is your one-stop-shop for interior design services. We offer end-to-end services for
+          various spaces, including modular interiors, false ceilings, civil work, painting, electrical work,
+          plumbing, flooring, and tiling. Browse our latest designs for inspiration to kickstart your home
+          interior journey.</p>
+      </details>
+
+      <hr>
+
+      <details>
+        <summary>
+          <h4>What are the trending interior design styles?</h4>
+          <span>expand_more</span>
+        </summary>
+        <p>Here's a curated list of top interior design styles in India that you should watch out for when
+          designing your dream home.<br>
+          1. Bohemian Style<br>
+          2. Modern Style<br>
+          3. Colonial Style<br>
+          4. Indian Traditional<br>
+          5. Art Deco Style<br>
+          6. Industrial Interior Design<br>
+          7. Minimalist Interior Design<br>
+          8. Scandinavian Interior Design</p>
+      </details>
+
+      <hr>
+
+      <details>
+        <summary>
+          <h4>What is the best material for kitchen cabinets?</h4>
+          <span>expand_more</span>
+        </summary>
+        <p>The best material for a modular kitchen is BWR(boiling water resistant) / BWP (boiling water proof)
+          ply. The other recommended materials include particle board and high-density-high-moisture resistant
+          board, commonly known as HDHMR. These are core materials for carcass/internal boxes.
+        </p>
+      </details>
+
+      <hr>
+
+      <details>
+        <summary>
+          <h4>What is an average size bedroom?</h4>
+          <span>expand_more</span>
+        </summary>
+        <p>The average size of a bedroom ranges from 10x10 to 12x16 sq.ft.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- footer is started -->
+  <footer>
+    <div class="footer">
+      <div class="footdiv1">
+        <h3 style="color: #cee1ff">About us</h3>
+        <p>
+          Interior design is a fast-growing enterprise rendering cutting edge
+          solutions across the domains of architecture, interior design and
+          continuum. The range of services provided include planning,
+          designing, interior design, engineering and construction of
+          commercial and residential spaces.
+        </p>
+      </div>
+      <div class="social-media">
+        <img class="icons" src="./assets/image/common/instagram.png" alt="instagram" />
+        <img class="icons" src="./assets/image/common/youtube.png" alt="youtube" />
+        <img class="icons" src="./assets/image/common/twitter.png" alt="twitter" />
+        <img class="icons" src="./assets/image/common/facebook.png" alt="facebook" />
+        <img class="icons" src="./assets/image/common/gmail.png" alt="gmail" />
+      </div>
+      <div class="footdiv3">
+        <h3 style="color: #cee1ff">CONTACT US</h3>
+        <h4>Head office</h4>
+        <p>
+          Vijay Shanthi Block-B, Global Infocity, 40, MGR Main Rd, Perungudi,
+          Chennai, Tamil Nadu 600096.
+        </p>
+        <h4>Phone Number</h4>
+        <p>9678453665</p>
+        <h4>Email us</h4>
+        <p>interiordynamicdesign@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- footer is ended -->
+
+</body>
+
 </html>

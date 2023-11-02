@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/user_profile.css">
+    <title>user profile</title>
+</head>
+
+<body>
+    <form class="profile_form" id="form_p">
+        <div class="head_div">
+            <h2 class="head">User Profile</h2>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">Name:</label>
+            <br />
+            <br />
+            <input type="text" class="form-control" id="name" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="name" class="all_label">username:</label>
+            <br />
+            <br />
+            <input type="text" pattern="[A-Za-z0-9]+" title="Make sure that name should not contain space"
+                class="form-control" id="userName" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="email" class="all_label">Email:</label>
+            <br />
+            <br />
+            <input type="email" class="form-control" id="email" disabled />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="number" class="all_label">Phone Number:</label>
+            <br />
+            <br />
+            <input type="number" class="form-control" pattern="[6-9]{1}[0-9]{9,15}"
+                title="Phone number with 6-9 and remaing 9-15 digit with 0-9" id="phoneNumber" disabled />
+        </div>
+        <br>
+        <br>
+        <div class="submit">
+
+            <a href="./own_user_profile_edit.html" class="edit_btn">Edit</a>
+
+            <button type="submit" class="submit_btn" id="delete_btn">Delete</button>
+            <button onclick="logout()" class="submit_btn" id="logout">Log out</button>
+        </div>
+
+    </form>
+
+
+    <script src="../assets/JS/user_register.js">
+    </script>
+
+    <script>
+        userProfile();
+    </script>
+    <script>
+        let logout = document.getElementById("logout");
+        logout.addEventListener("click", function (event) {
+            event.preventDefault();
+            let msg = confirm("Are you sure you want to logout this account?");
+            if (msg !== true) {
+                return;
+            } else {
+                localStorage.setItem("this_user", JSON.stringify(null));
+                window.location.href = "../index.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

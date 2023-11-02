@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/architect_apply_form.css" />
+    <title>architect edit form</title>
+</head>
+
+<body>
+
+    <section class="all-form">
+        <form id="architectForm3">
+            <div class="full_form">
+                <div class="form">
+                    <h2>personal information</h2>
+                    <label for="image">Photo:</label>
+                    <input type="url" required id="userImage" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
+                    <label>Name:</label>
+                    <input type="text" required id="userName" placeholder="John robert" />
+                    <br />
+                    <br />
+                    <label>Gender:</label>
+                    <input type="text" list="Gender" required id="userGender" placeholder="Male/Female" />
+                    <datalist id="Gender">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Trans gender">
+                        <option value="Others">
+
+                    </datalist>
+                    <br />
+                    <br />
+                    <label>Phone number:</label>
+                    <input type="tel" required id="userPhoneNumber" placeholder="9218457240" />
+                    <br />
+                    <br />
+                    <label>Address:</label>
+                    <input type="text" required id="userAddress" />
+                    <br />
+                    <br />
+                    <label for="image">Cover Photo:</label>
+                    <input type="url" id="userCoverPhoto" required name="image" placeholder="Cover photo design" />
+                    <br />
+                    <br />
+
+                </div>
+                <div class="form">
+                    <h2>professional information</h2>
+                    <label>Email:</label>
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        title="Make sure email should be in the correct pattern" required id="userEmail"
+                        placeholder="abc@gmail.com" disabled />
+                    <br />
+                    <br />
+                    <label>Education:</label>
+                    <input type="text" required id="userEducation" placeholder="Bachelor of architects" />
+                    <br />
+                    <br />
+                    <label>Experience:</label>
+                    <input type="text" required id="userExperience" placeholder="2 years" />
+                    <br />
+                    <br />
+
+                    <label for="image">Degree Certificate:</label>
+                    <input type="url" required id="userDocument" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
+
+                    <label for="image">NATA certificate:</label>
+                    <input type="url" required id="userNataCertificate" name="image" placeholder="Profileimage" />
+                    <br />
+                    <br />
+
+
+
+                    <div class="submit">
+
+                        <button type="submit" class="submit_btn">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <script src="../assets/JS/architect_register.js">
+    </script>
+    <script>
+        arcProfileEdit();
+    </script>
+</body>
+
+</html>

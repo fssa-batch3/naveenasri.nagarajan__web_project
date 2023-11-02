@@ -6,28 +6,29 @@
   width: 250px;
 }
 
-.Login {
-  color: white;
-  background-color: #28467f;
-  border-radius: 7px;
-  padding: 5px;
-  width: 100px;
-  font-weight: bold;
-  text-align: center;
-}
-
 /* header is ended */
 /* drop down */
+
+section div {
+  padding: 15px 0px;
+}
+.stepsimgdiv {
+  width: 320px;
+}
+.stepimg {
+  margin-top: 10px;
+  margin-left: 23px;
+  height: 170px;
+  width: 270px;
+  border-radius: 3px;
+}
+
 .dropbtn {
-  /* background-color: #04aa6d;
-  color: white;
-  padding: 16px; 
-  font-size: 16px;
-  border: none; */
   color: white;
   background-color: #28467f;
   border-radius: 7px;
-  padding: 5px;
+  margin-top: 10px;
+  margin-left: 570px;
   width: 100px;
   font-weight: bold;
   text-align: center;
@@ -40,6 +41,7 @@
 
 .dropdown-content {
   display: none;
+  margin-left: 600px;
   position: absolute;
   font-size: 16px;
   background-color: #f1f1f1;
@@ -151,6 +153,59 @@ button {
   align-items: center;
   margin-bottom: 30px;
 }
+
+/* question and answer */
+
+.faq-section {
+  width: 750px;
+  background-color: #ffff;
+  font-family: "Lato", sans-serif;
+  padding: 20px 315px;
+  margin-bottom: 20px;
+}
+
+header > p {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 38px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+span {
+  cursor: pointer;
+  margin-top: 4px;
+  color: #28467f;
+}
+
+summary {
+  font-size: 20px;
+  color: #28467f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+summary::marker {
+  display: none;
+  content: "";
+}
+
+details > p {
+  max-width: 650px;
+  color: #000000;
+  font-size: 18px;
+  line-height: 155%;
+  letter-spacing: 0.1px;
+  margin-bottom: 40px;
+  padding-left: 10px;
+}
+/* question and answer */
+
 /* phone resposive */
 @media screen and (max-width: 600px) {
   .free-img {
@@ -168,5 +223,9 @@ button {
   }
   .steps {
     display: block;
+  }
+  .faq-section {
+    width: auto;
+    padding: 24px;
   }
 }

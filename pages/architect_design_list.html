@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/universe.css">
+    <link rel="stylesheet" href="../assets/CSS/design.css">
+    <title>design list</title>
+</head>
+
+<body>
+    <!-- header is started -->
+    <header class="header">
+        <div>
+            <a href="./architect_architect_list.html">
+                <img src="../assets/image/common/logo.png" alt="logo" class="logo" />
+            </a>
+        </div>
+        <nav>
+            <a class="a" href="./architect_architect_list.html">Architects</a>
+            <a class="a" href="./architect_design_list.html">Designs</a>
+            <a class="a" href="./own_architect_booking_list.html">Ordered list</a>
+            <a class="a" href="./architect_about_us.html">About us</a>
+            <a class="a" href="./architect_contact_us.html">Contact us</a>
+            <a class="a" href="./own_architect_profile.html">
+                <img src="../assets/image/common/profile.png" alt="profile" class="profileofuser">
+            </a>
+        </nav>
+    </header>
+    <!-- header is ended -->
+
+    <section id="section1">
+        <div class="section1">
+            <div class="hold">
+                <div class="img2">Design</div>
+                <div class="img3">List</div>
+            </div>
+            <div class="holder">
+                <div class="img2">
+                    <img src="../assets/image/login as customer/design gallery/kitchen/image 3.jpg"
+                        alt="Interior design" width="250px" height="170px" />
+                </div>
+                <div class="img3">
+                    <img src="../assets/image/login as customer/design gallery/living room/image 3.webp"
+                        alt="Interior design" width="250px" height="170px" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="unique">
+        <div>
+            <input type="text" id="search" name="search" placeholder="search">
+        </div>
+        <!-- <div class="filter">
+            <select class="selectColor" id="selectColor">
+                <option value="all">All</option>
+                <option value="livingroom">Livingroom</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="bedroom">Bedroom</option>
+                <option value="bathroom">Bathroom</option>
+            </select>
+        </div> -->
+
+    </div>
+
+    <section>
+        <div class="designs">
+
+        </div>
+    </section>
+    <!-- main contanier is ended -->
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="footdiv1">
+                <h3>About us</h3>
+                <p>
+                    Interior design is a fast-growing enterprise rendering cutting edge
+                    solutions across the domains of architecture, interior design and
+                    continuum. The range of services provided include planning,
+                    designing, interior design, engineering and construction of
+                    commercial and residential spaces.
+                </p>
+            </div>
+            <div class="social-media">
+                <img class="icons" src="../assets/image/common/instagram.png" alt="instagram" />
+                <img class="icons" src="../assets/image/common/youtube.png" alt="youtube" />
+                <img class="icons" src="../assets/image/common/twitter.png" alt="twitter" />
+                <img class="icons" src="../assets/image/common/facebook.png" alt="facebook" />
+                <img class="icons" src="../assets/image/common/gmail.png" alt="gmail" />
+            </div>
+            <div class="footdiv3">
+                <h3>CONTACT US</h3>
+                <h4>Head office</h4>
+                <p>
+                    Vijay Shanthi Block-B, Global Infocity, 40, MGR Main Rd, Perungudi,
+                    Chennai, Tamil Nadu 600096.
+                </p>
+                <h4>Phone Number</h4>
+                <p>9678453665</p>
+                <h4>Email us</h4>
+                <p>interiordesign@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 
+    <script src="../assets/JS/design_page.js">
+    </script>
+    <script>
+        arcDesignList();
+    </script> -->
+
+    <script>
+
+
+        const select_design_list = [];
+
+        let deslist = JSON.parse(localStorage.getItem("personDesign"));
+
+        console.log(deslist);
+
+        for (let fulldesign of deslist) {
+            select_design_list.push(fulldesign);
+            console.log(select_design_list);
+        }
+
+        function designList(select_design_list) {
+
+            for (let i = 0; i < select_design_list.length; i++) {
+                let card;
+                let img;
+                let info_div;
+                let design_name;
+                let square_feet;
+                let para;
+                let details;
+
+                card = document.createElement("div");
+                card.setAttribute("class", "card");
+                document.querySelector("div.designs").append(card);
+                console.log(card);
+
+                img = document.createElement("img");
+                img.setAttribute("alt", "inteior design");
+                img.setAttribute("src", select_design_list[i]["designimg"]);
+                card.append(img);
+
+                info_div = document.createElement("div");
+                info_div.setAttribute("class", "info");
+                card.append(info_div);
+
+                design_name = document.createElement("h3");
+                design_name.innerText = select_design_list[i]["designdname"];
+                info_div.append(design_name);
+
+                square_feet = document.createElement("p");
+                square_feet.innerText = select_design_list[i]["designsquarefeet"];
+                info_div.append(square_feet);
+
+                para = document.createElement("p");
+                para.innerText = select_design_list[i]["designpara"];
+                info_div.append(para);
+
+                details = document.createElement("a");
+                details.setAttribute("class", "btn");
+                details.innerText = " More details";
+                details.setAttribute(
+                    "href",
+                    "./user_design_detail.html?id=" + deslist[i].designid
+                );
+                info_div.append(details);
+            }
+        }
+
+        designList(select_design_list)
+
+        let search = [];
+
+        document.getElementById("search").addEventListener("keyup", function () {
+
+            document.querySelector(".designs").innerText = "";
+
+            let text = document.getElementById("search").value;
+
+            search = select_design_list.filter(function (a) {
+                if (a.designdname.toLowerCase().includes(text.toLowerCase())) {
+                    return a.designdname;
+                }
+            });
+
+            console.log(search)
+            if (this.value == "") {
+                designList(select_design_list)
+
+            } else {
+                if (search == "") {
+                    document.querySelector(".designs").innerHTML = "";
+                } else {
+                    designList(search)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

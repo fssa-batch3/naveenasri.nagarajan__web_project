@@ -1,19 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
-
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* header is started */
+.profileofuser {
+  width: 40px;
 }
 
-body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  color: #fff;
-  font-family: "Playfair Display", serif;
-  background-color: black;
-} */
+#section1 {
+  background-image: url("../../assets/image/login as customer/design gallery/bed room/image 2.webp");
+}
+.hold {
+  width: 250px;
+}
+/* header is ended */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -22,18 +21,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 28px;
 }
 .card {
   position: relative;
   width: 400px;
   height: 270px;
-  /* width: 380px;
-  height: 300px; */
-  aspect-ratio: 9/14;
+  /* aspect-ratio: 9/14; */
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 8px;
   display: flex;
-  align-items: flex-end;
+  margin: 31px;
   justify-content: flex-end;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
@@ -67,7 +65,7 @@ body {
 
 .info h3 {
   font-size: 28px;
-  line-height: 110%;
+  line-height: 0%;
   color: #fff;
 }
 
@@ -79,7 +77,9 @@ body {
   transition: 0.4s;
 }
 
-.btn {
+.btn,
+.editdes,
+.deletedes {
   display: inline-block;
   font-size: 16px;
   text-decoration: none;
@@ -87,9 +87,10 @@ body {
   color: #fff;
   padding: 5px 15px;
   border-radius: 5px;
-  cursor: pinter;
   opacity: 0;
   transition: 0.4s;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .card:hover .info {
@@ -103,4 +104,36 @@ body {
 
 .card:hover img {
   transform: scale(1.15);
+}
+
+.unique {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search {
+  width: 300px;
+  height: 40px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.filter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectColor {
+  font-size: 20px;
+  position: relative;
+  padding: 10px;
+  border: none;
+  border-right: 10px solid #fff;
+  outline: none;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }

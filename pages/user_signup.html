@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/universe.css" />
+    <link rel="stylesheet" href="../assets/CSS/user_login.css">
+    <title>user signup</title>
+</head>
+
+<body>
+    <div>
+        <div class="all">
+            <a href="#">
+                <img src="../assets/image/common/logo.png" alt="logo" class="logo" />
+            </a>
+        </div>
+        <div class="main-container">
+            <div>
+                <form id="form2" class="form">
+                    <label>Name:</label>
+                    <input type="text" required autocomplete="norname" id="norname" placeholder="enter your name"
+                        required value="Jaha" />
+                    <br /><br />
+                    <label>User
+                        name:</label>
+                    <input type="text" pattern="[A-Za-z0-9]+" title="Make sure that name should not contain space"
+                        autocomplete="name" id="name" placeholder="enter your name" required value="jaha02" />
+                    <br /><br />
+                    <label>Email:</label>
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        title="Make sure email should be in the correct pattern" autocomplete="email"
+                        placeholder="abc@gmail.com" required id="email" value="jaha@gmail.com" />
+                    <br /><br />
+                    <label>Number:</label>
+                    <input type="tel" pattern="[6789]{1}[0-9]{9,15}"
+                        title="Phone number with 6-9 and remaing more then 9 and less than 15 digit with in  0-9"
+                        placeholder="enter your Phone Number" id="number" required value="9876545654" />
+                    <br /><br />
+                    <label>password:</label>
+                    <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+                        title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space "
+                        required autocomplete="current-password" class="password" id="password" placeholder="password"
+                        value="Jaha@123" />
+                    <br /><br />
+                    <label>Confirm Password:</label>
+                    <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+                        title="Must contain at least one number and one uppercase and lowercase letter,at least 8 or more characters and must not contain space"
+                        required id="confirm_password" class="copassword" autocomplete="current-password"
+                        placeholder="Confirm password" value="Jaha@123" />
+                    <br /><br />
+                    <div>
+                        <button class="signup" type="submit">
+                            Sign up
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="holder">
+                <div class="img2">
+                    <img src="../assets/image/login as customer/contact us/image 2.jpg" alt="interior design"
+                        width="300px" height="220px" />
+                </div>
+                <div class="img3">
+                    <img src="../assets/image/login as customer/design gallery/living room/image 3.webp"
+                        alt="interior design" width="300px" height="220px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- java  -->
+    <script src="../assets/JS/user_register.js">
+    </script>
+
+    <script>
+        userSignUp();
+    </script>
+</body>
+
+</html>
